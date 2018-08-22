@@ -1,0 +1,823 @@
+\hypertarget{estado_8h}{\section{estado.\+h File Reference}
+\label{estado_8h}\index{estado.\+h@{estado.\+h}}
+}
+
+
+Ficheiro header contendo os dados relativos ao módulo {\ttfamily E\+S\+T\+A\+D\+O}.  
+
+
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\\*
+Include dependency graph for estado.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{estado_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{estado_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{\#define \hyperlink{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{M\+A\+X\+\_\+\+G\+R\+I\+D}~20}\label{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}
+
+\begin{DoxyCompactList}\small\item\em O tamanho máximo da grelha. \end{DoxyCompactList}\item 
+\hypertarget{estado_8h_aa87360d2dd1fd5a07f92c6afe93045fc}{\#define \hyperlink{estado_8h_aa87360d2dd1fd5a07f92c6afe93045fc}{M\+A\+X\+\_\+\+U\+S\+E\+R}~100}\label{estado_8h_aa87360d2dd1fd5a07f92c6afe93045fc}
+
+\begin{DoxyCompactList}\small\item\em O tamanho máximo do nome de utilizador. \end{DoxyCompactList}\item 
+\hypertarget{estado_8h_a1d5dab30b404fab91608086105afc78c}{\#define \hyperlink{estado_8h_a1d5dab30b404fab91608086105afc78c}{M\+A\+X\+\_\+\+B\+U\+F\+F\+E\+R}~10240}\label{estado_8h_a1d5dab30b404fab91608086105afc78c}
+
+\begin{DoxyCompactList}\small\item\em O tamanho máximo do buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{estado_8h_aeae4430c2f33af42d34be5a7d75ab095}{typedef struct \hyperlink{structestado}{estado} $\ast$ \hyperlink{estado_8h_aeae4430c2f33af42d34be5a7d75ab095}{E\+S\+T\+A\+D\+O}}\label{estado_8h_aeae4430c2f33af42d34be5a7d75ab095}
+
+\begin{DoxyCompactList}\small\item\em Estrutura que armazena o estado do jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{estado_8h_abfd806e47e2e69b38156c2eab6fda6c0}{enum \hyperlink{estado_8h_abfd806e47e2e69b38156c2eab6fda6c0}{V\+A\+L\+O\+R} \{ \\*
+{\bfseries B\+L\+O\+Q\+U\+E\+A\+D\+A}, 
+{\bfseries F\+I\+X\+O\+\_\+\+X}, 
+{\bfseries F\+I\+X\+O\+\_\+\+O}, 
+{\bfseries V\+A\+Z\+I\+A}, 
+\\*
+{\bfseries S\+O\+L\+\_\+\+X}, 
+{\bfseries S\+O\+L\+\_\+\+O}
+ \}}\label{estado_8h_abfd806e47e2e69b38156c2eab6fda6c0}
+
+\begin{DoxyCompactList}\small\item\em Valores para facilitar leitura das Peças do tabuleiro. \end{DoxyCompactList}\item 
+\hypertarget{estado_8h_a92174b27f2983e923597ffca08c4b20f}{enum \hyperlink{estado_8h_a92174b27f2983e923597ffca08c4b20f}{M\+E\+N\+U\+\_\+\+I\+N\+D\+E\+X} \{ \\*
+{\bfseries D\+R\+A\+W\+\_\+\+T\+A\+B}, 
+{\bfseries P\+L\+A\+Y\+\_\+\+T\+A\+B}, 
+{\bfseries S\+E\+L\+E\+C\+T\+\_\+\+M\+E\+N\+U}, 
+{\bfseries V\+I\+C\+T\+O\+R\+Y}, 
+\\*
+{\bfseries S\+E\+L\+E\+C\+T\+\_\+\+M\+A\+P}, 
+{\bfseries C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+A\+P}, 
+{\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+A\+P}, 
+{\bfseries I\+N\+I\+T\+I\+A\+L\+\_\+\+M\+E\+N\+U}, 
+\\*
+{\bfseries S\+E\+L\+E\+C\+T\+\_\+\+D\+I\+F\+F\+I\+C\+U\+L\+T\+Y}, 
+{\bfseries R\+A\+N\+D\+O\+M\+\_\+\+M\+E\+N\+U}, 
+{\bfseries H10}, 
+{\bfseries H11}, 
+\\*
+{\bfseries H12}, 
+{\bfseries H13}, 
+{\bfseries H14}, 
+{\bfseries I\+N\+V\+A\+L\+I\+D\+\_\+\+R\+A\+N\+D\+O\+M}, 
+\\*
+{\bfseries L\+E\+A\+D\+E\+R\+B\+O\+A\+R\+D}
+ \}}\label{estado_8h_a92174b27f2983e923597ffca08c4b20f}
+
+\begin{DoxyCompactList}\small\item\em Valores para facilitar leitura do menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{estado_8h_a425d9a13679db6099c218938240ba30d}{make\+State} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que cria um estado. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a8b28e51aaf0dded437325daee1e86238}{destroy\+State} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que destroi o estado. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{estado_8h_a1c52197ddde667791a5210fd441cd3dc}{inicializar} (char $\ast$user, int ln, int col)
+\begin{DoxyCompactList}\small\item\em Função que inicializa o estado. \end{DoxyCompactList}\item 
+long \hyperlink{estado_8h_adacdc0e19436cc110b84a389bda1d153}{n\+\_\+solutions} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que indica o número de soluções de um tabuleiro. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_aa7a928e6dc71c7e6f4e25da3b5c10006}{set\+E\+\_\+state} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} dest, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} sourc)
+\begin{DoxyCompactList}\small\item\em Função que copia um estado para outro. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_ad2a155483a55076e3b583984fa4080e2}{set\+E\+\_\+user} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$user)
+\begin{DoxyCompactList}\small\item\em Função que altera o nome de utilizador num estado. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a409faed7da253d71a139e68c80d7c3d4}{set\+E\+\_\+lins} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int lins)
+\begin{DoxyCompactList}\small\item\em Função que altera o número de linhas. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a5fbaea168b59397cd59b16683935a278}{set\+E\+\_\+cols} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int cols)
+\begin{DoxyCompactList}\small\item\em Função que altera o número de colunas. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int menu)
+\begin{DoxyCompactList}\small\item\em Função que altera o menu. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a0b2cdae45084d690be7137255dfac0cb}{set\+E\+\_\+elem} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int i, int j, char val)
+\begin{DoxyCompactList}\small\item\em Função que altera um elemento do tabuleiro. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_aae2d35f0ec536272ce5ddf4a4a4cb5e9}{set\+E\+\_\+elem\+T} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int i, int j, char($\ast$map)(char))
+\begin{DoxyCompactList}\small\item\em Altera um elemento consoante uma função mapping. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a1cae4d8b65b1431a0a162399c8a5fdeb}{set\+E\+\_\+stack} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, \hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s, int c)
+\begin{DoxyCompactList}\small\item\em Função que altera as stack no estado. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_aec99fff0cdbcf7313a220b9908396c3c}{set\+E\+\_\+flag} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int flag)
+\item 
+void \hyperlink{estado_8h_ab7d13ddf2b3bdb333b271cc83eb1324e}{set\+E\+\_\+transverse} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int li, int ci, char($\ast$map)(char))
+\begin{DoxyCompactList}\small\item\em Aplica uma função de mapping a vários elementos da grelha. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a5eff026b884b0da81f84f8658a3d850d}{set\+E\+\_\+base} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char($\ast$map)(char))
+\begin{DoxyCompactList}\small\item\em Coloca no estado indicado um base. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_a37030bdeb38ad57caa19d47f541f14f3}{set\+E\+\_\+help} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int help)
+\begin{DoxyCompactList}\small\item\em Função que altera o número de ajudas. \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_ac5c132634200250bdaa5ae7a20e524c1}{set\+E\+\_\+help\+B} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que coloca um número base de ajudas em {\ttfamily e} . \end{DoxyCompactList}\item 
+void \hyperlink{estado_8h_aba618389582d28f62b9b79f5f3f6fe48}{set\+E\+\_\+wins} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int wins)
+\begin{DoxyCompactList}\small\item\em Função que coloca o número de vitórias no {\ttfamily E\+S\+T\+A\+D\+O} e no ficheiro para tal. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{estado_8h_a8b42f480d0d1c8fa0dae927f5158ac8b}{get\+E\+\_\+user} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve o nome de utilizador. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve o número de colunas na grelha. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve o número de linhas na grelha. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_a6b89af2e2e3e9eaf3521701eec86a702}{get\+E\+\_\+menu} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve o menu atual. \end{DoxyCompactList}\item 
+\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} \hyperlink{estado_8h_aa61011eadf880d552d197316ad4b30bb}{get\+E\+\_\+stack} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int c)
+\begin{DoxyCompactList}\small\item\em Função que devolve uma {\ttfamily S\+T\+A\+C\+K} do {\ttfamily E\+S\+T\+A\+D\+O}. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_af4fdbc1ee04d56bef9bd3fb97bb70cee}{get\+E\+\_\+flag} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve a {\ttfamily flag}. \end{DoxyCompactList}\item 
+char \hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int i, int j)
+\begin{DoxyCompactList}\small\item\em Função que devolve um elemento da grelha. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_ab3e47d845be6ab389f1cb63532ab9313}{get\+E\+\_\+help} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que devolve o número de ajudas. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_a27328d911d982f65736cd7ce9a136cfe}{get\+E\+\_\+verf} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int($\ast$inclusivecase)(\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O}, int, int))
+\begin{DoxyCompactList}\small\item\em Função que verifica todas as peças de um tabuleiro. \end{DoxyCompactList}\item 
+int \hyperlink{estado_8h_ad843d5e51766f087443787b3f2623961}{get\+E\+\_\+wins} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que obtem o número de vitórias do estado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ficheiro header contendo os dados relativos ao módulo {\ttfamily E\+S\+T\+A\+D\+O}. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{estado_8h_a8b28e51aaf0dded437325daee1e86238}{\index{estado.\+h@{estado.\+h}!destroy\+State@{destroy\+State}}
+\index{destroy\+State@{destroy\+State}!estado.\+h@{estado.\+h}}
+\subsubsection[{destroy\+State}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a8b28e51aaf0dded437325daee1e86238}
+
+
+Função que destroi o estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a destruir. \\
+\hline
+\end{DoxyParams}
+\hypertarget{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+cols@{get\+E\+\_\+cols}}
+\index{get\+E\+\_\+cols@{get\+E\+\_\+cols}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+cols (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}
+
+
+Função que devolve o número de colunas na grelha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de colunas.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a5b68d5d6aae41b5b7dd9308e40d53506}{estado\+::num\+\_\+cols} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+elem@{get\+E\+\_\+elem}}
+\index{get\+E\+\_\+elem@{get\+E\+\_\+elem}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+elem}]{\setlength{\rightskip}{0pt plus 5cm}char get\+E\+\_\+elem (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}
+
+
+Função que devolve um elemento da grelha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a procurar. \\
+\hline
+{\em i} & Linha do elemento. \\
+\hline
+{\em j} & Coluna do elemento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Elemento na linha 'i' e coluna 'j'. 
+\end{DoxyReturn}
+\hypertarget{estado_8h_af4fdbc1ee04d56bef9bd3fb97bb70cee}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+flag@{get\+E\+\_\+flag}}
+\index{get\+E\+\_\+flag@{get\+E\+\_\+flag}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+flag (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_af4fdbc1ee04d56bef9bd3fb97bb70cee}
+
+
+Função que devolve a {\ttfamily flag}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily flag} do {\ttfamily Estado}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a6786d825e542118c5d79b852ace947f7}{estado\+::flag} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_ab3e47d845be6ab389f1cb63532ab9313}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+help@{get\+E\+\_\+help}}
+\index{get\+E\+\_\+help@{get\+E\+\_\+help}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+help (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ab3e47d845be6ab389f1cb63532ab9313}
+
+
+Função que devolve o número de ajudas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de ajudas.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a488c0d087dcc7e84034cdd814cf3bf3b}{estado\+::help} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+lins@{get\+E\+\_\+lins}}
+\index{get\+E\+\_\+lins@{get\+E\+\_\+lins}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+lins}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+lins (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}
+
+
+Função que devolve o número de linhas na grelha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de linhas.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_ab02e4fe5644c3b59088d7c4566d70105}{estado\+::num\+\_\+lins} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a6b89af2e2e3e9eaf3521701eec86a702}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+menu@{get\+E\+\_\+menu}}
+\index{get\+E\+\_\+menu@{get\+E\+\_\+menu}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+menu}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a6b89af2e2e3e9eaf3521701eec86a702}
+
+
+Função que devolve o menu atual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Menu atual.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a219ca4fd4c068f749afedb392e3f83b0}{estado\+::menu} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_aa61011eadf880d552d197316ad4b30bb}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+stack@{get\+E\+\_\+stack}}
+\index{get\+E\+\_\+stack@{get\+E\+\_\+stack}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+C\+K} get\+E\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aa61011eadf880d552d197316ad4b30bb}
+
+
+Função que devolve uma {\ttfamily S\+T\+A\+C\+K} do {\ttfamily E\+S\+T\+A\+D\+O}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a procurar. \\
+\hline
+{\em c} & Indicador da {\ttfamily S\+T\+A\+C\+K} a devolver. Se for 0 a {\ttfamily S\+T\+A\+C\+K} alterada será a passado, caso contrário será a futuro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Uma {\ttfamily S\+T\+A\+C\+K}. Se {\ttfamily c} for 0 devolve a {\ttfamily S\+T\+A\+C\+K} do {\bfseries undo}, caso contrário devolve a {\ttfamily S\+T\+A\+C\+K} do {\bfseries redo}.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8h_a96c29a043be1d5a749a2452809ba9b8d}{S\+T\+A\+C\+K} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+
+\hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{estado\+::futuro} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a8b42f480d0d1c8fa0dae927f5158ac8b}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+user@{get\+E\+\_\+user}}
+\index{get\+E\+\_\+user@{get\+E\+\_\+user}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\+E\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a8b42f480d0d1c8fa0dae927f5158ac8b}
+
+
+Função que devolve o nome de utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nome de utilizador.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a256854b71f528cf0aafb9acb84fac759}{estado\+::user} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a27328d911d982f65736cd7ce9a136cfe}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+verf@{get\+E\+\_\+verf}}
+\index{get\+E\+\_\+verf@{get\+E\+\_\+verf}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+verf}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+verf (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int($\ast$)({\bf E\+S\+T\+A\+D\+O}, int, int)}]{inclusivecase}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a27328d911d982f65736cd7ce9a136cfe}
+
+
+Função que verifica todas as peças de um tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a procurar. \\
+\hline
+{\em inclusivecase} & Apontador para a função que contem a condição para verificar se um elemento é inclusivo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 Se se verificar em todas, 0 se alguma não o verificar. 
+\end{DoxyReturn}
+\hypertarget{estado_8h_ad843d5e51766f087443787b3f2623961}{\index{estado.\+h@{estado.\+h}!get\+E\+\_\+wins@{get\+E\+\_\+wins}}
+\index{get\+E\+\_\+wins@{get\+E\+\_\+wins}!estado.\+h@{estado.\+h}}
+\subsubsection[{get\+E\+\_\+wins}]{\setlength{\rightskip}{0pt plus 5cm}int get\+E\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ad843d5e51766f087443787b3f2623961}
+
+
+Função que obtem o número de vitórias do estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a procurar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o número de vitórias. 
+\end{DoxyReturn}
+\hypertarget{estado_8h_a1c52197ddde667791a5210fd441cd3dc}{\index{estado.\+h@{estado.\+h}!inicializar@{inicializar}}
+\index{inicializar@{inicializar}!estado.\+h@{estado.\+h}}
+\subsubsection[{inicializar}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} inicializar (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{user, }
+\item[{int}]{ln, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a1c52197ddde667791a5210fd441cd3dc}
+
+
+Função que inicializa o estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Uma string com o nome de utilizador do novo estado. \\
+\hline
+{\em ln} & Número de linhas no mapa. \\
+\hline
+{\em col} & Número de colunas no mapa.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um novo estado.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8c_a409faed7da253d71a139e68c80d7c3d4}{set\+E\+\_\+lins} 
+
+\hyperlink{estado_8c_a5fbaea168b59397cd59b16683935a278}{set\+E\+\_\+cols} 
+
+\hyperlink{estado_8c_a5eff026b884b0da81f84f8658a3d850d}{set\+E\+\_\+base} 
+
+\hyperlink{estado_8c_aec99fff0cdbcf7313a220b9908396c3c}{set\+E\+\_\+flag} 
+
+\hyperlink{estado_8c_ad2a155483a55076e3b583984fa4080e2}{set\+E\+\_\+user} 
+
+\hyperlink{estado_8c_aba618389582d28f62b9b79f5f3f6fe48}{set\+E\+\_\+wins} 
+
+\hyperlink{estado_8c_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a425d9a13679db6099c218938240ba30d}{\index{estado.\+h@{estado.\+h}!make\+State@{make\+State}}
+\index{make\+State@{make\+State}!estado.\+h@{estado.\+h}}
+\subsubsection[{make\+State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} make\+State (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a425d9a13679db6099c218938240ba30d}
+
+
+Função que cria um estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a copiar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Caso 'e' não seja N\+U\+L\+L devolve um pointer para uma cópia de 'e', caso contrário devolve um pointer para um estado indefinido
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8c_aa7a928e6dc71c7e6f4e25da3b5c10006}{set\+E\+\_\+state} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_adacdc0e19436cc110b84a389bda1d153}{\index{estado.\+h@{estado.\+h}!n\+\_\+solutions@{n\+\_\+solutions}}
+\index{n\+\_\+solutions@{n\+\_\+solutions}!estado.\+h@{estado.\+h}}
+\subsubsection[{n\+\_\+solutions}]{\setlength{\rightskip}{0pt plus 5cm}long n\+\_\+solutions (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_adacdc0e19436cc110b84a389bda1d153}
+
+
+Função que indica o número de soluções de um tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado onde se encontra o tabuleiro a calcular.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Número de soluções.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{state_8h_a1775e9c25dcb0dcf9d03020f281c4ca8}{makefixo} 
+
+\hyperlink{solver_8h_a6102730d9741f071f2354149756162a6}{solve} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a5eff026b884b0da81f84f8658a3d850d}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+base@{set\+E\+\_\+base}}
+\index{set\+E\+\_\+base@{set\+E\+\_\+base}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+base}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+base (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char($\ast$)(char)}]{map}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a5eff026b884b0da81f84f8658a3d850d}
+
+
+Coloca no estado indicado um base. 
+
+A base colocada em {\ttfamily e} corresponde a\+:
+\begin{DoxyItemize}
+\item Reajustar o número de ajudas para {\ttfamily M\+A\+X\+\_\+\+H\+E\+L\+P}.
+\item Inicializar a {\ttfamily S\+T\+A\+C\+K} {\ttfamily passado'}.
+\item Inicializar a {\ttfamily S\+T\+A\+C\+K} {\ttfamily futuro'}.
+\item Aplicar uma função de mapping a todos os elementos da grelha.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} onde irá ser colocada a base. \\
+\hline
+{\em map} & Função de mapping.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+M\+A\+X\+\_\+\+H\+E\+L\+P 
+
+\hyperlink{stack_8h_a96c29a043be1d5a749a2452809ba9b8d}{S\+T\+A\+C\+K} 
+
+\hyperlink{estado_8c_a37030bdeb38ad57caa19d47f541f14f3}{set\+E\+\_\+help} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+
+\hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{estado\+::futuro} 
+
+\hyperlink{estado_8c_a1cae4d8b65b1431a0a162399c8a5fdeb}{set\+E\+\_\+stack} 
+
+\hyperlink{stack_8c_ae737401bf8d705ce7fac339f553696bb}{init\+S()} 
+
+\hyperlink{estado_8c_ab7d13ddf2b3bdb333b271cc83eb1324e}{set\+E\+\_\+transverse} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a5fbaea168b59397cd59b16683935a278}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+cols@{set\+E\+\_\+cols}}
+\index{set\+E\+\_\+cols@{set\+E\+\_\+cols}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+cols (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{cols}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a5fbaea168b59397cd59b16683935a278}
+
+
+Função que altera o número de colunas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar. \\
+\hline
+{\em cols} & Novo número de colunas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a5b68d5d6aae41b5b7dd9308e40d53506}{estado\+::num\+\_\+cols} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a0b2cdae45084d690be7137255dfac0cb}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+elem@{set\+E\+\_\+elem}}
+\index{set\+E\+\_\+elem@{set\+E\+\_\+elem}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+elem}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+elem (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{char}]{val}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a0b2cdae45084d690be7137255dfac0cb}
+
+
+Função que altera um elemento do tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar. \\
+\hline
+{\em i} & Linha a alterar. \\
+\hline
+{\em j} & Coluna a alterar. \\
+\hline
+{\em val} & A colocar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{estado_8h_aae2d35f0ec536272ce5ddf4a4a4cb5e9}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+elem\+T@{set\+E\+\_\+elem\+T}}
+\index{set\+E\+\_\+elem\+T@{set\+E\+\_\+elem\+T}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+elem\+T}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+elem\+T (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{char($\ast$)(char)}]{map}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aae2d35f0ec536272ce5ddf4a4a4cb5e9}
+
+
+Altera um elemento consoante uma função mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a alterar. \\
+\hline
+{\em i} & Linha a alterar. \\
+\hline
+{\em j} & Coluna a alterar. \\
+\hline
+{\em map} & Função de mapping.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8c_a0b2cdae45084d690be7137255dfac0cb}{set\+E\+\_\+elem} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_aec99fff0cdbcf7313a220b9908396c3c}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+flag@{set\+E\+\_\+flag}}
+\index{set\+E\+\_\+flag@{set\+E\+\_\+flag}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+flag}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+flag (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{flag}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aec99fff0cdbcf7313a220b9908396c3c}
+Função que altera a flag.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a alterar. \\
+\hline
+{\em flag} & Flag a alterar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a6786d825e542118c5d79b852ace947f7}{estado\+::flag} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a37030bdeb38ad57caa19d47f541f14f3}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+help@{set\+E\+\_\+help}}
+\index{set\+E\+\_\+help@{set\+E\+\_\+help}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+help}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+help (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{help}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a37030bdeb38ad57caa19d47f541f14f3}
+
+
+Função que altera o número de ajudas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a alterar. \\
+\hline
+{\em help} & Novo número de ajudas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a488c0d087dcc7e84034cdd814cf3bf3b}{estado\+::help} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_ac5c132634200250bdaa5ae7a20e524c1}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+help\+B@{set\+E\+\_\+help\+B}}
+\index{set\+E\+\_\+help\+B@{set\+E\+\_\+help\+B}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+help\+B}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+help\+B (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ac5c132634200250bdaa5ae7a20e524c1}
+
+
+Função que coloca um número base de ajudas em {\ttfamily e} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} cujas ajudas iram ser alteradas. \\
+\hline
+\end{DoxyParams}
+\hypertarget{estado_8h_a409faed7da253d71a139e68c80d7c3d4}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+lins@{set\+E\+\_\+lins}}
+\index{set\+E\+\_\+lins@{set\+E\+\_\+lins}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+lins}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+lins (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{lins}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a409faed7da253d71a139e68c80d7c3d4}
+
+
+Função que altera o número de linhas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar. \\
+\hline
+{\em lins} & Novo número de linhas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_ab02e4fe5644c3b59088d7c4566d70105}{estado\+::num\+\_\+lins} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a173aba83ee9ef88015706361de32ae1d}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+menu@{set\+E\+\_\+menu}}
+\index{set\+E\+\_\+menu@{set\+E\+\_\+menu}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+menu}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{menu}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a173aba83ee9ef88015706361de32ae1d}
+
+
+Função que altera o menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar. \\
+\hline
+{\em menu} & Novo menu.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a219ca4fd4c068f749afedb392e3f83b0}{estado\+::menu} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_a1cae4d8b65b1431a0a162399c8a5fdeb}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+stack@{set\+E\+\_\+stack}}
+\index{set\+E\+\_\+stack@{set\+E\+\_\+stack}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+stack}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+stack (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{{\bf S\+T\+A\+C\+K}}]{s, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_a1cae4d8b65b1431a0a162399c8a5fdeb}
+
+
+Função que altera as stack no estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} a alterar. \\
+\hline
+{\em s} & {\ttfamily S\+T\+A\+C\+K} a colocar. \\
+\hline
+{\em c} & Indicador da {\ttfamily S\+T\+A\+C\+K} a alterar. Se for 0 a {\ttfamily S\+T\+A\+C\+K} alterada será a passado, caso contrário será a futuro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8h_a96c29a043be1d5a749a2452809ba9b8d}{S\+T\+A\+C\+K} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+
+\hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{estado\+::futuro} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_aa7a928e6dc71c7e6f4e25da3b5c10006}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+state@{set\+E\+\_\+state}}
+\index{set\+E\+\_\+state@{set\+E\+\_\+state}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+state}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+state (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{dest, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{sourc}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aa7a928e6dc71c7e6f4e25da3b5c10006}
+
+
+Função que copia um estado para outro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Para onde é copiado. \\
+\hline
+{\em sourc} & De onde é copidado. \\
+\hline
+\end{DoxyParams}
+\hypertarget{estado_8h_ab7d13ddf2b3bdb333b271cc83eb1324e}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+transverse@{set\+E\+\_\+transverse}}
+\index{set\+E\+\_\+transverse@{set\+E\+\_\+transverse}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+transverse}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+transverse (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{li, }
+\item[{int}]{ci, }
+\item[{char($\ast$)(char)}]{map}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ab7d13ddf2b3bdb333b271cc83eb1324e}
+
+
+Aplica uma função de mapping a vários elementos da grelha. 
+
+Partindo da linha {\ttfamily li} e da coluna {\ttfamily ci}, a função percorre todos os elementos até alcançar o limite de linhas e colunas máximo, aplicando a todos os elementos uma função de mapping.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em li} & Linha inicial de onde se pretende começar a percorrer \\
+\hline
+{\em ci} & Coluna inicial de onde se pretende começar a percorrer. \\
+\hline
+{\em map} & Função de mapping.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8c_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins} 
+
+\hyperlink{estado_8c_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols} 
+
+\hyperlink{estado_8c_aae2d35f0ec536272ce5ddf4a4a4cb5e9}{set\+E\+\_\+elem\+T} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_ad2a155483a55076e3b583984fa4080e2}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+user@{set\+E\+\_\+user}}
+\index{set\+E\+\_\+user@{set\+E\+\_\+user}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{user}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_ad2a155483a55076e3b583984fa4080e2}
+
+
+Função que altera o nome de utilizador num estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar. \\
+\hline
+{\em user} & Utilizador a colocar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structestado_a256854b71f528cf0aafb9acb84fac759}{estado\+::user} 
+\end{DoxySeeAlso}
+\hypertarget{estado_8h_aba618389582d28f62b9b79f5f3f6fe48}{\index{estado.\+h@{estado.\+h}!set\+E\+\_\+wins@{set\+E\+\_\+wins}}
+\index{set\+E\+\_\+wins@{set\+E\+\_\+wins}!estado.\+h@{estado.\+h}}
+\subsubsection[{set\+E\+\_\+wins}]{\setlength{\rightskip}{0pt plus 5cm}void set\+E\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{wins}
+\end{DoxyParamCaption}
+)}}\label{estado_8h_aba618389582d28f62b9b79f5f3f6fe48}
+
+
+Função que coloca o número de vitórias no {\ttfamily E\+S\+T\+A\+D\+O} e no ficheiro para tal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em wins} & Número de vitórias novo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8h_aa23db304e56c4f0e17bb06e619fe6956}{push\+\_\+info} 
+\end{DoxySeeAlso}

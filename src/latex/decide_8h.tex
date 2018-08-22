@@ -1,0 +1,150 @@
+\hypertarget{decide_8h}{\section{decide.\+h File Reference}
+\label{decide_8h}\index{decide.\+h@{decide.\+h}}
+}
+
+
+Módulo encarregue da interatividade com peças.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+Include dependency graph for decide.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{decide_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{decide_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{decide_8h_ac47faeda9e29e07135095e3711035845}{playadvance}(num, n)~(((num + n) $>$ (S\+O\+L\+\_\+\+O)) ? (V\+A\+Z\+I\+A)\+:((num) + n) )
+\begin{DoxyCompactList}\small\item\em Macro que indica de que foram devem progredir as peças para o modo de jogo play. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{decide_8h_a7eabd788dcab19ca586663bf73deddf5}{enum \hyperlink{decide_8h_a7eabd788dcab19ca586663bf73deddf5}{M\+O\+D\+E} \{ {\bfseries D\+R\+A\+W}, 
+{\bfseries P\+L\+A\+Y}
+ \}}\label{decide_8h_a7eabd788dcab19ca586663bf73deddf5}
+
+\begin{DoxyCompactList}\small\item\em Estrutura indicativa do modo de jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{decide_8h_ae13669ac08e09c81d021c5569733e0fb}{formove} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int i, int j)
+\begin{DoxyCompactList}\small\item\em Função que indica quantas casas devem ser avançadas de modo a manter a validade do jogo. \end{DoxyCompactList}\item 
+char \hyperlink{decide_8h_a7c4586a82bbbd99e2b8f94e12b2a3535}{advance} (char num, int n, char mode)
+\begin{DoxyCompactList}\small\item\em Função decide internamente que tipo de função aplicar ao avanço do jogo consoante o modo. \end{DoxyCompactList}\item 
+void \hyperlink{decide_8h_a82c09231e65f427fb432011ca6e79ad1}{play\+Pos} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int i, int j)
+\begin{DoxyCompactList}\small\item\em Função que faz uma jogada no estado consoante uma de jogo e a posição. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo encarregue da interatividade com peças. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{decide_8h_ac47faeda9e29e07135095e3711035845}{\index{decide.\+h@{decide.\+h}!playadvance@{playadvance}}
+\index{playadvance@{playadvance}!decide.\+h@{decide.\+h}}
+\subsubsection[{playadvance}]{\setlength{\rightskip}{0pt plus 5cm}\#define playadvance(
+\begin{DoxyParamCaption}
+\item[{}]{num, }
+\item[{}]{n}
+\end{DoxyParamCaption}
+)~(((num + n) $>$ (S\+O\+L\+\_\+\+O)) ? (V\+A\+Z\+I\+A)\+:((num) + n) )}}\label{decide_8h_ac47faeda9e29e07135095e3711035845}
+
+
+Macro que indica de que foram devem progredir as peças para o modo de jogo play. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & O valor apartir do qual se pretende avançar. \\
+\hline
+{\em n} & O numéro de vezes que se irá avançar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+o valor resultante. 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{decide_8h_a7c4586a82bbbd99e2b8f94e12b2a3535}{\index{decide.\+h@{decide.\+h}!advance@{advance}}
+\index{advance@{advance}!decide.\+h@{decide.\+h}}
+\subsubsection[{advance}]{\setlength{\rightskip}{0pt plus 5cm}char advance (
+\begin{DoxyParamCaption}
+\item[{char}]{num, }
+\item[{int}]{n, }
+\item[{char}]{mode}
+\end{DoxyParamCaption}
+)}}\label{decide_8h_a7c4586a82bbbd99e2b8f94e12b2a3535}
+
+
+Função decide internamente que tipo de função aplicar ao avanço do jogo consoante o modo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & O valor apartir do qual se pretende avançar. \\
+\hline
+{\em n} & O numéro de vezes que se irá avançar. \\
+\hline
+{\em mode} & O modo do jogo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor resultante. 
+\end{DoxyReturn}
+\hypertarget{decide_8h_ae13669ac08e09c81d021c5569733e0fb}{\index{decide.\+h@{decide.\+h}!formove@{formove}}
+\index{formove@{formove}!decide.\+h@{decide.\+h}}
+\subsubsection[{formove}]{\setlength{\rightskip}{0pt plus 5cm}int formove (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{decide_8h_ae13669ac08e09c81d021c5569733e0fb}
+
+
+Função que indica quantas casas devem ser avançadas de modo a manter a validade do jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Estado do qual se pretend aferir a validade. \\
+\hline
+{\em i} & Linha que se pretende avaliar. \\
+\hline
+{\em j} & Coluna que se pretende avaliar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quantas casas deve avançar. 
+\end{DoxyReturn}
+\hypertarget{decide_8h_a82c09231e65f427fb432011ca6e79ad1}{\index{decide.\+h@{decide.\+h}!play\+Pos@{play\+Pos}}
+\index{play\+Pos@{play\+Pos}!decide.\+h@{decide.\+h}}
+\subsubsection[{play\+Pos}]{\setlength{\rightskip}{0pt plus 5cm}void play\+Pos (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{decide_8h_a82c09231e65f427fb432011ca6e79ad1}
+
+
+Função que faz uma jogada no estado consoante uma de jogo e a posição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Apontador para o estado que irá ser alterado. \\
+\hline
+{\em i} & Linha onde se pretende fazer a jogada. \\
+\hline
+{\em j} & Colunas onde se pretende fazer a jogada. \\
+\hline
+\end{DoxyParams}

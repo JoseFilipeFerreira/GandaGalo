@@ -1,0 +1,317 @@
+\hypertarget{validate_8c}{\section{validate.\+c File Reference}
+\label{validate_8c}\index{validate.\+c@{validate.\+c}}
+}
+
+
+Módulo das funções utilizadas para verificação do tabuleiro.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validate.\+h\char`\"{}}\\*
+Include dependency graph for validate.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{validate_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{validate_8c_ae3969b94a6cdd703242e3043cc83a0ec}{less\+Col}(j, \hyperlink{structstate}{state})~((j) $<$ (\hyperlink{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols}(\hyperlink{structstate}{state})))
+\begin{DoxyCompactList}\small\item\em Macro utilizada para verificar se o primeiro paramêtro é menor que o número de colunas máximo do estado. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_a80449b0359ced479299462fda9dc9c2e}{less\+Lin}(i, \hyperlink{structstate}{state})~((i) $<$ (\hyperlink{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins}(\hyperlink{structstate}{state})))
+\begin{DoxyCompactList}\small\item\em Macro utilizada para verificar se o primeiro paramêtro é menor que o número de linhas máximo do estado. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}{ignore}(i, j, \hyperlink{structstate}{state})~(\hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem}(\hyperlink{structstate}{state}, i, j) != V\+A\+Z\+I\+A \&\& \hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem}(\hyperlink{structstate}{state}, i, j) != B\+L\+O\+Q\+U\+E\+A\+D\+A)
+\begin{DoxyCompactList}\small\item\em Macro utilizada para ignorar os casos em que a peça em questão é {\ttfamily V\+A\+Z\+I\+A} ou {\ttfamily B\+L\+O\+Q\+U\+E\+A\+D\+A} . \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_ab85e5e9750b691e416c597c0ef25847c}{equals}(num1, num2)~((num1 == num2) $\vert$$\vert$ (num1 == num2 + 3) $\vert$$\vert$ (num1 == num2 -\/ 3))
+\begin{DoxyCompactList}\small\item\em Macro verifica se dois valores são equivalentes. Dois valores são equivalentes neste cenário, quando são iguais ou se representarem fixos e soltos. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}{equal}(i1, j1, i2, j2, \hyperlink{structstate}{state})~(\hyperlink{validate_8c_ab85e5e9750b691e416c597c0ef25847c}{equals}(\hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem}(\hyperlink{structstate}{state}, i1, j1), \hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem}(\hyperlink{structstate}{state}, i2, j2)))
+\begin{DoxyCompactList}\small\item\em Macro que passa argumentos para a Macro equals segundo valores obtidos do {\ttfamily E\+S\+T\+A\+D\+O}. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_ae73a74cf98c9a84b845a218034c8e274}{countval}(i1, j1, i2, j2, \hyperlink{structstate}{state})~(\hyperlink{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}{equal}(i1, j1, i2, j2, \hyperlink{structstate}{state}) \&\& \hyperlink{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}{ignore}(i1, j1, \hyperlink{structstate}{state}))
+\begin{DoxyCompactList}\small\item\em Macro utilizada para a verificação da validade de uma sequência de peças. Comando 'countval' é utilizado para ignorar peças bloqueadas ou vazias e confirmar se a peça seguinte à atual é válida, incluindo para fixos, ou não. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{testall}(i, j, \hyperlink{structstate}{state})~((\hyperlink{validate_8c_a80449b0359ced479299462fda9dc9c2e}{less\+Lin}(i, \hyperlink{structstate}{state})) \&\& (\hyperlink{validate_8c_ae3969b94a6cdd703242e3043cc83a0ec}{less\+Col}(j, \hyperlink{structstate}{state})) \&\& (i $>$= 0) \&\& (j $>$= 0))
+\begin{DoxyCompactList}\small\item\em Macro utilizada para restringir as váriaveis aos limites da grelha. \end{DoxyCompactList}\item 
+\#define \hyperlink{validate_8c_a2eb737617082e5efeb996b6e36fb3fd0}{contain}(i1, j1, i2, j2, \hyperlink{structstate}{state})~(\hyperlink{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{testall}(i1, j1, \hyperlink{structstate}{state}) \&\& \hyperlink{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{testall}(i2, j2, \hyperlink{structstate}{state}))
+\begin{DoxyCompactList}\small\item\em Macro que passa argumentos à macro testall de forma restringir dois elementos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{validate_8c_a7cc26aa61c34f0e7fd569e7e176ef8e4}{valtab} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int i, int j)
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição na grelha do estado passado, é válida (Ou seja, não possui 3 em linhas em nenhuma direção). \end{DoxyCompactList}\item 
+static int \hyperlink{validate_8c_a41577d63c98a897565c29142cecd6f13}{validside} (int i, int j, int vectori, int vectorj, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state})
+\begin{DoxyCompactList}\small\item\em Verifica se dado um vetor uma posição é válida no estado. A função segue a trajetória indicada pelo vetor passado, bem como no sentido aposto a este. Utilizando para tal as macros {\ttfamily contain} e {\ttfamily countval} para obter a contagem de elementos iguais segundo a direção do {\bfseries vetor} passado como argumento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo das funções utilizadas para verificação do tabuleiro. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{validate_8c_a2eb737617082e5efeb996b6e36fb3fd0}{\index{validate.\+c@{validate.\+c}!contain@{contain}}
+\index{contain@{contain}!validate.\+c@{validate.\+c}}
+\subsubsection[{contain}]{\setlength{\rightskip}{0pt plus 5cm}\#define contain(
+\begin{DoxyParamCaption}
+\item[{}]{i1, }
+\item[{}]{j1, }
+\item[{}]{i2, }
+\item[{}]{j2, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf testall}(i1, j1, {\bf state}) \&\& {\bf testall}(i2, j2, {\bf state}))}}\label{validate_8c_a2eb737617082e5efeb996b6e36fb3fd0}
+
+
+Macro que passa argumentos à macro testall de forma restringir dois elementos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i1} & Linha do primeiro elemento a restringir. \\
+\hline
+{\em j1} & Coluna do primeiro elemento a restringir. \\
+\hline
+{\em i2} & Linha do segundo elemento a restringir. \\
+\hline
+{\em j2} & Coluna do segundo elemento a restringir. \\
+\hline
+{\em state} & Estado do qual se pretende obter os valores de restrição. \\
+\hline
+\end{DoxyParams}
+\hypertarget{validate_8c_ae73a74cf98c9a84b845a218034c8e274}{\index{validate.\+c@{validate.\+c}!countval@{countval}}
+\index{countval@{countval}!validate.\+c@{validate.\+c}}
+\subsubsection[{countval}]{\setlength{\rightskip}{0pt plus 5cm}\#define countval(
+\begin{DoxyParamCaption}
+\item[{}]{i1, }
+\item[{}]{j1, }
+\item[{}]{i2, }
+\item[{}]{j2, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf equal}(i1, j1, i2, j2, {\bf state}) \&\& {\bf ignore}(i1, j1, {\bf state}))}}\label{validate_8c_ae73a74cf98c9a84b845a218034c8e274}
+
+
+Macro utilizada para a verificação da validade de uma sequência de peças. Comando 'countval' é utilizado para ignorar peças bloqueadas ou vazias e confirmar se a peça seguinte à atual é válida, incluindo para fixos, ou não. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i1} & Linha do primeiro elemento. \\
+\hline
+{\em j1} & Coluna do primeiro elemento. \\
+\hline
+{\em i2} & Linha do segundo elemento. \\
+\hline
+{\em j2} & Coluna do segundo elemento. \\
+\hline
+{\em state} & {\ttfamily E\+S\+T\+A\+D\+O} onde se encontram os elementos a comparar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}{equal} 
+
+\hyperlink{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}{ignore} 
+\end{DoxySeeAlso}
+\hypertarget{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}{\index{validate.\+c@{validate.\+c}!equal@{equal}}
+\index{equal@{equal}!validate.\+c@{validate.\+c}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}\#define equal(
+\begin{DoxyParamCaption}
+\item[{}]{i1, }
+\item[{}]{j1, }
+\item[{}]{i2, }
+\item[{}]{j2, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf equals}({\bf get\+E\+\_\+elem}({\bf state}, i1, j1), {\bf get\+E\+\_\+elem}({\bf state}, i2, j2)))}}\label{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}
+
+
+Macro que passa argumentos para a Macro equals segundo valores obtidos do {\ttfamily E\+S\+T\+A\+D\+O}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i1} & Linha do primeiro elemento \\
+\hline
+{\em j1} & Coluna do primeiro elemento \\
+\hline
+{\em i2} & Linha do segundo elemento \\
+\hline
+{\em j2} & Coluna do segundo elemento \\
+\hline
+{\em state} & {\ttfamily E\+S\+T\+A\+D\+O} onde se encontram os elementos a comparar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Se os elementos forem iguais retorna 1, caso contrário devolve 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8c_ab85e5e9750b691e416c597c0ef25847c}{equals} 
+\end{DoxySeeAlso}
+\hypertarget{validate_8c_ab85e5e9750b691e416c597c0ef25847c}{\index{validate.\+c@{validate.\+c}!equals@{equals}}
+\index{equals@{equals}!validate.\+c@{validate.\+c}}
+\subsubsection[{equals}]{\setlength{\rightskip}{0pt plus 5cm}\#define equals(
+\begin{DoxyParamCaption}
+\item[{}]{num1, }
+\item[{}]{num2}
+\end{DoxyParamCaption}
+)~((num1 == num2) $\vert$$\vert$ (num1 == num2 + 3) $\vert$$\vert$ (num1 == num2 -\/ 3))}}\label{validate_8c_ab85e5e9750b691e416c597c0ef25847c}
+
+
+Macro verifica se dois valores são equivalentes. Dois valores são equivalentes neste cenário, quando são iguais ou se representarem fixos e soltos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & Primeiro valor do tabuleiro a ser verificado. \\
+\hline
+{\em num2} & Segundo valor do tabuleiro a ser verificado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Se os dois valores forem equivalente devolve 1, caso contrário devolve 0. 
+\end{DoxyReturn}
+\hypertarget{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}{\index{validate.\+c@{validate.\+c}!ignore@{ignore}}
+\index{ignore@{ignore}!validate.\+c@{validate.\+c}}
+\subsubsection[{ignore}]{\setlength{\rightskip}{0pt plus 5cm}\#define ignore(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf get\+E\+\_\+elem}({\bf state}, i, j) != V\+A\+Z\+I\+A \&\& {\bf get\+E\+\_\+elem}({\bf state}, i, j) != B\+L\+O\+Q\+U\+E\+A\+D\+A)}}\label{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}
+
+
+Macro utilizada para ignorar os casos em que a peça em questão é {\ttfamily V\+A\+Z\+I\+A} ou {\ttfamily B\+L\+O\+Q\+U\+E\+A\+D\+A} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Linha do elemento. \\
+\hline
+{\em j} & Coluna do elemento. \\
+\hline
+{\em state} & Estado do qual se pretende obter a informação. \\
+\hline
+\end{DoxyParams}
+\hypertarget{validate_8c_ae3969b94a6cdd703242e3043cc83a0ec}{\index{validate.\+c@{validate.\+c}!less\+Col@{less\+Col}}
+\index{less\+Col@{less\+Col}!validate.\+c@{validate.\+c}}
+\subsubsection[{less\+Col}]{\setlength{\rightskip}{0pt plus 5cm}\#define less\+Col(
+\begin{DoxyParamCaption}
+\item[{}]{j, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~((j) $<$ ({\bf get\+E\+\_\+cols}({\bf state})))}}\label{validate_8c_ae3969b94a6cdd703242e3043cc83a0ec}
+
+
+Macro utilizada para verificar se o primeiro paramêtro é menor que o número de colunas máximo do estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & Componente das abcissas de uma posição. \\
+\hline
+{\em state} & Estado utilizado para verificar o número de colunas máximo. \\
+\hline
+\end{DoxyParams}
+\hypertarget{validate_8c_a80449b0359ced479299462fda9dc9c2e}{\index{validate.\+c@{validate.\+c}!less\+Lin@{less\+Lin}}
+\index{less\+Lin@{less\+Lin}!validate.\+c@{validate.\+c}}
+\subsubsection[{less\+Lin}]{\setlength{\rightskip}{0pt plus 5cm}\#define less\+Lin(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~((i) $<$ ({\bf get\+E\+\_\+lins}({\bf state})))}}\label{validate_8c_a80449b0359ced479299462fda9dc9c2e}
+
+
+Macro utilizada para verificar se o primeiro paramêtro é menor que o número de linhas máximo do estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Componente das abcissas de uma posição. \\
+\hline
+{\em state} & Estado utilizado para verificar o número de linhas máximo. \\
+\hline
+\end{DoxyParams}
+\hypertarget{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{\index{validate.\+c@{validate.\+c}!testall@{testall}}
+\index{testall@{testall}!validate.\+c@{validate.\+c}}
+\subsubsection[{testall}]{\setlength{\rightskip}{0pt plus 5cm}\#define testall(
+\begin{DoxyParamCaption}
+\item[{}]{i, }
+\item[{}]{j, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~(({\bf less\+Lin}(i, {\bf state})) \&\& ({\bf less\+Col}(j, {\bf state})) \&\& (i $>$= 0) \&\& (j $>$= 0))}}\label{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}
+
+
+Macro utilizada para restringir as váriaveis aos limites da grelha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Linha a restringir. \\
+\hline
+{\em j} & Coluna a restringir. \\
+\hline
+{\em state} & Estado do qual se pretende obter os valores de restrição. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{validate_8c_a41577d63c98a897565c29142cecd6f13}{\index{validate.\+c@{validate.\+c}!validside@{validside}}
+\index{validside@{validside}!validate.\+c@{validate.\+c}}
+\subsubsection[{validside}]{\setlength{\rightskip}{0pt plus 5cm}static int validside (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{vectori, }
+\item[{int}]{vectorj, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{validate_8c_a41577d63c98a897565c29142cecd6f13}
+
+
+Verifica se dado um vetor uma posição é válida no estado. A função segue a trajetória indicada pelo vetor passado, bem como no sentido aposto a este. Utilizando para tal as macros {\ttfamily contain} e {\ttfamily countval} para obter a contagem de elementos iguais segundo a direção do {\bfseries vetor} passado como argumento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & representa a coluna que se pretende verificar. \\
+\hline
+{\em i} & representa a linha que se pretende verificar. \\
+\hline
+{\em vectori} & representa a componente das linhas do vetor utilizado. \\
+\hline
+{\em vectorj} & representa a componente das colunas do vetor utilizado. \\
+\hline
+{\em state} & Estado do qual se pretende analisar a grelha.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quantas peças do mesmo valor há à volta de uma certa posição, segundo a direção do vetor.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8c_a2eb737617082e5efeb996b6e36fb3fd0}{contain} 
+
+\hyperlink{validate_8c_ae73a74cf98c9a84b845a218034c8e274}{countval} 
+\end{DoxySeeAlso}
+\hypertarget{validate_8c_a7cc26aa61c34f0e7fd569e7e176ef8e4}{\index{validate.\+c@{validate.\+c}!valtab@{valtab}}
+\index{valtab@{valtab}!validate.\+c@{validate.\+c}}
+\subsubsection[{valtab}]{\setlength{\rightskip}{0pt plus 5cm}int valtab (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{validate_8c_a7cc26aa61c34f0e7fd569e7e176ef8e4}
+
+
+Verifica se uma posição na grelha do estado passado, é válida (Ou seja, não possui 3 em linhas em nenhuma direção). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Linha que se pretende verificar. \\
+\hline
+{\em j} & Coluna que se pretende verificar. \\
+\hline
+{\em state} & Apontador para o estado que possui a grelha onde se pretende avaliar a posição.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Validade da posição na grelha.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8c_a41577d63c98a897565c29142cecd6f13}{validside} 
+\end{DoxySeeAlso}

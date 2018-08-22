@@ -1,0 +1,908 @@
+\hypertarget{solver_8c}{\section{solver.\+c File Reference}
+\label{solver_8c}\index{solver.\+c@{solver.\+c}}
+}
+
+
+Ficheiro dedicado à análise do espaço de soluções.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for solver.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{solver_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstate}{state}
+\begin{DoxyCompactList}\small\item\em Declaração do estado interno. \end{DoxyCompactList}\item 
+struct \hyperlink{structgtree}{gtree}
+\begin{DoxyCompactList}\small\item\em Estrutura que representa o espaço de soluções de um dado Estado. \end{DoxyCompactList}\item 
+struct \hyperlink{structgtree_1_1pecas}{gtree\+::pecas}
+\begin{DoxyCompactList}\small\item\em Estrutura que contem apontadores para os filhos do nodo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{solver_8c_a806da3fd78ef4fa442d053b1c67f58b7}{testall}(x, y, num\+\_\+lins, num\+\_\+cols)~((y $<$ num\+\_\+lins) \&\& (x $<$ num\+\_\+cols) \&\& (x $>$= 0) \&\& (y $>$= 0))
+\begin{DoxyCompactList}\small\item\em Macro que verifica se valores se encontram dentro de um intervalo. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_a2d6130b49e818bfe457fb0905176d8f6}{contain}(x1, y1, x2, y2, num\+\_\+lins, num\+\_\+cols)~(\hyperlink{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{testall}(x1, y1, num\+\_\+lins, num\+\_\+cols) \&\& \hyperlink{validate_8c_a3e83cfe59dc3bacf9951d6e40cb4ecc7}{testall}(x2, y2, num\+\_\+lins, num\+\_\+cols))
+\begin{DoxyCompactList}\small\item\em Macro que verifica se dua pecas estão dentro do tabuleiro. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_ab27ec55b4939191fcd8573e095c46718}{countval}(x1, y1, x2, y2, \hyperlink{structstate}{state})~(\hyperlink{validate_8c_ad3ddaa88cdf36ed91ed86c882719b023}{equal}(x1, y1, x2, y2, \hyperlink{structstate}{state}) \&\& \hyperlink{validate_8c_a04580bc5cd9cff271e78e4d5645ed293}{ignore}(x1, y1, \hyperlink{structstate}{state}))
+\begin{DoxyCompactList}\small\item\em Macro que verifica se duas pecas são iguais e diferentes de V\+A\+Z\+I\+O e B\+L\+O\+Q\+U\+E\+A\+D\+A. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_a30b7bce0ad2f3157f2dc094fffb9a2b1}{ignore}(x, y, \hyperlink{structstate}{state})~((\hyperlink{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{acess}(x, y, \hyperlink{structstate}{state}) != V\+A\+Z\+I\+A) \&\& (\hyperlink{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{acess}(x, y, \hyperlink{structstate}{state}) != B\+L\+O\+Q\+U\+E\+A\+D\+A))
+\begin{DoxyCompactList}\small\item\em Macro para verificar se uma posição é diferente de V\+A\+Z\+I\+A e de B\+L\+O\+Q\+U\+E\+A\+D\+A. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{acess}(x, y, \hyperlink{structstate}{state})~(\hyperlink{structstate}{state}\mbox{[}x\mbox{]}\mbox{[}y\mbox{]})
+\begin{DoxyCompactList}\small\item\em Macro que devolve o valor de uma posição. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_ab391e62015346112bc3af684bead24a0}{equal}(x1, y1, x2, y2, \hyperlink{structstate}{state})~(\hyperlink{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{acess}(x1, y1, \hyperlink{structstate}{state}) == \hyperlink{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{acess}(x2, y2, \hyperlink{structstate}{state}))
+\begin{DoxyCompactList}\small\item\em Macro para verificar se duas posições são iguais. \end{DoxyCompactList}\item 
+\#define \hyperlink{solver_8c_aff9931d7524c88e07743af6535b20761}{M\+A\+X}(X, Y)~((X) $>$ (Y)) ? (X) \+: (Y)
+\begin{DoxyCompactList}\small\item\em Macro para cálculo do valor máximo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{typedef struct \hyperlink{structstate}{state} $\ast$ \hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T}}\label{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}
+
+\begin{DoxyCompactList}\small\item\em Declaração do estado interno. \end{DoxyCompactList}\item 
+\hypertarget{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{typedef struct \hyperlink{structgtree}{gtree} $\ast$ \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree}}\label{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}
+
+\begin{DoxyCompactList}\small\item\em Estrutura que representa o espaço de soluções de um dado Estado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{solver_8c_a525bf7e52560dc0068ad77c5435af98b}{H\+U\+N\+T} \{ \hyperlink{solver_8c_a525bf7e52560dc0068ad77c5435af98baa57edeeb1dd2c77d5b8afca80b14e9aa}{R\+O\+A\+D}, 
+\hyperlink{solver_8c_a525bf7e52560dc0068ad77c5435af98ba2e29f8ab4cef28acccce44e578b257dc}{T\+R\+A\+I\+L}, 
+\hyperlink{solver_8c_a525bf7e52560dc0068ad77c5435af98ba7427d7115f5add8d4260333334793dc7}{T\+R\+E\+S\+U\+R\+E}
+ \}
+\begin{DoxyCompactList}\small\item\em Tipos de nodos de uma G\+Tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{solver_8c_a6102730d9741f071f2354149756162a6}{solve} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} a, long $\ast$number\+\_\+of\+\_\+solutions)
+\begin{DoxyCompactList}\small\item\em Resolve um dado E\+S\+T\+A\+D\+O. \end{DoxyCompactList}\item 
+\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} \hyperlink{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{ana} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, \hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} func)
+\begin{DoxyCompactList}\small\item\em Esta função, um anamorfimo, cria árvores de soluções do estado indicado conforme a função recebida. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8c_a5c97af1c1d88b32a051b450225f5a981}{cluster} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, int u, int $\ast$cp, int sig)
+\begin{DoxyCompactList}\small\item\em Esta função implementa uma Position Selector. Este Position Selector foi calibrado para promover clustering para obter estados invalidos o mais rapidamente possivel. \end{DoxyCompactList}\item 
+\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} \hyperlink{solver_8c_aa84d7910720fb3f1d65cfc5aef010565}{base\+Map} (int numl, int numc, float prob\+B)
+\begin{DoxyCompactList}\small\item\em Esta função cria um estado interno aleatório com o minimo de peças preenchidas possível. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8c_aea6b60a620fd32a3087893bbafbd87b1}{findk} (\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Esta função cria um array de nodos com as peças que levam a uma solução. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8c_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} (\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node)
+\begin{DoxyCompactList}\small\item\em Destroi uma instância da Árvore que representa o espaço de soluções. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8c_aef893a4134b63eeeddadf57d2a89ba85}{pick\+G} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} tr)
+\begin{DoxyCompactList}\small\item\em Altera o estado interno por forma a conter o elemento que o nodo contêm. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8c_a9befd5c024b5276c08fccb7def98092b}{show\+S} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Escreve um estado interno no ecra. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8c_af632244db4e92b792bac954fde83a795}{write\+Map} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, char $\ast$difficulty)
+\begin{DoxyCompactList}\small\item\em Escreve um mapa em ficheiro. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8c_a51385fec0d272f29703ff6dc466d59a3}{count\+Use\+S} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Consulta o numero de casas que podem ser alterados na grelha do estado interno. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8c_a5edd3336bf1a14feae92f81deba546fb}{get\+Dimension} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Consulta o numero de casas na grelha do estado interno. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8c_abc174ddc3e0e8a2994759589328ca810}{destroyit} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Destroi uma instaância do estado interno. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \hyperlink{solver_8c_a89a52a8604a20c3bd897b5c461b6ca92}{convert\+\_\+external} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Converte o estado interno numa grelha do estado externo. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_a0d9f13ee6341325b731c2e477fa9a399}{verifica} (int x, int y, int vectorx, int vectory, int $\ast$$\ast$\hyperlink{structstate}{state}, int l, int c)
+\begin{DoxyCompactList}\small\item\em Verifica se no sentido de um dado vetor em questão tem menos de 3 em linhas. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_a4e5c14594936dfc099c1f05726bc9698}{valida} (int x, int y, int $\ast$$\ast$e, int maxl, int maxc)
+\begin{DoxyCompactList}\small\item\em Válida se uma dada jogada será valida. \end{DoxyCompactList}\item 
+static \hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} \hyperlink{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}{makeit} (int l, int c)
+\begin{DoxyCompactList}\small\item\em Construtor do elemento T(estado interno). \end{DoxyCompactList}\item 
+static \hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} \hyperlink{solver_8c_ac27cadf2b0541e74e6f4c915db7de3a1}{convert\+\_\+internal} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} a)
+\begin{DoxyCompactList}\small\item\em Converte o estado externo num estado interno. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_a153a660bbdd5fe29918bfdbfdd3e253d}{find\+Way} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} current, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node, int flag)
+\begin{DoxyCompactList}\small\item\em Atribui a current uma das soluções (escolhida aleatóriamente) da árvore dada. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_af889ba91bf5bb2fbc4fa4d790867709c}{number\+Ofsolutions} (\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node)
+\begin{DoxyCompactList}\small\item\em Calcula o numero de soluções da árvore recebida. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_a9e5c9151d4c6e5f8225ce4803c643510}{rec\+Ana} (int n, \hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} current, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} $\ast$node, \hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} func)
+\begin{DoxyCompactList}\small\item\em Esta função vai recursivamente inspecionando elementos e desenvolvendo a arvore recebida. \end{DoxyCompactList}\item 
+static int \hyperlink{solver_8c_ae6f4a9ace4f041e4725c0bf84ddd4a77}{change\+\_\+aim} (int cd\mbox{[}2\mbox{]}, int lin, int col)
+\begin{DoxyCompactList}\small\item\em Esta função define qual a próxima coordenada. \end{DoxyCompactList}\item 
+static void \hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, int i, int j, int value)
+\begin{DoxyCompactList}\small\item\em Esta função altera uma das entradas de elemento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ficheiro dedicado à análise do espaço de soluções. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{solver_8c_a4301a2244ca8bec79d38108a18b809f5}{\index{solver.\+c@{solver.\+c}!acess@{acess}}
+\index{acess@{acess}!solver.\+c@{solver.\+c}}
+\subsubsection[{acess}]{\setlength{\rightskip}{0pt plus 5cm}\#define acess(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf state}\mbox{[}x\mbox{]}\mbox{[}y\mbox{]})}}\label{solver_8c_a4301a2244ca8bec79d38108a18b809f5}
+
+
+Macro que devolve o valor de uma posição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & linha da posição \\
+\hline
+{\em y} & coluna da posição \\
+\hline
+{\em state} & estado onde se encontra a peca\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor da peca na posição (x,y) 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a2d6130b49e818bfe457fb0905176d8f6}{\index{solver.\+c@{solver.\+c}!contain@{contain}}
+\index{contain@{contain}!solver.\+c@{solver.\+c}}
+\subsubsection[{contain}]{\setlength{\rightskip}{0pt plus 5cm}\#define contain(
+\begin{DoxyParamCaption}
+\item[{}]{x1, }
+\item[{}]{y1, }
+\item[{}]{x2, }
+\item[{}]{y2, }
+\item[{}]{num\+\_\+lins, }
+\item[{}]{num\+\_\+cols}
+\end{DoxyParamCaption}
+)~({\bf testall}(x1, y1, num\+\_\+lins, num\+\_\+cols) \&\& {\bf testall}(x2, y2, num\+\_\+lins, num\+\_\+cols))}}\label{solver_8c_a2d6130b49e818bfe457fb0905176d8f6}
+
+
+Macro que verifica se dua pecas estão dentro do tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & linha da primeira peca \\
+\hline
+{\em y1} & coluna da primeira peca \\
+\hline
+{\em x2} & linha da segunda peca \\
+\hline
+{\em y2} & coluna da segunda peca \\
+\hline
+{\em num\+\_\+lins} & valor superior do intervalo para x \\
+\hline
+{\em num\+\_\+cols} & valor superior do intervalo para y\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se ambas estiverem dentro do tabuleiro, 0 caso contrário 
+\end{DoxyReturn}
+\hypertarget{solver_8c_ab27ec55b4939191fcd8573e095c46718}{\index{solver.\+c@{solver.\+c}!countval@{countval}}
+\index{countval@{countval}!solver.\+c@{solver.\+c}}
+\subsubsection[{countval}]{\setlength{\rightskip}{0pt plus 5cm}\#define countval(
+\begin{DoxyParamCaption}
+\item[{}]{x1, }
+\item[{}]{y1, }
+\item[{}]{x2, }
+\item[{}]{y2, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf equal}(x1, y1, x2, y2, {\bf state}) \&\& {\bf ignore}(x1, y1, {\bf state}))}}\label{solver_8c_ab27ec55b4939191fcd8573e095c46718}
+
+
+Macro que verifica se duas pecas são iguais e diferentes de V\+A\+Z\+I\+O e B\+L\+O\+Q\+U\+E\+A\+D\+A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & linha da primeira peca \\
+\hline
+{\em y1} & coluna da primeira peca \\
+\hline
+{\em x2} & linha da segunda peca \\
+\hline
+{\em y2} & coluna da segunda peca \\
+\hline
+{\em state} & estado onde se encontram as pecas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se as duas pecas são iguais e diferentes de V\+A\+Z\+I\+O e B\+L\+O\+Q\+U\+E\+A\+D\+A, 0 caso contrário 
+\end{DoxyReturn}
+\hypertarget{solver_8c_ab391e62015346112bc3af684bead24a0}{\index{solver.\+c@{solver.\+c}!equal@{equal}}
+\index{equal@{equal}!solver.\+c@{solver.\+c}}
+\subsubsection[{equal}]{\setlength{\rightskip}{0pt plus 5cm}\#define equal(
+\begin{DoxyParamCaption}
+\item[{}]{x1, }
+\item[{}]{y1, }
+\item[{}]{x2, }
+\item[{}]{y2, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~({\bf acess}(x1, y1, {\bf state}) == {\bf acess}(x2, y2, {\bf state}))}}\label{solver_8c_ab391e62015346112bc3af684bead24a0}
+
+
+Macro para verificar se duas posições são iguais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & linha da primeira peca \\
+\hline
+{\em y1} & coluna da primeira peca \\
+\hline
+{\em x2} & linha da segunda peca \\
+\hline
+{\em y2} & coluna da segunda peca \\
+\hline
+{\em state} & estado onde se encontram as pecas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 forem iguais, o se forem diferentes 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a30b7bce0ad2f3157f2dc094fffb9a2b1}{\index{solver.\+c@{solver.\+c}!ignore@{ignore}}
+\index{ignore@{ignore}!solver.\+c@{solver.\+c}}
+\subsubsection[{ignore}]{\setlength{\rightskip}{0pt plus 5cm}\#define ignore(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{{\bf state}}
+\end{DoxyParamCaption}
+)~(({\bf acess}(x, y, {\bf state}) != V\+A\+Z\+I\+A) \&\& ({\bf acess}(x, y, {\bf state}) != B\+L\+O\+Q\+U\+E\+A\+D\+A))}}\label{solver_8c_a30b7bce0ad2f3157f2dc094fffb9a2b1}
+
+
+Macro para verificar se uma posição é diferente de V\+A\+Z\+I\+A e de B\+L\+O\+Q\+U\+E\+A\+D\+A. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & linha da posição \\
+\hline
+{\em y} & coluna da posição \\
+\hline
+{\em state} & estado onde se encontra a peca\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se for diferente de V\+A\+Z\+I\+A e de B\+L\+O\+Q\+U\+E\+A\+D\+A, 0 caso contrário 
+\end{DoxyReturn}
+\hypertarget{solver_8c_aff9931d7524c88e07743af6535b20761}{\index{solver.\+c@{solver.\+c}!M\+A\+X@{M\+A\+X}}
+\index{M\+A\+X@{M\+A\+X}!solver.\+c@{solver.\+c}}
+\subsubsection[{M\+A\+X}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+X(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y}
+\end{DoxyParamCaption}
+)~((X) $>$ (Y)) ? (X) \+: (Y)}}\label{solver_8c_aff9931d7524c88e07743af6535b20761}
+
+
+Macro para cálculo do valor máximo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & valor 1 \\
+\hline
+{\em Y} & valor 2\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+o maior entre X e Y 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a806da3fd78ef4fa442d053b1c67f58b7}{\index{solver.\+c@{solver.\+c}!testall@{testall}}
+\index{testall@{testall}!solver.\+c@{solver.\+c}}
+\subsubsection[{testall}]{\setlength{\rightskip}{0pt plus 5cm}\#define testall(
+\begin{DoxyParamCaption}
+\item[{}]{x, }
+\item[{}]{y, }
+\item[{}]{num\+\_\+lins, }
+\item[{}]{num\+\_\+cols}
+\end{DoxyParamCaption}
+)~((y $<$ num\+\_\+lins) \&\& (x $<$ num\+\_\+cols) \&\& (x $>$= 0) \&\& (y $>$= 0))}}\label{solver_8c_a806da3fd78ef4fa442d053b1c67f58b7}
+
+
+Macro que verifica se valores se encontram dentro de um intervalo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & valor 1 a verificar \\
+\hline
+{\em y} & valor 2 a verificar \\
+\hline
+{\em num\+\_\+lins} & valor superior do intervalo para x \\
+\hline
+{\em num\+\_\+cols} & valor superior do intervalo para y\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se x estiver entre 0 e num\+\_\+lins e y entre 0 e num\+\_\+cols, caso contrário devolve 0 
+\end{DoxyReturn}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{solver_8c_a525bf7e52560dc0068ad77c5435af98b}{\index{solver.\+c@{solver.\+c}!H\+U\+N\+T@{H\+U\+N\+T}}
+\index{H\+U\+N\+T@{H\+U\+N\+T}!solver.\+c@{solver.\+c}}
+\subsubsection[{H\+U\+N\+T}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf H\+U\+N\+T}}}\label{solver_8c_a525bf7e52560dc0068ad77c5435af98b}
+
+
+Tipos de nodos de uma G\+Tree. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\+O\+A\+D@{R\+O\+A\+D}!solver.\+c@{solver.\+c}}\index{solver.\+c@{solver.\+c}!R\+O\+A\+D@{R\+O\+A\+D}}\item[{\em 
+\hypertarget{solver_8c_a525bf7e52560dc0068ad77c5435af98baa57edeeb1dd2c77d5b8afca80b14e9aa}{R\+O\+A\+D}\label{solver_8c_a525bf7e52560dc0068ad77c5435af98baa57edeeb1dd2c77d5b8afca80b14e9aa}
+}]Caminho com várias soluções. \index{T\+R\+A\+I\+L@{T\+R\+A\+I\+L}!solver.\+c@{solver.\+c}}\index{solver.\+c@{solver.\+c}!T\+R\+A\+I\+L@{T\+R\+A\+I\+L}}\item[{\em 
+\hypertarget{solver_8c_a525bf7e52560dc0068ad77c5435af98ba2e29f8ab4cef28acccce44e578b257dc}{T\+R\+A\+I\+L}\label{solver_8c_a525bf7e52560dc0068ad77c5435af98ba2e29f8ab4cef28acccce44e578b257dc}
+}]Caminnho para uma solução única. \index{T\+R\+E\+S\+U\+R\+E@{T\+R\+E\+S\+U\+R\+E}!solver.\+c@{solver.\+c}}\index{solver.\+c@{solver.\+c}!T\+R\+E\+S\+U\+R\+E@{T\+R\+E\+S\+U\+R\+E}}\item[{\em 
+\hypertarget{solver_8c_a525bf7e52560dc0068ad77c5435af98ba7427d7115f5add8d4260333334793dc7}{T\+R\+E\+S\+U\+R\+E}\label{solver_8c_a525bf7e52560dc0068ad77c5435af98ba7427d7115f5add8d4260333334793dc7}
+}]Solução. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{\index{solver.\+c@{solver.\+c}!ana@{ana}}
+\index{ana@{ana}!solver.\+c@{solver.\+c}}
+\subsubsection[{ana}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+Tree} ana (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{{\bf Position\+Selector}}]{func}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}
+
+
+Esta função, um anamorfimo, cria árvores de soluções do estado indicado conforme a função recebida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado interno. \\
+\hline
+{\em func} & função que determina a próxima posição a ser inspecionada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+árvore de soluções.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} 
+
+rec\+\_\+\+Ana 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_aa84d7910720fb3f1d65cfc5aef010565}{\index{solver.\+c@{solver.\+c}!base\+Map@{base\+Map}}
+\index{base\+Map@{base\+Map}!solver.\+c@{solver.\+c}}
+\subsubsection[{base\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T} base\+Map (
+\begin{DoxyParamCaption}
+\item[{int}]{numl, }
+\item[{int}]{numc, }
+\item[{float}]{prob\+B}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_aa84d7910720fb3f1d65cfc5aef010565}
+
+
+Esta função cria um estado interno aleatório com o minimo de peças preenchidas possível. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numl} & numero de linhas do estado a criar. \\
+\hline
+{\em numc} & numero de coluna do estado a criar. \\
+\hline
+{\em prob\+B} & probabilidade de uma dada peças estar Bloqueada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado interno.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}{makeit} 
+
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+
+\hyperlink{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{ana} 
+
+\hyperlink{solver_8c_a153a660bbdd5fe29918bfdbfdd3e253d}{find\+Way} 
+
+number\+Of\+Solutions 
+
+\hyperlink{solver_8c_abc174ddc3e0e8a2994759589328ca810}{destroyit} 
+
+\hyperlink{solver_8c_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_ae6f4a9ace4f041e4725c0bf84ddd4a77}{\index{solver.\+c@{solver.\+c}!change\+\_\+aim@{change\+\_\+aim}}
+\index{change\+\_\+aim@{change\+\_\+aim}!solver.\+c@{solver.\+c}}
+\subsubsection[{change\+\_\+aim}]{\setlength{\rightskip}{0pt plus 5cm}static int change\+\_\+aim (
+\begin{DoxyParamCaption}
+\item[{int}]{cd\mbox{[}2\mbox{]}, }
+\item[{int}]{lin, }
+\item[{int}]{col}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_ae6f4a9ace4f041e4725c0bf84ddd4a77}
+
+
+Esta função define qual a próxima coordenada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cd} & vetor com as coordenadas do presente elemento. \\
+\hline
+{\em lin} & numero de linhas. \\
+\hline
+{\em col} & numero de colunas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 no caso de sucesso e 0 caso contrário. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a5c97af1c1d88b32a051b450225f5a981}{\index{solver.\+c@{solver.\+c}!cluster@{cluster}}
+\index{cluster@{cluster}!solver.\+c@{solver.\+c}}
+\subsubsection[{cluster}]{\setlength{\rightskip}{0pt plus 5cm}int cluster (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{int}]{u, }
+\item[{int $\ast$}]{cp, }
+\item[{int}]{sig}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a5c97af1c1d88b32a051b450225f5a981}
+
+
+Esta função implementa uma Position Selector. Este Position Selector foi calibrado para promover clustering para obter estados invalidos o mais rapidamente possivel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado interno. \\
+\hline
+{\em sig} & sinal que indica se a função está no modo de criação ou remoção. \\
+\hline
+{\em u} & numero peças já percorridas \\
+\hline
+{\em cp} & receberá as proximas coordenadas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no caso de sucesso 1 caso contrário 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} 
+
+\hyperlink{solver_8c_ae6f4a9ace4f041e4725c0bf84ddd4a77}{change\+\_\+aim} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a89a52a8604a20c3bd897b5c461b6ca92}{\index{solver.\+c@{solver.\+c}!convert\+\_\+external@{convert\+\_\+external}}
+\index{convert\+\_\+external@{convert\+\_\+external}!solver.\+c@{solver.\+c}}
+\subsubsection[{convert\+\_\+external}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$$\ast$ convert\+\_\+external (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a89a52a8604a20c3bd897b5c461b6ca92}
+
+
+Converte o estado interno numa grelha do estado externo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & é um estado Interno que se pretende converter para um estado externo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+grelha do estado Externo. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_ac27cadf2b0541e74e6f4c915db7de3a1}{\index{solver.\+c@{solver.\+c}!convert\+\_\+internal@{convert\+\_\+internal}}
+\index{convert\+\_\+internal@{convert\+\_\+internal}!solver.\+c@{solver.\+c}}
+\subsubsection[{convert\+\_\+internal}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf T} convert\+\_\+internal (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_ac27cadf2b0541e74e6f4c915db7de3a1}
+
+
+Converte o estado externo num estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & é um estado Externo que se pretende converter para um estado interno.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado interno.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}{makeit} 
+
+\hyperlink{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins} 
+
+\hyperlink{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols} 
+
+\hyperlink{estado_8h_ae4aeab324373aa7d36cd03ad28caae57}{get\+E\+\_\+elem} 
+
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a51385fec0d272f29703ff6dc466d59a3}{\index{solver.\+c@{solver.\+c}!count\+Use\+S@{count\+Use\+S}}
+\index{count\+Use\+S@{count\+Use\+S}!solver.\+c@{solver.\+c}}
+\subsubsection[{count\+Use\+S}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Use\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a51385fec0d272f29703ff6dc466d59a3}
+
+
+Consulta o numero de casas que podem ser alterados na grelha do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a consultar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de casas que podem ser alterados na grelha. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a62183a083fdfe2c14c18270540695676}{\index{solver.\+c@{solver.\+c}!destroy\+G\+Tree@{destroy\+G\+Tree}}
+\index{destroy\+G\+Tree@{destroy\+G\+Tree}!solver.\+c@{solver.\+c}}
+\subsubsection[{destroy\+G\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+G\+Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+Tree}}]{node}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a62183a083fdfe2c14c18270540695676}
+
+
+Destroi uma instância da Árvore que representa o espaço de soluções. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & árvore a ser eliminada. \\
+\hline
+\end{DoxyParams}
+\hypertarget{solver_8c_abc174ddc3e0e8a2994759589328ca810}{\index{solver.\+c@{solver.\+c}!destroyit@{destroyit}}
+\index{destroyit@{destroyit}!solver.\+c@{solver.\+c}}
+\subsubsection[{destroyit}]{\setlength{\rightskip}{0pt plus 5cm}void destroyit (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_abc174ddc3e0e8a2994759589328ca810}
+
+
+Destroi uma instaância do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser eliminado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_aff9931d7524c88e07743af6535b20761}{M\+A\+X} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_aea6b60a620fd32a3087893bbafbd87b1}{\index{solver.\+c@{solver.\+c}!findk@{findk}}
+\index{findk@{findk}!solver.\+c@{solver.\+c}}
+\subsubsection[{findk}]{\setlength{\rightskip}{0pt plus 5cm}int findk (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+Tree}}]{node, }
+\item[{{\bf G\+Tree} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_aea6b60a620fd32a3087893bbafbd87b1}
+
+
+Esta função cria um array de nodos com as peças que levam a uma solução. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & árvore com uma unica solução. \\
+\hline
+{\em v} & array a construir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+árvore de soluções. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a153a660bbdd5fe29918bfdbfdd3e253d}{\index{solver.\+c@{solver.\+c}!find\+Way@{find\+Way}}
+\index{find\+Way@{find\+Way}!solver.\+c@{solver.\+c}}
+\subsubsection[{find\+Way}]{\setlength{\rightskip}{0pt plus 5cm}static int find\+Way (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{current, }
+\item[{{\bf G\+Tree}}]{node, }
+\item[{int}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a153a660bbdd5fe29918bfdbfdd3e253d}
+
+
+Atribui a current uma das soluções (escolhida aleatóriamente) da árvore dada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em current} & Estado que se pertende resolver. \\
+\hline
+{\em node} & Raiz da árvore que se pretende selecionar uma solução. \\
+\hline
+{\em flag} & Determina se os valores da grelha são gravados como fixos(0) ou não(1).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+E\+S\+T\+A\+D\+O externo resolvido.(se tiver solução)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a5edd3336bf1a14feae92f81deba546fb}{\index{solver.\+c@{solver.\+c}!get\+Dimension@{get\+Dimension}}
+\index{get\+Dimension@{get\+Dimension}!solver.\+c@{solver.\+c}}
+\subsubsection[{get\+Dimension}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Dimension (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a5edd3336bf1a14feae92f81deba546fb}
+
+
+Consulta o numero de casas na grelha do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a consultar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de casas na grelha. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}{\index{solver.\+c@{solver.\+c}!makeit@{makeit}}
+\index{makeit@{makeit}!solver.\+c@{solver.\+c}}
+\subsubsection[{makeit}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf T} makeit (
+\begin{DoxyParamCaption}
+\item[{int}]{l, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}
+
+
+Construtor do elemento T(estado interno). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & numero de linhas deste elemento. \\
+\hline
+{\em c} & numero de colunas deste elemento.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instância do tipo T; 
+\end{DoxyReturn}
+\hypertarget{solver_8c_af889ba91bf5bb2fbc4fa4d790867709c}{\index{solver.\+c@{solver.\+c}!number\+Ofsolutions@{number\+Ofsolutions}}
+\index{number\+Ofsolutions@{number\+Ofsolutions}!solver.\+c@{solver.\+c}}
+\subsubsection[{number\+Ofsolutions}]{\setlength{\rightskip}{0pt plus 5cm}static int number\+Ofsolutions (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+Tree}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_af889ba91bf5bb2fbc4fa4d790867709c}
+
+
+Calcula o numero de soluções da árvore recebida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & Raiz da árvore de soluções.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+numero de soluções da árvore indicada. 
+\end{DoxyReturn}
+\hypertarget{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{\index{solver.\+c@{solver.\+c}!pick@{pick}}
+\index{pick@{pick}!solver.\+c@{solver.\+c}}
+\subsubsection[{pick}]{\setlength{\rightskip}{0pt plus 5cm}static void pick (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}
+
+
+Esta função altera uma das entradas de elemento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Elemento que se pertende alterar. \\
+\hline
+{\em i} & linha onde se pertende fazer a adição. \\
+\hline
+{\em j} & coluna onde se pertende fazer a adição. \\
+\hline
+{\em value} & valor a adicionar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{solver_8c_aef893a4134b63eeeddadf57d2a89ba85}{\index{solver.\+c@{solver.\+c}!pick\+G@{pick\+G}}
+\index{pick\+G@{pick\+G}!solver.\+c@{solver.\+c}}
+\subsubsection[{pick\+G}]{\setlength{\rightskip}{0pt plus 5cm}void pick\+G (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{{\bf G\+Tree}}]{tr}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_aef893a4134b63eeeddadf57d2a89ba85}
+
+
+Altera o estado interno por forma a conter o elemento que o nodo contêm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser alterado. \\
+\hline
+{\em tr} & nodo que se pretende incorporar\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a9e5c9151d4c6e5f8225ce4803c643510}{\index{solver.\+c@{solver.\+c}!rec\+Ana@{rec\+Ana}}
+\index{rec\+Ana@{rec\+Ana}!solver.\+c@{solver.\+c}}
+\subsubsection[{rec\+Ana}]{\setlength{\rightskip}{0pt plus 5cm}static int rec\+Ana (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{{\bf T}}]{current, }
+\item[{{\bf G\+Tree} $\ast$}]{node, }
+\item[{{\bf Position\+Selector}}]{func}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a9e5c9151d4c6e5f8225ce4803c643510}
+
+
+Esta função vai recursivamente inspecionando elementos e desenvolvendo a arvore recebida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & endereço do árvore a desenvolver. \\
+\hline
+{\em current} & estado interno. \\
+\hline
+{\em func} & função que determina a próxima posição a ser inspecionada. \\
+\hline
+{\em n} & numero de elementos já inspecionados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+árvore de soluções.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} 
+
+\hyperlink{solver_8c_a4e5c14594936dfc099c1f05726bc9698}{valida} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a9befd5c024b5276c08fccb7def98092b}{\index{solver.\+c@{solver.\+c}!show\+S@{show\+S}}
+\index{show\+S@{show\+S}!solver.\+c@{solver.\+c}}
+\subsubsection[{show\+S}]{\setlength{\rightskip}{0pt plus 5cm}void show\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a9befd5c024b5276c08fccb7def98092b}
+
+
+Escreve um estado interno no ecra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser impresso. \\
+\hline
+\end{DoxyParams}
+\hypertarget{solver_8c_a6102730d9741f071f2354149756162a6}{\index{solver.\+c@{solver.\+c}!solve@{solve}}
+\index{solve@{solve}!solver.\+c@{solver.\+c}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} solve (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{a, }
+\item[{long $\ast$}]{number\+\_\+of\+\_\+solutions}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_a6102730d9741f071f2354149756162a6}
+
+
+Resolve um dado E\+S\+T\+A\+D\+O. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Estado que se pertende resolver. \\
+\hline
+{\em number\+\_\+of\+\_\+solutions} & variavel que contêm o endereço da variavel que se ira colocar o numeor de soluções do mapa.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+E\+S\+T\+A\+D\+O externo resolvido.(se tiver solução)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_abc174ddc3e0e8a2994759589328ca810}{destroyit} 
+
+conver\+\_\+internal 
+
+find\+Sol 
+
+\hyperlink{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{ana} 
+
+\hyperlink{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins} 
+
+\hyperlink{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols} 
+
+\hyperlink{estado_8h_a0b2cdae45084d690be7137255dfac0cb}{set\+E\+\_\+elem} 
+
+\hyperlink{solver_8c_af889ba91bf5bb2fbc4fa4d790867709c}{number\+Ofsolutions} 
+
+\hyperlink{solver_8c_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a4e5c14594936dfc099c1f05726bc9698}{\index{solver.\+c@{solver.\+c}!valida@{valida}}
+\index{valida@{valida}!solver.\+c@{solver.\+c}}
+\subsubsection[{valida}]{\setlength{\rightskip}{0pt plus 5cm}static int valida (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int $\ast$$\ast$}]{e, }
+\item[{int}]{maxl, }
+\item[{int}]{maxc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a4e5c14594936dfc099c1f05726bc9698}
+
+
+Válida se uma dada jogada será valida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Abcissa da jogada. \\
+\hline
+{\em y} & Ordenada da jogada. \\
+\hline
+{\em e} & Matrix do tabuleiro. \\
+\hline
+{\em maxl} & Número de linhas da matrix tabuleiro. \\
+\hline
+{\em maxc} & Número de colunas da matrix tabuleiro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Booleano que indica se a peça indicada é valida.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a0d9f13ee6341325b731c2e477fa9a399}{verifica} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_a0d9f13ee6341325b731c2e477fa9a399}{\index{solver.\+c@{solver.\+c}!verifica@{verifica}}
+\index{verifica@{verifica}!solver.\+c@{solver.\+c}}
+\subsubsection[{verifica}]{\setlength{\rightskip}{0pt plus 5cm}static int verifica (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{vectorx, }
+\item[{int}]{vectory, }
+\item[{int $\ast$$\ast$}]{state, }
+\item[{int}]{l, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{solver_8c_a0d9f13ee6341325b731c2e477fa9a399}
+
+
+Verifica se no sentido de um dado vetor em questão tem menos de 3 em linhas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abcissa da jogada. \\
+\hline
+{\em y} & ordenada da jogada. \\
+\hline
+{\em vectorx} & projeçao nas abcissas do vetor direção. \\
+\hline
+{\em vectory} & projeçao nas ordenas do vetor direção. \\
+\hline
+{\em state} & matrix do tabuleiro. \\
+\hline
+{\em l} & numero de linhas da matrix tabuleiro. \\
+\hline
+{\em c} & numero de colunas da matrix tabuleiro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O numero de peças iguais numa determinada direção.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_ab27ec55b4939191fcd8573e095c46718}{countval} 
+
+\hyperlink{solver_8c_a2d6130b49e818bfe457fb0905176d8f6}{contain} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8c_af632244db4e92b792bac954fde83a795}{\index{solver.\+c@{solver.\+c}!write\+Map@{write\+Map}}
+\index{write\+Map@{write\+Map}!solver.\+c@{solver.\+c}}
+\subsubsection[{write\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void write\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{char $\ast$}]{difficulty}
+\end{DoxyParamCaption}
+)}}\label{solver_8c_af632244db4e92b792bac954fde83a795}
+
+
+Escreve um mapa em ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado que irá escrever. \\
+\hline
+{\em difficulty} & Dificuldade do mapa. \\
+\hline
+\end{DoxyParams}

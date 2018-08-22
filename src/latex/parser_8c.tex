@@ -1,0 +1,510 @@
+\hypertarget{parser_8c}{\section{parser.\+c File Reference}
+\label{parser_8c}\index{parser.\+c@{parser.\+c}}
+}
+
+
+Módulo de User input / Interpertador de comandos.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}userfiles.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decide.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}givehelp.\+h\char`\"{}}\\*
+Include dependency graph for parser.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{parser_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{parser_8c_ae2e06e355435bed377eb689dd5eeaaba}{\#define \hyperlink{parser_8c_ae2e06e355435bed377eb689dd5eeaaba}{tab\+Size}~800}\label{parser_8c_ae2e06e355435bed377eb689dd5eeaaba}
+
+\begin{DoxyCompactList}\small\item\em Macro para o tamanho da área a desenhar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{parser_8c_a34976bb9db8f4c74909c52a61a7982eb}{pipe\+\_\+env} (void)
+\begin{DoxyCompactList}\small\item\em Efetua todas as operações necessárias para load do utilizador e aplicação dos comandos. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a0da69644ab20507560818f1895e8a481}{main\+\_\+op} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua a leitura de comandos considerados com principais. \end{DoxyCompactList}\item 
+static void \hyperlink{parser_8c_a9dd3ff6aa5721874cf88bec4955f600b}{snd\+\_\+op} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua a leitura de comandos considerados como secundários. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a227e8f8f6042cf524b17e865a2f4b69c}{get\+\_\+resize} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua a leitura do tipo de resize que se pretende fazer à grelha do tabuleiro. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a6387331e4edbe1b6e46e442dca2d0e9e}{read\+\_\+menu} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua a leitura do menu para o qual se pretende alterar. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a963f4a94599302cf043cb1193fc2265b}{choose\+\_\+load} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Consoante o comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G} decide que tipo de load terá de ser feito. \end{DoxyCompactList}\item 
+static void \hyperlink{parser_8c_a73656ae8b230927c5daf8aeb07c0fb92}{load\+\_\+map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua load de um mapa criado pelo utilizador ao contrário de load\+\_\+id. \end{DoxyCompactList}\item 
+static void \hyperlink{parser_8c_a50e4e28b0321b1cf9fd88f166787b4c2}{load\+\_\+id} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Efetua load do mapa guardado em ficheiro. \end{DoxyCompactList}\item 
+\hypertarget{parser_8c_a2ec62418632fae2aa57609082f11fdd7}{static int \hyperlink{parser_8c_a2ec62418632fae2aa57609082f11fdd7}{load\+\_\+random} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$name)}\label{parser_8c_a2ec62418632fae2aa57609082f11fdd7}
+
+\begin{DoxyCompactList}\small\item\em Efetua load de um mapa gerado aleatoriamente, anteriormente. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_ac8e0d98f52835e13cdeb0815f76693f7}{make\+Play} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Consoante um comando, efetua um jogada em um dado {\ttfamily E\+S\+T\+A\+D\+O}. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a39d22eae9933bec99ed863c6723abbf4}{read\+Parse} (char $\ast$command, int $\ast$i, int $\ast$j)
+\begin{DoxyCompactList}\small\item\em Obtem os valores passados no comando de jogada. \end{DoxyCompactList}\item 
+static \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{parser_8c_a62404024039935a10aa34e9939a02d4e}{load\+\_\+user} (char $\ast$user)
+\begin{DoxyCompactList}\small\item\em Efetua o load do {\ttfamily E\+S\+T\+A\+D\+O} associado a um certo utilizador. \end{DoxyCompactList}\item 
+static char $\ast$ \hyperlink{parser_8c_a6d68c2d1184f8a61f809f29b38e743ac}{put\+\_\+user} (char $\ast$user\+Query)
+\begin{DoxyCompactList}\small\item\em Identifica em que posição de encontra o identificador do utilizador. \end{DoxyCompactList}\item 
+static char $\ast$ \hyperlink{parser_8c_a0d2b502d56325f9e1a72c703c2f51086}{convert} (char $\ast$ler)
+\begin{DoxyCompactList}\small\item\em Faz a conversão de uma string de forma a poder ser lida pela função get\+User\+C. \end{DoxyCompactList}\item 
+static int \hyperlink{parser_8c_a2ba3af7ad2c8720dffb2e60ec1936697}{get\+User\+C} (char $\ast$query, char $\ast$user, char $\ast$command)
+\begin{DoxyCompactList}\small\item\em Identifica o utilizador e o comando a ser executado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de User input / Interpertador de comandos. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{parser_8c_a963f4a94599302cf043cb1193fc2265b}{\index{parser.\+c@{parser.\+c}!choose\+\_\+load@{choose\+\_\+load}}
+\index{choose\+\_\+load@{choose\+\_\+load}!parser.\+c@{parser.\+c}}
+\subsubsection[{choose\+\_\+load}]{\setlength{\rightskip}{0pt plus 5cm}static int choose\+\_\+load (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a963f4a94599302cf043cb1193fc2265b}
+
+
+Consoante o comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G} decide que tipo de load terá de ser feito. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} onde terá de ser colocada a grelha. \\
+\hline
+{\em command} & Comando obtido da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se o comando corresponde à nomenclatura de algum load, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_a73656ae8b230927c5daf8aeb07c0fb92}{load\+\_\+map} 
+
+\hyperlink{parser_8c_a50e4e28b0321b1cf9fd88f166787b4c2}{load\+\_\+id} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a0d2b502d56325f9e1a72c703c2f51086}{\index{parser.\+c@{parser.\+c}!convert@{convert}}
+\index{convert@{convert}!parser.\+c@{parser.\+c}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ convert (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a0d2b502d56325f9e1a72c703c2f51086}
+
+
+Faz a conversão de uma string de forma a poder ser lida pela função get\+User\+C. 
+
+A função converte todas as ocorrências de {\bfseries '/'} e {\bfseries '\+\_\+'} em espaços, pois só desta forma é possível ser lida.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ler} & A string que irá converter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A própria string. 
+\end{DoxyReturn}
+\hypertarget{parser_8c_a227e8f8f6042cf524b17e865a2f4b69c}{\index{parser.\+c@{parser.\+c}!get\+\_\+resize@{get\+\_\+resize}}
+\index{get\+\_\+resize@{get\+\_\+resize}!parser.\+c@{parser.\+c}}
+\subsubsection[{get\+\_\+resize}]{\setlength{\rightskip}{0pt plus 5cm}static int get\+\_\+resize (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a227e8f8f6042cf524b17e865a2f4b69c}
+
+
+Efetua a leitura do tipo de resize que se pretende fazer à grelha do tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em command} & Comando obtido da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se o tamanho de grelha foi alterado, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{state_8h_a1bee768ce8693d3a440b5a60b545dce3}{increase} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a2ba3af7ad2c8720dffb2e60ec1936697}{\index{parser.\+c@{parser.\+c}!get\+User\+C@{get\+User\+C}}
+\index{get\+User\+C@{get\+User\+C}!parser.\+c@{parser.\+c}}
+\subsubsection[{get\+User\+C}]{\setlength{\rightskip}{0pt plus 5cm}static int get\+User\+C (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{query, }
+\item[{char $\ast$}]{user, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a2ba3af7ad2c8720dffb2e60ec1936697}
+
+
+Identifica o utilizador e o comando a ser executado. 
+
+Identifica, caso existam, o utilizador e o comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & {\bfseries Q\+U\+E\+R\+Y} de onde se irá retirar o utilizador e o comando. \\
+\hline
+{\em user} & Apontador de onde irá ser colocado o utilizador passado na {\bfseries Q\+U\+E\+R\+Y} \\
+\hline
+{\em command} & Apontador de onde irá ser colocado o comando passado na {\bfseries Q\+U\+E\+R\+Y}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O número de inputs lidos com sucesso. 
+\end{DoxyReturn}
+\hypertarget{parser_8c_a50e4e28b0321b1cf9fd88f166787b4c2}{\index{parser.\+c@{parser.\+c}!load\+\_\+id@{load\+\_\+id}}
+\index{load\+\_\+id@{load\+\_\+id}!parser.\+c@{parser.\+c}}
+\subsubsection[{load\+\_\+id}]{\setlength{\rightskip}{0pt plus 5cm}static void load\+\_\+id (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a50e4e28b0321b1cf9fd88f166787b4c2}
+
+
+Efetua load do mapa guardado em ficheiro. 
+
+Lê o mapa contido em ficheiro, fazendo a verificação da sua validade, e se este for válido, coloca em {\ttfamily e} a grelha correspondente. Caso contrário, coloca o utilizador no menu de mapa inválido.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} onde irá ser colocada a grelha lida. \\
+\hline
+{\em command} & String correspondente ao comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{filemanager_8h_a65db46ec06db54c143d8c58f50a480af}{S\+E\+L\+E\+C\+T} 
+
+\hyperlink{estado_8h_aa7a928e6dc71c7e6f4e25da3b5c10006}{set\+E\+\_\+state} 
+
+\hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+
+\hyperlink{estado_8h_a8b28e51aaf0dded437325daee1e86238}{destroy\+State} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a73656ae8b230927c5daf8aeb07c0fb92}{\index{parser.\+c@{parser.\+c}!load\+\_\+map@{load\+\_\+map}}
+\index{load\+\_\+map@{load\+\_\+map}!parser.\+c@{parser.\+c}}
+\subsubsection[{load\+\_\+map}]{\setlength{\rightskip}{0pt plus 5cm}static void load\+\_\+map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a73656ae8b230927c5daf8aeb07c0fb92}
+
+
+Efetua load de um mapa criado pelo utilizador ao contrário de load\+\_\+id. 
+
+Lê a grelha contida em ficheiro, e caso esta seja válida e se encontre no formato pedido, então esta é colocada no {\ttfamily E\+S\+T\+A\+D\+O} {\ttfamily e} passado como argumento.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} onde irá ser colocada a grelha. \\
+\hline
+{\em command} & Comando passado da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{filemanager_8h_a312709802aca1cafd23ab379fb6fb9cc}{s\+Padrao} 
+
+\hyperlink{estado_8h_aa7a928e6dc71c7e6f4e25da3b5c10006}{set\+E\+\_\+state} 
+
+\hyperlink{estado_8h_a8b28e51aaf0dded437325daee1e86238}{destroy\+State} 
+
+\hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+
+\hyperlink{estado_8h_a37030bdeb38ad57caa19d47f541f14f3}{set\+E\+\_\+help} 
+
+\hyperlink{parser_8c_a50e4e28b0321b1cf9fd88f166787b4c2}{load\+\_\+id} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a62404024039935a10aa34e9939a02d4e}{\index{parser.\+c@{parser.\+c}!load\+\_\+user@{load\+\_\+user}}
+\index{load\+\_\+user@{load\+\_\+user}!parser.\+c@{parser.\+c}}
+\subsubsection[{load\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf E\+S\+T\+A\+D\+O} load\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{user}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a62404024039935a10aa34e9939a02d4e}
+
+
+Efetua o load do {\ttfamily E\+S\+T\+A\+D\+O} associado a um certo utilizador. 
+
+Cria o {\ttfamily E\+S\+T\+A\+D\+O} guardado em ficheiro de um certo utilizador, ou caso este não exista, cria um novo {\ttfamily E\+S\+T\+A\+D\+O} que será associado ao utilizador passado como argumentos.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & O utilizador do qual se pretende fazer load.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O {\ttfamily E\+S\+T\+A\+D\+O} lido.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_a6d68c2d1184f8a61f809f29b38e743ac}{put\+\_\+user} 
+
+\hyperlink{userfiles_8h_a698a8661109d5789f2b856cdf3b22adb}{file2estado} 
+
+\hyperlink{estado_8h_a1c52197ddde667791a5210fd441cd3dc}{inicializar} 
+
+\hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a0da69644ab20507560818f1895e8a481}{\index{parser.\+c@{parser.\+c}!main\+\_\+op@{main\+\_\+op}}
+\index{main\+\_\+op@{main\+\_\+op}!parser.\+c@{parser.\+c}}
+\subsubsection[{main\+\_\+op}]{\setlength{\rightskip}{0pt plus 5cm}static int main\+\_\+op (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a0da69644ab20507560818f1895e8a481}
+
+
+Efetua a leitura de comandos considerados com principais. 
+
+Estes comandos mais importantes correspondem aos seguintes\+:
+
+
+\begin{DoxyItemize}
+\item Efetuar uma jogada na grelha.
+\item Efetuar operações de redimensão.
+\item Alterar o menu do {\ttfamily E\+S\+T\+A\+D\+O}.
+\item Fazer load de uma grelha guardada em ficheiro.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em command} & Comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se o estado foi alterado, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_ac8e0d98f52835e13cdeb0815f76693f7}{make\+Play} 
+
+\hyperlink{parser_8c_a227e8f8f6042cf524b17e865a2f4b69c}{get\+\_\+resize} 
+
+\hyperlink{parser_8c_a6387331e4edbe1b6e46e442dca2d0e9e}{read\+\_\+menu} 
+
+\hyperlink{parser_8c_a963f4a94599302cf043cb1193fc2265b}{choose\+\_\+load} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_ac8e0d98f52835e13cdeb0815f76693f7}{\index{parser.\+c@{parser.\+c}!make\+Play@{make\+Play}}
+\index{make\+Play@{make\+Play}!parser.\+c@{parser.\+c}}
+\subsubsection[{make\+Play}]{\setlength{\rightskip}{0pt plus 5cm}static int make\+Play (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_ac8e0d98f52835e13cdeb0815f76693f7}
+
+
+Consoante um comando, efetua um jogada em um dado {\ttfamily E\+S\+T\+A\+D\+O}. 
+
+Após os valores da linha e coluna serem lidos do comando, é efetuada a jogada correspondente na posição.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em command} & Comando obtido da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se o {\ttfamily E\+S\+T\+A\+D\+O} foi alterado, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_a39d22eae9933bec99ed863c6723abbf4}{read\+Parse} 
+
+\hyperlink{decide_8h_a82c09231e65f427fb432011ca6e79ad1}{play\+Pos} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a34976bb9db8f4c74909c52a61a7982eb}{\index{parser.\+c@{parser.\+c}!pipe\+\_\+env@{pipe\+\_\+env}}
+\index{pipe\+\_\+env@{pipe\+\_\+env}!parser.\+c@{parser.\+c}}
+\subsubsection[{pipe\+\_\+env}]{\setlength{\rightskip}{0pt plus 5cm}void pipe\+\_\+env (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{parser_8c_a34976bb9db8f4c74909c52a61a7982eb}
+
+
+Efetua todas as operações necessárias para load do utilizador e aplicação dos comandos. 
+
+Para a leitura de utilizadores e comandos há três situações, consoante o número de itens lidos.
+
+
+\begin{DoxyItemize}
+\item Caso nenhum item seja lido, então é colocada na página uma input box onde se deve colocar o utilizador.
+\item Caso seja só lido o utilizador, é aberto o {\ttfamily E\+S\+T\+A\+D\+O} correspondente e apresentado.
+\item Caso seja lido o utilizador e o comando, é apresentado o {\ttfamily E\+S\+T\+A\+D\+O} corresponde com as alterações do comando já efetuadas.
+\begin{DoxyItemize}
+\item Neste caso acima, primeiro são analisadas as operações principais, e caso nenhuma seja efetuada, então passa para as operações secundárias.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+No final, o {\ttfamily E\+S\+T\+A\+D\+O} é escrito em ficheiro.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_a2ba3af7ad2c8720dffb2e60ec1936697}{get\+User\+C} 
+
+\hyperlink{parser_8c_a0d2b502d56325f9e1a72c703c2f51086}{convert} 
+
+\hyperlink{frontend_8h_a24cc4ee047b57331edabed32f639b9f7}{select\+File} 
+
+\hyperlink{parser_8c_a62404024039935a10aa34e9939a02d4e}{load\+\_\+user} 
+
+\hyperlink{parser_8c_a0da69644ab20507560818f1895e8a481}{main\+\_\+op} 
+
+\hyperlink{parser_8c_a9dd3ff6aa5721874cf88bec4955f600b}{snd\+\_\+op} 
+
+\hyperlink{userfiles_8h_af94c939d48715fec1933684c3073f7d9}{estado2file} 
+
+\hyperlink{frontend_8h_a3bd06a6350b1adbcf2d2d71769b27ff9}{printstate} 
+
+\hyperlink{estado_8h_a8b28e51aaf0dded437325daee1e86238}{destroy\+State} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a6d68c2d1184f8a61f809f29b38e743ac}{\index{parser.\+c@{parser.\+c}!put\+\_\+user@{put\+\_\+user}}
+\index{put\+\_\+user@{put\+\_\+user}!parser.\+c@{parser.\+c}}
+\subsubsection[{put\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}static char $\ast$ put\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{user\+Query}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a6d68c2d1184f8a61f809f29b38e743ac}
+
+
+Identifica em que posição de encontra o identificador do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Query} & String lida da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G} correspondente.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Posição onde se encontra o identificador do utilizador. 
+\end{DoxyReturn}
+\hypertarget{parser_8c_a6387331e4edbe1b6e46e442dca2d0e9e}{\index{parser.\+c@{parser.\+c}!read\+\_\+menu@{read\+\_\+menu}}
+\index{read\+\_\+menu@{read\+\_\+menu}!parser.\+c@{parser.\+c}}
+\subsubsection[{read\+\_\+menu}]{\setlength{\rightskip}{0pt plus 5cm}static int read\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a6387331e4edbe1b6e46e442dca2d0e9e}
+
+
+Efetua a leitura do menu para o qual se pretende alterar. 
+
+A função lê o menu para o qual se pretende alterar e faz a devida alteração, sendo que quando o estado corresponde a M\+E\+N\+U\+\_\+\+I\+N\+D\+E\+X\+::\+S\+E\+L\+E\+C\+T\+\_\+\+M\+E\+N\+U o {\ttfamily E\+S\+T\+A\+D\+O} é inicializado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em command} & Comando passado na {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1, se o menu foi alterado, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+
+\hyperlink{estado_8h_a6b89af2e2e3e9eaf3521701eec86a702}{get\+E\+\_\+menu} 
+
+\hyperlink{estado_8h_a1c52197ddde667791a5210fd441cd3dc}{inicializar} 
+\end{DoxySeeAlso}
+\hypertarget{parser_8c_a39d22eae9933bec99ed863c6723abbf4}{\index{parser.\+c@{parser.\+c}!read\+Parse@{read\+Parse}}
+\index{read\+Parse@{read\+Parse}!parser.\+c@{parser.\+c}}
+\subsubsection[{read\+Parse}]{\setlength{\rightskip}{0pt plus 5cm}static int read\+Parse (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{command, }
+\item[{int $\ast$}]{i, }
+\item[{int $\ast$}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a39d22eae9933bec99ed863c6723abbf4}
+
+
+Obtem os valores passados no comando de jogada. 
+
+Por nomenclatura um comando de jogada, é todo o comando que comece com o caráter '@'.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & O comando lido da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}. \\
+\hline
+{\em i} & Apontador onde ira colocar a linha onde se pretende jogar. \\
+\hline
+{\em j} & Apontador onde ira colocar a coluna onde se pretende jogar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O número de elementos lidos com sucesso. 
+\end{DoxyReturn}
+\hypertarget{parser_8c_a9dd3ff6aa5721874cf88bec4955f600b}{\index{parser.\+c@{parser.\+c}!snd\+\_\+op@{snd\+\_\+op}}
+\index{snd\+\_\+op@{snd\+\_\+op}!parser.\+c@{parser.\+c}}
+\subsubsection[{snd\+\_\+op}]{\setlength{\rightskip}{0pt plus 5cm}static void snd\+\_\+op (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{char $\ast$}]{command}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{parser_8c_a9dd3ff6aa5721874cf88bec4955f600b}
+
+
+Efetua a leitura de comandos considerados como secundários. 
+
+Efetua a leitura de comandos que são considerados menos importantes em termos de aplicação, e por isso a sua verificação é feita numa só função. Estas funções correspondem aos seguintes comandos.
+
+{\bfseries Comando} \+: {\bfseries Função}.
+
+
+\begin{DoxyItemize}
+\item help \+: givehelp.
+\item undo \+: pipestack, com o segundo argumento a 0.
+\item redo \+: pipestack, com o segundo argumento a 1.
+\item solve \+: solve.
+\item clear \+: clearstate.
+\item save\+Checkpoint \+: save\+Anc.
+\item safedraw \+: safedraw.
+\item get\+Anc \+: pop\+\_\+\+Anc.
+\item clear\+S \+: clearcanvas.
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em e} & {\ttfamily E\+S\+T\+A\+D\+O} que irá ser alterado. \\
+\hline
+{\em command} & Comando obtido da {\bfseries Q\+U\+E\+R\+Y\+\_\+\+S\+T\+R\+I\+N\+G}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{givehelp_8h_a56fc46f28368685f0897f3f58f80b039}{givehelp} 
+
+\hyperlink{state_8h_ab9caafc0116aeec18705eda9533f132f}{pipestack} 
+
+\hyperlink{solver_8h_a6102730d9741f071f2354149756162a6}{solve} 
+
+\hyperlink{state_8h_a11aed0a30a94f6dbf787a6c73dbd6409}{clearstate} 
+
+\hyperlink{state_8h_a695e69034d7f22ba4eb4489af2e8786c}{save\+Anc} 
+
+\hyperlink{state_8h_abcfe0e950583a81bc2a7586eb7d044b5}{safedraw} 
+
+\hyperlink{state_8h_aa72d6a8965f5d7a3d214a4ecde14ecc0}{pop\+\_\+\+Anc} 
+
+\hyperlink{state_8h_a8f967d9da54fb07016a74353f7a230ee}{clearcanvas} 
+\end{DoxySeeAlso}

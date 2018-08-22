@@ -1,0 +1,108 @@
+\hypertarget{userfiles_8c}{\section{userfiles.\+c File Reference}
+\label{userfiles_8c}\index{userfiles.\+c@{userfiles.\+c}}
+}
+
+
+Módulo para conversão entre ficheiros e E\+S\+T\+A\+D\+O.  
+
+
+{\ttfamily \#include \char`\"{}userfiles.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$fcntl.\+h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\+h$>$}\\*
+Include dependency graph for userfiles.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{userfiles_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{userfiles_8c_a2f7763ec29a228279585236b4e3d6252}{estado2file\+\_\+un} (char $\ast$path, char $\ast$user, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Escreve um estado para ficheiro. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{userfiles_8c_a9956376d29d551af64f82f7af082ec39}{file2estado\+\_\+un} (char $\ast$path, char $\ast$user, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Passa um ficheiro para Estado. A função cria um Estado apartir de um ficheiro, assumindo que este está escrito corretamente. É colocado no valor apontador por flag uma represetação nuḿerica da validade do ficheiro lido. \end{DoxyCompactList}\item 
+static \hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} \hyperlink{userfiles_8c_afb4764dc56e887a4a885c3ad2227ba3e}{read\+All} (F\+I\+L\+E $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Lê, enquanto for possível, os valores obtidos de uma Stream de ficheiro e cria uma stack correspondente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para conversão entre ficheiros e E\+S\+T\+A\+D\+O. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{userfiles_8c_a2f7763ec29a228279585236b4e3d6252}{\index{userfiles.\+c@{userfiles.\+c}!estado2file\+\_\+un@{estado2file\+\_\+un}}
+\index{estado2file\+\_\+un@{estado2file\+\_\+un}!userfiles.\+c@{userfiles.\+c}}
+\subsubsection[{estado2file\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}void estado2file\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{user, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{userfiles_8c_a2f7763ec29a228279585236b4e3d6252}
+
+
+Escreve um estado para ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String correspondente à diretória onde se encontram os users. \\
+\hline
+{\em user} & String correspondente ao nome do ficheiro que irá ser guardado. \\
+\hline
+{\em e} & Apontador para o estado que irá ser guardado em ficheiro. \\
+\hline
+\end{DoxyParams}
+fclose(fp); \hypertarget{userfiles_8c_a9956376d29d551af64f82f7af082ec39}{\index{userfiles.\+c@{userfiles.\+c}!file2estado\+\_\+un@{file2estado\+\_\+un}}
+\index{file2estado\+\_\+un@{file2estado\+\_\+un}!userfiles.\+c@{userfiles.\+c}}
+\subsubsection[{file2estado\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} file2estado\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{user, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{userfiles_8c_a9956376d29d551af64f82f7af082ec39}
+
+
+Passa um ficheiro para Estado. A função cria um Estado apartir de um ficheiro, assumindo que este está escrito corretamente. É colocado no valor apontador por flag uma represetação nuḿerica da validade do ficheiro lido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String correspondente à diretória onde se encontram os users. \\
+\hline
+{\em user} & String correspondente ao nome do ficheiro que irá ser lido. \\
+\hline
+{\em flag} & Apontador para o inteiro onde irá ser colocado o valor da validade do ficheiro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O Estado obtido do ficheiro. 
+\end{DoxyReturn}
+\hypertarget{userfiles_8c_afb4764dc56e887a4a885c3ad2227ba3e}{\index{userfiles.\+c@{userfiles.\+c}!read\+All@{read\+All}}
+\index{read\+All@{read\+All}!userfiles.\+c@{userfiles.\+c}}
+\subsubsection[{read\+All}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf S\+T\+A\+C\+K} read\+All (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{fp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{userfiles_8c_afb4764dc56e887a4a885c3ad2227ba3e}
+
+
+Lê, enquanto for possível, os valores obtidos de uma Stream de ficheiro e cria uma stack correspondente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & Apontador para ficheiro apartir do qual se pretende começar a ler a stack.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A stack criada apartir do ficheiro passado como argumento. 
+\end{DoxyReturn}

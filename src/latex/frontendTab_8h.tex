@@ -1,0 +1,86 @@
+\hypertarget{frontendTab_8h}{\section{frontend\+Tab.\+h File Reference}
+\label{frontendTab_8h}\index{frontend\+Tab.\+h@{frontend\+Tab.\+h}}
+}
+
+
+Módulo de tratamento gráfico, especializado ao tabuleiro.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{frontendTab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontendTab_8h_aa931d57852fb164f2d99a6e339bc521b}{draw\+Tab} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize, int x, int y)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Tabuleiro. \end{DoxyCompactList}\item 
+void \hyperlink{frontendTab_8h_a9d5ce8de0b474b3a08f544463433551a}{map\+Placer} (int x, int y, int size, int id, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Função que desenha um Mapa clicavél dos mapas pré-\/definidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de tratamento gráfico, especializado ao tabuleiro. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{frontendTab_8h_aa931d57852fb164f2d99a6e339bc521b}{\index{frontend\+Tab.\+h@{frontend\+Tab.\+h}!draw\+Tab@{draw\+Tab}}
+\index{draw\+Tab@{draw\+Tab}!frontend\+Tab.\+h@{frontend\+Tab.\+h}}
+\subsubsection[{draw\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}void draw\+Tab (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{frontendTab_8h_aa931d57852fb164f2d99a6e339bc521b}
+
+
+Função que desenha o Tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+{\em x} & offset do tabuleiro no eixo Ox \\
+\hline
+{\em y} & offset do tabuleiro no eixo Oy \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontendTab_8h_a9d5ce8de0b474b3a08f544463433551a}{\index{frontend\+Tab.\+h@{frontend\+Tab.\+h}!map\+Placer@{map\+Placer}}
+\index{map\+Placer@{map\+Placer}!frontend\+Tab.\+h@{frontend\+Tab.\+h}}
+\subsubsection[{map\+Placer}]{\setlength{\rightskip}{0pt plus 5cm}void map\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{size, }
+\item[{int}]{id, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{char $\ast$}]{username}
+\end{DoxyParamCaption}
+)}}\label{frontendTab_8h_a9d5ce8de0b474b3a08f544463433551a}
+
+
+Função que desenha um Mapa clicavél dos mapas pré-\/definidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abcissa do canto superior esquerdo do mapa \\
+\hline
+{\em y} & ordenada do canto superior esquerdo do mapa \\
+\hline
+{\em size} & tamanho do mapa \\
+\hline
+{\em id} & número do mapa que está a ser desenhado \\
+\hline
+{\em state} & o estado onde se encontra o mapa a desenhar \\
+\hline
+{\em username} & o nome do utilizador que está a jogar \\
+\hline
+\end{DoxyParams}

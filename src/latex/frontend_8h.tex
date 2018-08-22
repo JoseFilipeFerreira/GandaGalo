@@ -1,0 +1,154 @@
+\hypertarget{frontend_8h}{\section{frontend.\+h File Reference}
+\label{frontend_8h}\index{frontend.\+h@{frontend.\+h}}
+}
+
+
+Módulo de tratamento gráfico.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+Include dependency graph for frontend.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{frontend_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{frontend_8h_aa6bdf6a6d9916c343e1e17774d84a156}{\#define \hyperlink{frontend_8h_aa6bdf6a6d9916c343e1e17774d84a156}{B\+O\+D\+Y}~printf(\char`\"{}$<$body bgcolor='\#8\+F\+D8\+D8'$>$\textbackslash{}n\char`\"{})}\label{frontend_8h_aa6bdf6a6d9916c343e1e17774d84a156}
+
+\begin{DoxyCompactList}\small\item\em Macro para abrir um body com a cor de fundo. \end{DoxyCompactList}\item 
+\hypertarget{frontend_8h_a53dcc93404ee91f4f58e369c5cb28c3f}{\#define \hyperlink{frontend_8h_a53dcc93404ee91f4f58e369c5cb28c3f}{F\+E\+C\+H\+A\+R\+\_\+\+B\+O\+D\+Y}~printf(\char`\"{}$<$/body$>$\textbackslash{}n\char`\"{})}\label{frontend_8h_a53dcc93404ee91f4f58e369c5cb28c3f}
+
+\begin{DoxyCompactList}\small\item\em Macro para fechar o body. \end{DoxyCompactList}\item 
+\hypertarget{frontend_8h_a5f4e860a5a2d4a031933b102ab57a245}{\#define \hyperlink{frontend_8h_a5f4e860a5a2d4a031933b102ab57a245}{D\+I\+V\+\_\+\+C\+E\+N\+T\+R\+A\+R}~printf(\char`\"{}$<$div style='text-\/align\+:center;padding\+:50px'$>$\textbackslash{}n\char`\"{})}\label{frontend_8h_a5f4e860a5a2d4a031933b102ab57a245}
+
+\begin{DoxyCompactList}\small\item\em Macro para cria o div que centra. \end{DoxyCompactList}\item 
+\hypertarget{frontend_8h_a548edaa1e0b38a4a5e6662866a5836c3}{\#define \hyperlink{frontend_8h_a548edaa1e0b38a4a5e6662866a5836c3}{F\+E\+C\+H\+A\+R\+\_\+\+D\+I\+V}~printf(\char`\"{}$<$/div$>$\textbackslash{}n\char`\"{})}\label{frontend_8h_a548edaa1e0b38a4a5e6662866a5836c3}
+
+\begin{DoxyCompactList}\small\item\em Macro para fechar div. \end{DoxyCompactList}\item 
+\#define \hyperlink{frontend_8h_a1ba74891223a4e3dd6fe95ec633f965c}{calculate}(windowsize, win, mar, text)~(windowsize $\ast$ win + mar $\ast$ \hyperlink{frontend_8c_a4e7c62acc3de768680fb1ca1a7e4663a}{M\+A\+R\+G\+I\+N}(windowsize) + text $\ast$ \hyperlink{frontend_8c_aabac370a28fbfb599c4dfcd65919e94d}{T\+E\+X\+T\+M\+A\+R\+G\+I\+N}(windowsize))
+\begin{DoxyCompactList}\small\item\em Macro para calcular o valor . \end{DoxyCompactList}\item 
+\#define \hyperlink{frontend_8h_a35f1bfd38a7dbc1dbb3d45fa90d2e26f}{A\+C\+U\+\_\+\+I\+M\+A\+G\+E}(X, Y, E\+S\+C\+A\+L\+A, F\+I\+C\+H\+E\+I\+R\+O)
+\begin{DoxyCompactList}\small\item\em Macro para criar uma imagem que ignora correções de escala. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontend_8h_a3bd06a6350b1adbcf2d2d71769b27ff9}{printstate} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que deesenha o Estado. \end{DoxyCompactList}\item 
+void \hyperlink{frontend_8h_a24cc4ee047b57331edabed32f639b9f7}{select\+File} (char $\ast$name\+Tag, char $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Função que coloca uma textbox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de tratamento gráfico. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{frontend_8h_a35f1bfd38a7dbc1dbb3d45fa90d2e26f}{\index{frontend.\+h@{frontend.\+h}!A\+C\+U\+\_\+\+I\+M\+A\+G\+E@{A\+C\+U\+\_\+\+I\+M\+A\+G\+E}}
+\index{A\+C\+U\+\_\+\+I\+M\+A\+G\+E@{A\+C\+U\+\_\+\+I\+M\+A\+G\+E}!frontend.\+h@{frontend.\+h}}
+\subsubsection[{A\+C\+U\+\_\+\+I\+M\+A\+G\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+C\+U\+\_\+\+I\+M\+A\+G\+E(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y, }
+\item[{}]{E\+S\+C\+A\+L\+A, }
+\item[{}]{F\+I\+C\+H\+E\+I\+R\+O}
+\end{DoxyParamCaption}
+)}}\label{frontend_8h_a35f1bfd38a7dbc1dbb3d45fa90d2e26f}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"<image x=%d y=%d width=%d height=%d xlink:href=%s%s />\(\backslash\)n"}, \(\backslash\)
+                                                 X, Y, ESCALA, ESCALA, 
+      \hyperlink{cgi_8h_a6852d85bc96a09e605bbf4a2dcfc7a5c}{IMAGE\_PATH}, FICHEIRO)
+\end{DoxyCode}
+
+
+Macro para criar uma imagem que ignora correções de escala. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & A coordenada X do canto superior esquerdo. \\
+\hline
+{\em Y} & A coordenada Y do canto superior esquerdo. \\
+\hline
+{\em E\+S\+C\+A\+L\+A} & A escala da imagem. \\
+\hline
+{\em F\+I\+C\+H\+E\+I\+R\+O} & O caminho para o link do ficheiro. \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8h_a1ba74891223a4e3dd6fe95ec633f965c}{\index{frontend.\+h@{frontend.\+h}!calculate@{calculate}}
+\index{calculate@{calculate}!frontend.\+h@{frontend.\+h}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}\#define calculate(
+\begin{DoxyParamCaption}
+\item[{}]{windowsize, }
+\item[{}]{win, }
+\item[{}]{mar, }
+\item[{}]{text}
+\end{DoxyParamCaption}
+)~(windowsize $\ast$ win + mar $\ast$ {\bf M\+A\+R\+G\+I\+N}(windowsize) + text $\ast$ {\bf T\+E\+X\+T\+M\+A\+R\+G\+I\+N}(windowsize))}}\label{frontend_8h_a1ba74891223a4e3dd6fe95ec633f965c}
+
+
+Macro para calcular o valor . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & tamanho da área disponível para desenhar. \\
+\hline
+{\em win} & multiplier pelo valor windowsize. \\
+\hline
+{\em mar} & multiplier pelo valor \hyperlink{frontend_8c_a4e7c62acc3de768680fb1ca1a7e4663a}{M\+A\+R\+G\+I\+N(windowsize)}. \\
+\hline
+{\em text} & multiplier pelo valor \hyperlink{frontend_8c_aabac370a28fbfb599c4dfcd65919e94d}{T\+E\+X\+T\+M\+A\+R\+G\+I\+N(windowsize)}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontend_8h_a3bd06a6350b1adbcf2d2d71769b27ff9}{\index{frontend.\+h@{frontend.\+h}!printstate@{printstate}}
+\index{printstate@{printstate}!frontend.\+h@{frontend.\+h}}
+\subsubsection[{printstate}]{\setlength{\rightskip}{0pt plus 5cm}void printstate (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)}}\label{frontend_8h_a3bd06a6350b1adbcf2d2d71769b27ff9}
+
+
+Função que deesenha o Estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8h_a24cc4ee047b57331edabed32f639b9f7}{\index{frontend.\+h@{frontend.\+h}!select\+File@{select\+File}}
+\index{select\+File@{select\+File}!frontend.\+h@{frontend.\+h}}
+\subsubsection[{select\+File}]{\setlength{\rightskip}{0pt plus 5cm}void select\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name\+Tag, }
+\item[{char $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}}\label{frontend_8h_a24cc4ee047b57331edabed32f639b9f7}
+
+
+Função que coloca uma textbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+Tag} & nome da Text\+Box \\
+\hline
+{\em tag} & parte de trás da string \\
+\hline
+\end{DoxyParams}

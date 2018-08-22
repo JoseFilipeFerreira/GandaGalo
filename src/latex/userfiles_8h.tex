@@ -1,0 +1,134 @@
+\hypertarget{userfiles_8h}{\section{userfiles.\+h File Reference}
+\label{userfiles_8h}\index{userfiles.\+h@{userfiles.\+h}}
+}
+
+
+Módulo para conversão entre ficheiros e E\+S\+T\+A\+D\+O.  
+
+
+{\ttfamily \#include \char`\"{}cgi.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+Include dependency graph for userfiles.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{userfiles_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{userfiles_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{userfiles_8h_a698a8661109d5789f2b856cdf3b22adb}{file2estado}(user, flag)~(\hyperlink{userfiles_8h_a9956376d29d551af64f82f7af082ec39}{file2estado\+\_\+un}(\hyperlink{cgi_8h_a2997e8baab88fb20ec0dce822d405aa9}{U\+S\+E\+R\+\_\+\+P\+A\+T\+H},user,\&(flag)))
+\begin{DoxyCompactList}\small\item\em Macro para converter um ficheiro em estado. \end{DoxyCompactList}\item 
+\#define \hyperlink{userfiles_8h_af94c939d48715fec1933684c3073f7d9}{estado2file}(user, e)~(\hyperlink{userfiles_8h_a2f7763ec29a228279585236b4e3d6252}{estado2file\+\_\+un}(\hyperlink{cgi_8h_a2997e8baab88fb20ec0dce822d405aa9}{U\+S\+E\+R\+\_\+\+P\+A\+T\+H},user,e))
+\begin{DoxyCompactList}\small\item\em Macro para converter um estado em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{userfiles_8h_a9956376d29d551af64f82f7af082ec39}{file2estado\+\_\+un} (char $\ast$path, char $\ast$user, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Passa um ficheiro para Estado. A função cria um Estado apartir de um ficheiro, assumindo que este está escrito corretamente. É colocado no valor apontador por flag uma represetação nuḿerica da validade do ficheiro lido. \end{DoxyCompactList}\item 
+void \hyperlink{userfiles_8h_a2f7763ec29a228279585236b4e3d6252}{estado2file\+\_\+un} (char $\ast$path, char $\ast$user, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Escreve um estado para ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para conversão entre ficheiros e E\+S\+T\+A\+D\+O. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{userfiles_8h_af94c939d48715fec1933684c3073f7d9}{\index{userfiles.\+h@{userfiles.\+h}!estado2file@{estado2file}}
+\index{estado2file@{estado2file}!userfiles.\+h@{userfiles.\+h}}
+\subsubsection[{estado2file}]{\setlength{\rightskip}{0pt plus 5cm}\#define estado2file(
+\begin{DoxyParamCaption}
+\item[{}]{user, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~({\bf estado2file\+\_\+un}({\bf U\+S\+E\+R\+\_\+\+P\+A\+T\+H},user,e))}}\label{userfiles_8h_af94c939d48715fec1933684c3073f7d9}
+
+
+Macro para converter um estado em ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & nome de utilizador \\
+\hline
+{\em e} & estado a guardar \\
+\hline
+\end{DoxyParams}
+\hypertarget{userfiles_8h_a698a8661109d5789f2b856cdf3b22adb}{\index{userfiles.\+h@{userfiles.\+h}!file2estado@{file2estado}}
+\index{file2estado@{file2estado}!userfiles.\+h@{userfiles.\+h}}
+\subsubsection[{file2estado}]{\setlength{\rightskip}{0pt plus 5cm}\#define file2estado(
+\begin{DoxyParamCaption}
+\item[{}]{user, }
+\item[{}]{flag}
+\end{DoxyParamCaption}
+)~({\bf file2estado\+\_\+un}({\bf U\+S\+E\+R\+\_\+\+P\+A\+T\+H},user,\&(flag)))}}\label{userfiles_8h_a698a8661109d5789f2b856cdf3b22adb}
+
+
+Macro para converter um ficheiro em estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & nome de utilizador \\
+\hline
+{\em flag} & Apontador para o inteiro onde irá ser colocado o valor da validade do ficheiro. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Function Documentation}
+\hypertarget{userfiles_8h_a2f7763ec29a228279585236b4e3d6252}{\index{userfiles.\+h@{userfiles.\+h}!estado2file\+\_\+un@{estado2file\+\_\+un}}
+\index{estado2file\+\_\+un@{estado2file\+\_\+un}!userfiles.\+h@{userfiles.\+h}}
+\subsubsection[{estado2file\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}void estado2file\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{user, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{userfiles_8h_a2f7763ec29a228279585236b4e3d6252}
+
+
+Escreve um estado para ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String correspondente à diretória onde se encontram os users. \\
+\hline
+{\em user} & String correspondente ao nome do ficheiro que irá ser guardado. \\
+\hline
+{\em e} & Apontador para o estado que irá ser guardado em ficheiro. \\
+\hline
+\end{DoxyParams}
+fclose(fp); \hypertarget{userfiles_8h_a9956376d29d551af64f82f7af082ec39}{\index{userfiles.\+h@{userfiles.\+h}!file2estado\+\_\+un@{file2estado\+\_\+un}}
+\index{file2estado\+\_\+un@{file2estado\+\_\+un}!userfiles.\+h@{userfiles.\+h}}
+\subsubsection[{file2estado\+\_\+un}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} file2estado\+\_\+un (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{user, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{userfiles_8h_a9956376d29d551af64f82f7af082ec39}
+
+
+Passa um ficheiro para Estado. A função cria um Estado apartir de um ficheiro, assumindo que este está escrito corretamente. É colocado no valor apontador por flag uma represetação nuḿerica da validade do ficheiro lido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String correspondente à diretória onde se encontram os users. \\
+\hline
+{\em user} & String correspondente ao nome do ficheiro que irá ser lido. \\
+\hline
+{\em flag} & Apontador para o inteiro onde irá ser colocado o valor da validade do ficheiro.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O Estado obtido do ficheiro. 
+\end{DoxyReturn}

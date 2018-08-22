@@ -1,0 +1,149 @@
+\hypertarget{leaderboard_8h}{\section{leaderboard.\+h File Reference}
+\label{leaderboard_8h}\index{leaderboard.\+h@{leaderboard.\+h}}
+}
+
+
+Módulo de obtenção da leaderboard.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{leaderboard_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{leaderboard_8h_ab5c9e28069b9fbddd9c296f14d25b84c}{\#define \hyperlink{leaderboard_8h_ab5c9e28069b9fbddd9c296f14d25b84c}{M\+A\+X\+\_\+\+S}~50}\label{leaderboard_8h_ab5c9e28069b9fbddd9c296f14d25b84c}
+
+\begin{DoxyCompactList}\small\item\em Tamanho máximo de uma string que utilizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{leaderboard_8h_a1b75417d96e36e635a0302644a6c66fc}{typedef struct \hyperlink{structinfo}{info} $\ast$ \hyperlink{leaderboard_8h_a1b75417d96e36e635a0302644a6c66fc}{I\+N\+F\+O}}\label{leaderboard_8h_a1b75417d96e36e635a0302644a6c66fc}
+
+\begin{DoxyCompactList}\small\item\em Estrutura onde é guardada a informação usada pela leaderboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{leaderboard_8h_afead7e22f6585d03b4f9b09d89dfade7}{get\+Info\+\_\+user} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v, int i)
+\begin{DoxyCompactList}\small\item\em Função que obtêm o utilizador associado a um bloco de informação. \end{DoxyCompactList}\item 
+int \hyperlink{leaderboard_8h_a3596e9737c2017c08210285adbf50541}{get\+Info\+\_\+wins} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v, int i)
+\begin{DoxyCompactList}\small\item\em Função que obtêm o número de vitórias associado a um bloco de informação. \end{DoxyCompactList}\item 
+int \hyperlink{leaderboard_8h_a6b7ea262cb48cc841d5ba76db2984768}{get\+\_\+info} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} $\ast$v, int N)
+\begin{DoxyCompactList}\small\item\em Função que indica um array de {\ttfamily I\+N\+F\+O} contendo a leaderboard. \end{DoxyCompactList}\item 
+void \hyperlink{leaderboard_8h_aa23db304e56c4f0e17bb06e619fe6956}{push\+\_\+info} (char $\ast$user, int wins)
+\begin{DoxyCompactList}\small\item\em Função que adiciona nova informação ao ficheiro. Consoante o utilizador e o número de vitória coloca no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} a informação passada como argumento. Da seguinte forma\+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de obtenção da leaderboard. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{leaderboard_8h_a6b7ea262cb48cc841d5ba76db2984768}{\index{leaderboard.\+h@{leaderboard.\+h}!get\+\_\+info@{get\+\_\+info}}
+\index{get\+\_\+info@{get\+\_\+info}!leaderboard.\+h@{leaderboard.\+h}}
+\subsubsection[{get\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O} $\ast$}]{v, }
+\item[{int}]{N}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8h_a6b7ea262cb48cc841d5ba76db2984768}
+
+
+Função que indica um array de {\ttfamily I\+N\+F\+O} contendo a leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Apontador para o endereço onde irá ser colocada a leaderboard. \\
+\hline
+{\em N} & Número máximo de elementos colocados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Números de elementos colocados.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_a57f19b982e416216fe5865738c7e5b2a}{list\+\_\+info} 
+
+\hyperlink{leaderboard_8c_a31d353bb4c3a5c08b568d5b5a4e98696}{sort\+\_\+info} 
+
+\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8h_afead7e22f6585d03b4f9b09d89dfade7}{\index{leaderboard.\+h@{leaderboard.\+h}!get\+Info\+\_\+user@{get\+Info\+\_\+user}}
+\index{get\+Info\+\_\+user@{get\+Info\+\_\+user}!leaderboard.\+h@{leaderboard.\+h}}
+\subsubsection[{get\+Info\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\+Info\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O}}]{v, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8h_afead7e22f6585d03b4f9b09d89dfade7}
+
+
+Função que obtêm o utilizador associado a um bloco de informação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Array de onde irá ser retirada a informação. \\
+\hline
+{\em i} & Posição da informação.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o utilizador. 
+\end{DoxyReturn}
+\hypertarget{leaderboard_8h_a3596e9737c2017c08210285adbf50541}{\index{leaderboard.\+h@{leaderboard.\+h}!get\+Info\+\_\+wins@{get\+Info\+\_\+wins}}
+\index{get\+Info\+\_\+wins@{get\+Info\+\_\+wins}!leaderboard.\+h@{leaderboard.\+h}}
+\subsubsection[{get\+Info\+\_\+wins}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Info\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O}}]{v, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8h_a3596e9737c2017c08210285adbf50541}
+
+
+Função que obtêm o número de vitórias associado a um bloco de informação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Array de onde irá ser retirada a informação. \\
+\hline
+{\em i} & Posição da informação.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o número de vitórias. 
+\end{DoxyReturn}
+\hypertarget{leaderboard_8h_aa23db304e56c4f0e17bb06e619fe6956}{\index{leaderboard.\+h@{leaderboard.\+h}!push\+\_\+info@{push\+\_\+info}}
+\index{push\+\_\+info@{push\+\_\+info}!leaderboard.\+h@{leaderboard.\+h}}
+\subsubsection[{push\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}void push\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{user, }
+\item[{int}]{wins}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8h_aa23db304e56c4f0e17bb06e619fe6956}
+
+
+Função que adiciona nova informação ao ficheiro. Consoante o utilizador e o número de vitória coloca no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} a informação passada como argumento. Da seguinte forma\+: 
+
+
+\begin{DoxyItemize}
+\item Se o utilizador não existir no ficheiro então é colocado no fim.
+\item Se o utilizador existir no ficheiro então o seu número de vitórias é atualizado.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Utilizador em registo. \\
+\hline
+{\em wins} & Nome de vitórias em registo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_ada70e23e1c8bd904bd090ff8f9d03966}{make\+\_\+info} 
+
+\hyperlink{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{D\+I\+R\+I\+N\+F\+O} 
+\end{DoxySeeAlso}

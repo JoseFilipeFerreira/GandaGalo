@@ -1,0 +1,289 @@
+\hypertarget{stack_8c}{\section{stack.\+c File Reference}
+\label{stack_8c}\index{stack.\+c@{stack.\+c}}
+}
+
+
+Módulo para operar sobre S\+T\+A\+C\+K.  
+
+
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for stack.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{stack_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structrecord}{record}
+\begin{DoxyCompactList}\small\item\em Estrutura para o valor a armazenar. \end{DoxyCompactList}\item 
+struct \hyperlink{structlista}{lista}
+\begin{DoxyCompactList}\small\item\em Estrutura para a lista ligada. \end{DoxyCompactList}\item 
+struct \hyperlink{structstack}{stack}
+\begin{DoxyCompactList}\small\item\em Declaração da Estrutura principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{stack_8c_a44e8f2943831641ea8ac9a833b65f08c}{typedef struct \hyperlink{structrecord}{record} \hyperlink{stack_8c_a44e8f2943831641ea8ac9a833b65f08c}{R\+E\+C\+O\+R\+D}}\label{stack_8c_a44e8f2943831641ea8ac9a833b65f08c}
+
+\begin{DoxyCompactList}\small\item\em Estrutura para o valor a armazenar. \end{DoxyCompactList}\item 
+\hypertarget{stack_8c_ab3843315393c74d2ade69877ac22d661}{typedef struct \hyperlink{structlista}{lista} $\ast$ \hyperlink{stack_8c_ab3843315393c74d2ade69877ac22d661}{L\+Rec}}\label{stack_8c_ab3843315393c74d2ade69877ac22d661}
+
+\begin{DoxyCompactList}\small\item\em Estrutura para a lista ligada. \end{DoxyCompactList}\item 
+\hypertarget{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{typedef struct \hyperlink{structstack}{stack} $\ast$ \hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K}}\label{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}
+
+\begin{DoxyCompactList}\small\item\em Declaração da Estrutura principal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} \hyperlink{stack_8c_ae737401bf8d705ce7fac339f553696bb}{init\+S} ()
+\begin{DoxyCompactList}\small\item\em Cria uma instância destes módulo. \end{DoxyCompactList}\item 
+void \hyperlink{stack_8c_ad57d238196f579aa8ad21efd9dedc734}{destroy\+S} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Destrói uma instância destes módulo. \end{DoxyCompactList}\item 
+int \hyperlink{stack_8c_aa2e25739a0ea0041423448bdcc5559c3}{is\+Empty} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Verifica se a stack está vazia. \end{DoxyCompactList}\item 
+void \hyperlink{stack_8c_a734636978e69eedc1efd53ddc858d360}{push} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s, int i, int j, char val)
+\begin{DoxyCompactList}\small\item\em Põe um elemento no topo da stack. \end{DoxyCompactList}\item 
+int \hyperlink{stack_8c_aaf4563f073d541201c7601184039b879}{pop} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s, int $\ast$i, int $\ast$j, char $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Tira um elemento no topo da stack. \end{DoxyCompactList}\item 
+int \hyperlink{stack_8c_a105edf65b7e96281c133bee40d35ca9f}{peek} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Consulta o elemento no topo da stack e alterar este para 0. \end{DoxyCompactList}\item 
+int \hyperlink{stack_8c_a0cfa1c1680d521fb7da8a03b20c2b1f1}{can\+Get\+Anc} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Verifica se a Stack possui uma âncora. \end{DoxyCompactList}\item 
+int \hyperlink{stack_8c_a57784d722b977fd9dc3f17dfec32b7aa}{make\+Anc} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Coloca, se possivél, uma âncora. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{stack_8c_ab9b9993c40e51034e26060048f6116e2}{complete\+S} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s)
+\begin{DoxyCompactList}\small\item\em Cria uma string correspondente aos elementos de uma {\ttfamily S\+T\+A\+C\+K} , aplicando {\ttfamily pop} a todos os elementos. \end{DoxyCompactList}\item 
+void \hyperlink{stack_8c_a84b5260749650f26ce95bd755a43dde3}{add\+To\+Tail} (\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} s, char i, char j, char val, char check)
+\begin{DoxyCompactList}\small\item\em Recebe um conjunto de valores e adiciona à cauda da lista em tempo constante. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para operar sobre S\+T\+A\+C\+K. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{stack_8c_a84b5260749650f26ce95bd755a43dde3}{\index{stack.\+c@{stack.\+c}!add\+To\+Tail@{add\+To\+Tail}}
+\index{add\+To\+Tail@{add\+To\+Tail}!stack.\+c@{stack.\+c}}
+\subsubsection[{add\+To\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}void add\+To\+Tail (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s, }
+\item[{char}]{i, }
+\item[{char}]{j, }
+\item[{char}]{val, }
+\item[{char}]{check}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_a84b5260749650f26ce95bd755a43dde3}
+
+
+Recebe um conjunto de valores e adiciona à cauda da lista em tempo constante. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & stack onde irá colocar o elemento. \\
+\hline
+{\em i} & Valor a adicionar. \\
+\hline
+{\em j} & Valor a adicionar. \\
+\hline
+{\em val} & Valor a adicionar. \\
+\hline
+{\em check} & Valor a adicionar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{stack_8c_a0cfa1c1680d521fb7da8a03b20c2b1f1}{\index{stack.\+c@{stack.\+c}!can\+Get\+Anc@{can\+Get\+Anc}}
+\index{can\+Get\+Anc@{can\+Get\+Anc}!stack.\+c@{stack.\+c}}
+\subsubsection[{can\+Get\+Anc}]{\setlength{\rightskip}{0pt plus 5cm}int can\+Get\+Anc (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_a0cfa1c1680d521fb7da8a03b20c2b1f1}
+
+
+Verifica se a Stack possui uma âncora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack que se pertende consultar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve 1 se existir uma âncora na {\ttfamily S\+T\+A\+C\+K}, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structrecord_a381a80a513768c3eba6b765c5e356bad}{record\+::check} 
+\end{DoxySeeAlso}
+\hypertarget{stack_8c_ab9b9993c40e51034e26060048f6116e2}{\index{stack.\+c@{stack.\+c}!complete\+S@{complete\+S}}
+\index{complete\+S@{complete\+S}!stack.\+c@{stack.\+c}}
+\subsubsection[{complete\+S}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ complete\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_ab9b9993c40e51034e26060048f6116e2}
+
+
+Cria uma string correspondente aos elementos de uma {\ttfamily S\+T\+A\+C\+K} , aplicando {\ttfamily pop} a todos os elementos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A {\ttfamily S\+T\+A\+C\+K} que irá passar a string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string correspondente à {\ttfamily S\+T\+A\+C\+K} .
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8c_aaf4563f073d541201c7601184039b879}{pop} 
+\end{DoxySeeAlso}
+\hypertarget{stack_8c_ad57d238196f579aa8ad21efd9dedc734}{\index{stack.\+c@{stack.\+c}!destroy\+S@{destroy\+S}}
+\index{destroy\+S@{destroy\+S}!stack.\+c@{stack.\+c}}
+\subsubsection[{destroy\+S}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_ad57d238196f579aa8ad21efd9dedc734}
+
+
+Destrói uma instância destes módulo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack a ser destruida. \\
+\hline
+\end{DoxyParams}
+\hypertarget{stack_8c_ae737401bf8d705ce7fac339f553696bb}{\index{stack.\+c@{stack.\+c}!init\+S@{init\+S}}
+\index{init\+S@{init\+S}!stack.\+c@{stack.\+c}}
+\subsubsection[{init\+S}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+C\+K} init\+S (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_ae737401bf8d705ce7fac339f553696bb}
+
+
+Cria uma instância destes módulo. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily S\+T\+A\+C\+K} criada. 
+\end{DoxyReturn}
+\hypertarget{stack_8c_aa2e25739a0ea0041423448bdcc5559c3}{\index{stack.\+c@{stack.\+c}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!stack.\+c@{stack.\+c}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}int is\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_aa2e25739a0ea0041423448bdcc5559c3}
+
+
+Verifica se a stack está vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack que se pertender verificar se está vazia. \\
+\hline
+\end{DoxyParams}
+\hypertarget{stack_8c_a57784d722b977fd9dc3f17dfec32b7aa}{\index{stack.\+c@{stack.\+c}!make\+Anc@{make\+Anc}}
+\index{make\+Anc@{make\+Anc}!stack.\+c@{stack.\+c}}
+\subsubsection[{make\+Anc}]{\setlength{\rightskip}{0pt plus 5cm}int make\+Anc (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_a57784d722b977fd9dc3f17dfec32b7aa}
+
+
+Coloca, se possivél, uma âncora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & A stack que onde irá ser guardada a âncora.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve 1 se foi possivél colocar uma âncora, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structrecord_a381a80a513768c3eba6b765c5e356bad}{record\+::check} 
+\end{DoxySeeAlso}
+\hypertarget{stack_8c_a105edf65b7e96281c133bee40d35ca9f}{\index{stack.\+c@{stack.\+c}!peek@{peek}}
+\index{peek@{peek}!stack.\+c@{stack.\+c}}
+\subsubsection[{peek}]{\setlength{\rightskip}{0pt plus 5cm}int peek (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_a105edf65b7e96281c133bee40d35ca9f}
+
+
+Consulta o elemento no topo da stack e alterar este para 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack que se pertende consultar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries -\/1} se a {\ttfamily S\+T\+A\+C\+K} for vazia, caso contrário devolve o valor indicativo de âncora no topo da {\ttfamily S\+T\+A\+C\+K} .
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structrecord_a381a80a513768c3eba6b765c5e356bad}{record\+::check} 
+\end{DoxySeeAlso}
+\hypertarget{stack_8c_aaf4563f073d541201c7601184039b879}{\index{stack.\+c@{stack.\+c}!pop@{pop}}
+\index{pop@{pop}!stack.\+c@{stack.\+c}}
+\subsubsection[{pop}]{\setlength{\rightskip}{0pt plus 5cm}int pop (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s, }
+\item[{int $\ast$}]{i, }
+\item[{int $\ast$}]{j, }
+\item[{char $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_aaf4563f073d541201c7601184039b879}
+
+
+Tira um elemento no topo da stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack que se pertende remover uma entrada. \\
+\hline
+{\em i} & abcissas do elemento que se retirou. \\
+\hline
+{\em j} & ordenada do elemento que se retirou. \\
+\hline
+{\em flag} & valor a guardar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries -\/1} se a {\ttfamily S\+T\+A\+C\+K} for vazia, caso contrário retorna o valor retirado.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{structrecord_a125d17b59037591de0a682688802f670}{record\+::val} 
+\end{DoxySeeAlso}
+\hypertarget{stack_8c_a734636978e69eedc1efd53ddc858d360}{\index{stack.\+c@{stack.\+c}!push@{push}}
+\index{push@{push}!stack.\+c@{stack.\+c}}
+\subsubsection[{push}]{\setlength{\rightskip}{0pt plus 5cm}void push (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K}}]{s, }
+\item[{int}]{i, }
+\item[{int}]{j, }
+\item[{char}]{val}
+\end{DoxyParamCaption}
+)}}\label{stack_8c_a734636978e69eedc1efd53ddc858d360}
+
+
+Põe um elemento no topo da stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Instância de Stack que se pertende adicionar uma entrada. \\
+\hline
+{\em i} & abcissas do elemento a guardar. \\
+\hline
+{\em j} & ordenada do elemento a guardar. \\
+\hline
+{\em val} & valor a guardar. \\
+\hline
+\end{DoxyParams}

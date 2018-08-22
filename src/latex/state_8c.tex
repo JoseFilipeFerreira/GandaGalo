@@ -1,0 +1,424 @@
+\hypertarget{state_8c}{\section{state.\+c File Reference}
+\label{state_8c}\index{state.\+c@{state.\+c}}
+}
+
+
+Módulo para alterar estado.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decide.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}stack.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validate.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for state.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{state_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{state_8c_ae024ee88ce892fab4a83ea2be5185cfa}{limit}(num)~((num $>$ 0) \&\& (num $<$ \hyperlink{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{M\+A\+X\+\_\+\+G\+R\+I\+D}))
+\begin{DoxyCompactList}\small\item\em Macro que verifica se o 'num' se encontra nos limites indicados. \end{DoxyCompactList}\item 
+\#define \hyperlink{state_8c_acbc8990e81e4a745cbb34fe695ae9788}{extracase}(num, vec)~( (num == \hyperlink{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{M\+A\+X\+\_\+\+G\+R\+I\+D} \&\& vec $<$ 0))
+\begin{DoxyCompactList}\small\item\em Macro que verifica se 'num' e 'vec' se encontram no caso especifico indicado. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{state_8c_a11aed0a30a94f6dbf787a6c73dbd6409}{clearstate} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que converte para vazia todas as peças não fixas. \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_a8f967d9da54fb07016a74353f7a230ee}{clearcanvas} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que converte todas as peças para vazia. \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_a1775e9c25dcb0dcf9d03020f281c4ca8}{makefixo} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que converte todas as peças soltas para fixas. \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_a1bee768ce8693d3a440b5a60b545dce3}{increase} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int ox, int oy)
+\begin{DoxyCompactList}\small\item\em Função que incrementa o tamanho de um tabuleiro. \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_abcfe0e950583a81bc2a7586eb7d044b5}{safedraw} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que converte todas as peças para fixo e muda para o menu de Jogar. \end{DoxyCompactList}\item 
+int \hyperlink{state_8c_a326d958585b69c8ea98488815583cfaf}{victory} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que verifica se o tabuleiro não tem peças vazias. \end{DoxyCompactList}\item 
+int \hyperlink{state_8c_a695e69034d7f22ba4eb4489af2e8786c}{save\+Anc} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que guarda uma âncora. \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_aa72d6a8965f5d7a3d214a4ecde14ecc0}{pop\+\_\+\+Anc} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que carrega a última âncora. \end{DoxyCompactList}\item 
+int \hyperlink{state_8c_affd00f2e02da4d53ecb069aeb0d5ce4b}{valid\+Tab} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Verifica se um tabuleiro é válido. \end{DoxyCompactList}\item 
+static char \hyperlink{state_8c_a2548e60a79422e129c9ec17075f76960}{cleansolto} (char val)
+\begin{DoxyCompactList}\small\item\em Função que recebe uma peça e verifica se ela é solta. \end{DoxyCompactList}\item 
+static char \hyperlink{state_8c_aa9cddc4fa064e7f8c404c4f055785590}{fixatepec} (char val)
+\begin{DoxyCompactList}\small\item\em Função transforma uma peça na sua contraparte {\bfseries F\+I\+X\+A} . \end{DoxyCompactList}\item 
+void \hyperlink{state_8c_ab9caafc0116aeec18705eda9533f132f}{pipestack} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int c)
+\begin{DoxyCompactList}\small\item\em Função que transfere um elemento entre as stacks do estado. \end{DoxyCompactList}\item 
+int \hyperlink{state_8c_a9aebac26301ed491854416fbd9683ba8}{is\+\_\+not\+\_\+solto} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e, int i, int j)
+\begin{DoxyCompactList}\small\item\em Verifica se a peça dada não é vazia. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para alterar estado. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{state_8c_acbc8990e81e4a745cbb34fe695ae9788}{\index{state.\+c@{state.\+c}!extracase@{extracase}}
+\index{extracase@{extracase}!state.\+c@{state.\+c}}
+\subsubsection[{extracase}]{\setlength{\rightskip}{0pt plus 5cm}\#define extracase(
+\begin{DoxyParamCaption}
+\item[{}]{num, }
+\item[{}]{vec}
+\end{DoxyParamCaption}
+)~( (num == {\bf M\+A\+X\+\_\+\+G\+R\+I\+D} \&\& vec $<$ 0))}}\label{state_8c_acbc8990e81e4a745cbb34fe695ae9788}
+
+
+Macro que verifica se 'num' e 'vec' se encontram no caso especifico indicado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Valor a comparar. \\
+\hline
+{\em vec} & Valor a comparar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devolve 1 se os valores se encontrarem no estado indicado, devolve 0 caso contrário. 
+\end{DoxyReturn}
+\hypertarget{state_8c_ae024ee88ce892fab4a83ea2be5185cfa}{\index{state.\+c@{state.\+c}!limit@{limit}}
+\index{limit@{limit}!state.\+c@{state.\+c}}
+\subsubsection[{limit}]{\setlength{\rightskip}{0pt plus 5cm}\#define limit(
+\begin{DoxyParamCaption}
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~((num $>$ 0) \&\& (num $<$ {\bf M\+A\+X\+\_\+\+G\+R\+I\+D}))}}\label{state_8c_ae024ee88ce892fab4a83ea2be5185cfa}
+
+
+Macro que verifica se o 'num' se encontra nos limites indicados. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Valor a comparar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+devolve 1 se o valor se encontrar entre 0 e M\+A\+X\+\_\+\+G\+R\+I\+D, devolve 0 caso contrário. 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{state_8c_a2548e60a79422e129c9ec17075f76960}{\index{state.\+c@{state.\+c}!cleansolto@{cleansolto}}
+\index{cleansolto@{cleansolto}!state.\+c@{state.\+c}}
+\subsubsection[{cleansolto}]{\setlength{\rightskip}{0pt plus 5cm}static char cleansolto (
+\begin{DoxyParamCaption}
+\item[{char}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{state_8c_a2548e60a79422e129c9ec17075f76960}
+
+
+Função que recebe uma peça e verifica se ela é solta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Peça a verificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Se val for S\+O\+L devolve V\+A\+Z\+I\+A, caso contrário devolve val. 
+\end{DoxyReturn}
+\hypertarget{state_8c_a8f967d9da54fb07016a74353f7a230ee}{\index{state.\+c@{state.\+c}!clearcanvas@{clearcanvas}}
+\index{clearcanvas@{clearcanvas}!state.\+c@{state.\+c}}
+\subsubsection[{clearcanvas}]{\setlength{\rightskip}{0pt plus 5cm}void clearcanvas (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a8f967d9da54fb07016a74353f7a230ee}
+
+
+Função que converte todas as peças para vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a limpar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8h_a5eff026b884b0da81f84f8658a3d850d}{set\+E\+\_\+base} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_a11aed0a30a94f6dbf787a6c73dbd6409}{\index{state.\+c@{state.\+c}!clearstate@{clearstate}}
+\index{clearstate@{clearstate}!state.\+c@{state.\+c}}
+\subsubsection[{clearstate}]{\setlength{\rightskip}{0pt plus 5cm}void clearstate (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a11aed0a30a94f6dbf787a6c73dbd6409}
+
+
+Função que converte para vazia todas as peças não fixas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a limpar. \\
+\hline
+\end{DoxyParams}
+\hypertarget{state_8c_aa9cddc4fa064e7f8c404c4f055785590}{\index{state.\+c@{state.\+c}!fixatepec@{fixatepec}}
+\index{fixatepec@{fixatepec}!state.\+c@{state.\+c}}
+\subsubsection[{fixatepec}]{\setlength{\rightskip}{0pt plus 5cm}static char fixatepec (
+\begin{DoxyParamCaption}
+\item[{char}]{val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{state_8c_aa9cddc4fa064e7f8c404c4f055785590}
+
+
+Função transforma uma peça na sua contraparte {\bfseries F\+I\+X\+A} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Valor inicial.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Contraparte de val. 
+\end{DoxyReturn}
+\hypertarget{state_8c_a1bee768ce8693d3a440b5a60b545dce3}{\index{state.\+c@{state.\+c}!increase@{increase}}
+\index{increase@{increase}!state.\+c@{state.\+c}}
+\subsubsection[{increase}]{\setlength{\rightskip}{0pt plus 5cm}void increase (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{ox, }
+\item[{int}]{oy}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a1bee768ce8693d3a440b5a60b545dce3}
+
+
+Função que incrementa o tamanho de um tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Apontador para o estado onde se encontra o tabuleiro. \\
+\hline
+{\em ox} & Valor a incrementar no eixo ox. \\
+\hline
+{\em oy} & Valor a incrementar no eixo oy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{state_8c_acbc8990e81e4a745cbb34fe695ae9788}{extracase} 
+
+\hyperlink{state_8c_ae024ee88ce892fab4a83ea2be5185cfa}{limit} 
+
+\hyperlink{estado_8h_ab7d13ddf2b3bdb333b271cc83eb1324e}{set\+E\+\_\+transverse} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_a9aebac26301ed491854416fbd9683ba8}{\index{state.\+c@{state.\+c}!is\+\_\+not\+\_\+solto@{is\+\_\+not\+\_\+solto}}
+\index{is\+\_\+not\+\_\+solto@{is\+\_\+not\+\_\+solto}!state.\+c@{state.\+c}}
+\subsubsection[{is\+\_\+not\+\_\+solto}]{\setlength{\rightskip}{0pt plus 5cm}int is\+\_\+not\+\_\+solto (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a9aebac26301ed491854416fbd9683ba8}
+
+
+Verifica se a peça dada não é vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado onde se encontra o tabuleiro. \\
+\hline
+{\em i} & Linha da Peca \\
+\hline
+{\em j} & Coluna da Peca\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se for V\+A\+Z\+I\+A, 1 caso contrário. 
+\end{DoxyReturn}
+\hypertarget{state_8c_a1775e9c25dcb0dcf9d03020f281c4ca8}{\index{state.\+c@{state.\+c}!makefixo@{makefixo}}
+\index{makefixo@{makefixo}!state.\+c@{state.\+c}}
+\subsubsection[{makefixo}]{\setlength{\rightskip}{0pt plus 5cm}void makefixo (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a1775e9c25dcb0dcf9d03020f281c4ca8}
+
+
+Função que converte todas as peças soltas para fixas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Apontador para o estado a converter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{state_8c_aa9cddc4fa064e7f8c404c4f055785590}{fixatepec} 
+
+\hyperlink{estado_8h_a5eff026b884b0da81f84f8658a3d850d}{set\+E\+\_\+base} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_ab9caafc0116aeec18705eda9533f132f}{\index{state.\+c@{state.\+c}!pipestack@{pipestack}}
+\index{pipestack@{pipestack}!state.\+c@{state.\+c}}
+\subsubsection[{pipestack}]{\setlength{\rightskip}{0pt plus 5cm}void pipestack (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e, }
+\item[{int}]{c}
+\end{DoxyParamCaption}
+)}}\label{state_8c_ab9caafc0116aeec18705eda9533f132f}
+
+
+Função que transfere um elemento entre as stacks do estado. 
+
+A função efetua um {\ttfamily pop} da stack obtida por {\ttfamily get\+E\+\_\+stack} segundo {\ttfamily c} , e de seguida efetua um push que coloca o elemento retirado desta primeira na contra-\/parte. Por exemplo se {\ttfamily c} for 0 , então é efetuado {\ttfamily pop} em {\ttfamily passado} e {\ttfamily push} em futuro.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado onde se encontra a stack a alterar. \\
+\hline
+{\em c} & indicador da primeira stack a alterar stack a alterar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8h_aaf4563f073d541201c7601184039b879}{pop} 
+
+\hyperlink{stack_8h_a734636978e69eedc1efd53ddc858d360}{push} 
+
+\hyperlink{estado_8h_aa61011eadf880d552d197316ad4b30bb}{get\+E\+\_\+stack} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+
+\hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{estado\+::futuro} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_aa72d6a8965f5d7a3d214a4ecde14ecc0}{\index{state.\+c@{state.\+c}!pop\+\_\+\+Anc@{pop\+\_\+\+Anc}}
+\index{pop\+\_\+\+Anc@{pop\+\_\+\+Anc}!state.\+c@{state.\+c}}
+\subsubsection[{pop\+\_\+\+Anc}]{\setlength{\rightskip}{0pt plus 5cm}void pop\+\_\+\+Anc (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_aa72d6a8965f5d7a3d214a4ecde14ecc0}
+
+
+Função que carrega a última âncora. 
+
+Verifica se há alguma posição na {\ttfamily S\+T\+A\+C\+K} que corresponda a um valor com âncora, e se existir faz pops sucessivos até alcançar este ponto. Colocando todos os elementos retirados da {\ttfamily S\+T\+A\+C\+K} {\ttfamily passado} em {\ttfamily futuro} .
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & apontador para o estado a verificar\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8h_a0cfa1c1680d521fb7da8a03b20c2b1f1}{can\+Get\+Anc} 
+
+\hyperlink{stack_8h_a105edf65b7e96281c133bee40d35ca9f}{peek} 
+
+\hyperlink{stack_8h_aaf4563f073d541201c7601184039b879}{pop} 
+
+\hyperlink{stack_8h_a734636978e69eedc1efd53ddc858d360}{push} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+
+\hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{estado\+::futuro} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_abcfe0e950583a81bc2a7586eb7d044b5}{\index{state.\+c@{state.\+c}!safedraw@{safedraw}}
+\index{safedraw@{safedraw}!state.\+c@{state.\+c}}
+\subsubsection[{safedraw}]{\setlength{\rightskip}{0pt plus 5cm}void safedraw (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_abcfe0e950583a81bc2a7586eb7d044b5}
+
+
+Função que converte todas as peças para fixo e muda para o menu de Jogar. 
+
+Esta conversão é só efetuada se o tabuleiro em questão possuir soluções.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & apontador para o estado a modificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8h_adacdc0e19436cc110b84a389bda1d153}{n\+\_\+solutions} 
+
+\hyperlink{state_8c_a1775e9c25dcb0dcf9d03020f281c4ca8}{makefixo} 
+
+\hyperlink{estado_8h_a173aba83ee9ef88015706361de32ae1d}{set\+E\+\_\+menu} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_a695e69034d7f22ba4eb4489af2e8786c}{\index{state.\+c@{state.\+c}!save\+Anc@{save\+Anc}}
+\index{save\+Anc@{save\+Anc}!state.\+c@{state.\+c}}
+\subsubsection[{save\+Anc}]{\setlength{\rightskip}{0pt plus 5cm}int save\+Anc (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a695e69034d7f22ba4eb4489af2e8786c}
+
+
+Função que guarda uma âncora. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a modificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se não ocorrerem erros, caso contrário devolve 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{stack_8h_a57784d722b977fd9dc3f17dfec32b7aa}{make\+Anc} 
+
+\hyperlink{estado_8h_aa61011eadf880d552d197316ad4b30bb}{get\+E\+\_\+stack} 
+
+\hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{estado\+::passado} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_affd00f2e02da4d53ecb069aeb0d5ce4b}{\index{state.\+c@{state.\+c}!valid\+Tab@{valid\+Tab}}
+\index{valid\+Tab@{valid\+Tab}!state.\+c@{state.\+c}}
+\subsubsection[{valid\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}int valid\+Tab (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_affd00f2e02da4d53ecb069aeb0d5ce4b}
+
+
+Verifica se um tabuleiro é válido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a verificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se o tabuleiro for válido, 0 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}{valtab} 
+
+\hyperlink{estado_8h_a27328d911d982f65736cd7ce9a136cfe}{get\+E\+\_\+verf} 
+\end{DoxySeeAlso}
+\hypertarget{state_8c_a326d958585b69c8ea98488815583cfaf}{\index{state.\+c@{state.\+c}!victory@{victory}}
+\index{victory@{victory}!state.\+c@{state.\+c}}
+\subsubsection[{victory}]{\setlength{\rightskip}{0pt plus 5cm}int victory (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{state_8c_a326d958585b69c8ea98488815583cfaf}
+
+
+Função que verifica se o tabuleiro não tem peças vazias. 
+
+Visto que o Jogo não permite o utilizador colocar três peças iguais em linha, para verificar se um mapa está completo, basta verificar se nãoexistem espaços em branco.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & apontador para o estado a verificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se todas peças forem diferentes de vazia, caso contrário devolve 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{state_8c_a9aebac26301ed491854416fbd9683ba8}{is\+\_\+not\+\_\+solto} 
+
+\hyperlink{estado_8h_a27328d911d982f65736cd7ce9a136cfe}{get\+E\+\_\+verf} 
+\end{DoxySeeAlso}

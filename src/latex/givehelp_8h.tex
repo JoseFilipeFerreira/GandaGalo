@@ -1,0 +1,95 @@
+\hypertarget{givehelp_8h}{\section{givehelp.\+h File Reference}
+\label{givehelp_8h}\index{givehelp.\+h@{givehelp.\+h}}
+}
+
+
+Módulo para fornecimento de ajudas.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+Include dependency graph for givehelp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{givehelp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{givehelp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{givehelp_8h_a76ebe592c1a541633c7e5662fff4eb8e}{possiblepath} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int i, int j)
+\begin{DoxyCompactList}\small\item\em Indica o número de casas válidas que uma posição consegue percorrer. \end{DoxyCompactList}\item 
+void \hyperlink{givehelp_8h_a56fc46f28368685f0897f3f58f80b039}{givehelp} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que altera o Estado e dá ajudas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para fornecimento de ajudas. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{givehelp_8h_a56fc46f28368685f0897f3f58f80b039}{\index{givehelp.\+h@{givehelp.\+h}!givehelp@{givehelp}}
+\index{givehelp@{givehelp}!givehelp.\+h@{givehelp.\+h}}
+\subsubsection[{givehelp}]{\setlength{\rightskip}{0pt plus 5cm}void givehelp (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{givehelp_8h_a56fc46f28368685f0897f3f58f80b039}
+
+
+Função que altera o Estado e dá ajudas. 
+
+A função inicialmente verifica se o número de ajudas disponivél é maior que 0, se o for, então é criada uma solução de {\ttfamily state} , sendo então utilizada a função {\ttfamily putnatural} , de forma a encontrar peças sem verificar a solução. Se {\ttfamily putnatural} não encontrar nenhuma ajuda então é utilizada a função {\ttfamily searchcomp} com {\ttfamily indc} a {\bfseries 0} de forma a que não utilize recursividade. Se não encontrar nenhum elemento a alterar desta forma então corre a função {\ttfamily searchcomp} com {\ttfamily indc} a {\bfseries 1} , então será utilizada recursividade e mais de uma peça será alterada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8h_ab3e47d845be6ab389f1cb63532ab9313}{get\+E\+\_\+help} 
+
+\hyperlink{solver_8h_a6102730d9741f071f2354149756162a6}{solve} 
+
+\hyperlink{givehelp_8c_a7ef25cc065d026571f0a09c6f37a3dc0}{putnatural} 
+
+\hyperlink{givehelp_8c_a040597e0574505bd0f83f904df3debed}{searchcomp} 
+\end{DoxySeeAlso}
+\hypertarget{givehelp_8h_a76ebe592c1a541633c7e5662fff4eb8e}{\index{givehelp.\+h@{givehelp.\+h}!possiblepath@{possiblepath}}
+\index{possiblepath@{possiblepath}!givehelp.\+h@{givehelp.\+h}}
+\subsubsection[{possiblepath}]{\setlength{\rightskip}{0pt plus 5cm}int possiblepath (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{givehelp_8h_a76ebe592c1a541633c7e5662fff4eb8e}
+
+
+Indica o número de casas válidas que uma posição consegue percorrer. 
+
+Verifica a grelha de um estado, e consoante as peças à volta de uma posição, percorre as possibilidades de peças até alcançar {\bfseries S\+O\+L\+\_\+\+O} indicando quantas destas peças intermédias são válidas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Estado que se pretende alterar. \\
+\hline
+{\em i} & Linha que se pretende verificar. \\
+\hline
+{\em j} & Coluna que se pretende verificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O número de peças que são válidas.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}{valtab} 
+\end{DoxySeeAlso}

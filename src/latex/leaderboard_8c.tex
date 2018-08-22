@@ -1,0 +1,262 @@
+\hypertarget{leaderboard_8c}{\section{leaderboard.\+c File Reference}
+\label{leaderboard_8c}\index{leaderboard.\+c@{leaderboard.\+c}}
+}
+
+
+Módulo de obtenção da leaderboard.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}leaderboard.\+h\char`\"{}}\\*
+Include dependency graph for leaderboard.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{leaderboard_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structinfo}{info}
+\begin{DoxyCompactList}\small\item\em Estrutura onde é guardada a informação usada pela leaderboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{\#define \hyperlink{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{D\+I\+R\+I\+N\+F\+O}~\char`\"{}/usr/local/games/Ganda\+Galo/users/users.\+save\char`\"{}}\label{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}
+
+\begin{DoxyCompactList}\small\item\em Diretória onde se encontra o ficheiro onde são guardados todos os utilizadores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{typedef struct \hyperlink{structinfo}{info} $\ast$ \hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O}}\label{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}
+
+\begin{DoxyCompactList}\small\item\em Estrutura onde é guardada a informação usada pela leaderboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{leaderboard_8c_a71a5dab891243597dbb138612ecf3857}{get\+Info\+\_\+user} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v, int i)
+\begin{DoxyCompactList}\small\item\em Função que obtêm o utilizador associado a um bloco de informação. \end{DoxyCompactList}\item 
+int \hyperlink{leaderboard_8c_a3596e9737c2017c08210285adbf50541}{get\+Info\+\_\+wins} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v, int i)
+\begin{DoxyCompactList}\small\item\em Função que obtêm o número de vitórias associado a um bloco de informação. \end{DoxyCompactList}\item 
+int \hyperlink{leaderboard_8c_a6b7ea262cb48cc841d5ba76db2984768}{get\+\_\+info} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} $\ast$v, int N)
+\begin{DoxyCompactList}\small\item\em Função que indica um array de {\ttfamily I\+N\+F\+O} contendo a leaderboard. \end{DoxyCompactList}\item 
+void \hyperlink{leaderboard_8c_aa23db304e56c4f0e17bb06e619fe6956}{push\+\_\+info} (char $\ast$user, int wins)
+\begin{DoxyCompactList}\small\item\em Função que adiciona nova informação ao ficheiro. Consoante o utilizador e o número de vitória coloca no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} a informação passada como argumento. Da seguinte forma\+: \end{DoxyCompactList}\item 
+static void \hyperlink{leaderboard_8c_ada70e23e1c8bd904bd090ff8f9d03966}{make\+\_\+info} ()
+\begin{DoxyCompactList}\small\item\em Função que verifica a existência de {\ttfamily D\+I\+R\+I\+N\+F\+O} . Caso o ficheiro não exista, então é criado. \end{DoxyCompactList}\item 
+static int \hyperlink{leaderboard_8c_ae790da7f1eee2be78a2e51c248ee4282}{size\+\_\+info} ()
+\begin{DoxyCompactList}\small\item\em Função que devolve o número de elementos no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} . \end{DoxyCompactList}\item 
+static \hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} \hyperlink{leaderboard_8c_a57f19b982e416216fe5865738c7e5b2a}{list\+\_\+info} (int $\ast$x)
+\begin{DoxyCompactList}\small\item\em Cria um array com todos os elementos do ficheiro. \end{DoxyCompactList}\item 
+static int \hyperlink{leaderboard_8c_a03c0eeffe08be732225b326846f7a107}{cmp\+\_\+info} (const void $\ast$a, const void $\ast$b)
+\begin{DoxyCompactList}\small\item\em Função de comparação utilizada no sorting. \end{DoxyCompactList}\item 
+static void \hyperlink{leaderboard_8c_a31d353bb4c3a5c08b568d5b5a4e98696}{sort\+\_\+info} (\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v)
+\begin{DoxyCompactList}\small\item\em Efetua o sorting do array de {\ttfamily I\+N\+F\+O} . \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de obtenção da leaderboard. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{leaderboard_8c_a03c0eeffe08be732225b326846f7a107}{\index{leaderboard.\+c@{leaderboard.\+c}!cmp\+\_\+info@{cmp\+\_\+info}}
+\index{cmp\+\_\+info@{cmp\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{cmp\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}static int cmp\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{a, }
+\item[{const void $\ast$}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{leaderboard_8c_a03c0eeffe08be732225b326846f7a107}
+
+
+Função de comparação utilizada no sorting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Primeiro valor a comparar. \\
+\hline
+{\em b} & Segundo valor a confirmar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor da comparação. 
+\end{DoxyReturn}
+\hypertarget{leaderboard_8c_a6b7ea262cb48cc841d5ba76db2984768}{\index{leaderboard.\+c@{leaderboard.\+c}!get\+\_\+info@{get\+\_\+info}}
+\index{get\+\_\+info@{get\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{get\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}int get\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O} $\ast$}]{v, }
+\item[{int}]{N}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8c_a6b7ea262cb48cc841d5ba76db2984768}
+
+
+Função que indica um array de {\ttfamily I\+N\+F\+O} contendo a leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Apontador para o endereço onde irá ser colocada a leaderboard. \\
+\hline
+{\em N} & Número máximo de elementos colocados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Números de elementos colocados.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_a57f19b982e416216fe5865738c7e5b2a}{list\+\_\+info} 
+
+\hyperlink{leaderboard_8c_a31d353bb4c3a5c08b568d5b5a4e98696}{sort\+\_\+info} 
+
+\hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8c_a71a5dab891243597dbb138612ecf3857}{\index{leaderboard.\+c@{leaderboard.\+c}!get\+Info\+\_\+user@{get\+Info\+\_\+user}}
+\index{get\+Info\+\_\+user@{get\+Info\+\_\+user}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{get\+Info\+\_\+user}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ get\+Info\+\_\+user (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O}}]{v, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8c_a71a5dab891243597dbb138612ecf3857}
+
+
+Função que obtêm o utilizador associado a um bloco de informação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Array de onde irá ser retirada a informação. \\
+\hline
+{\em i} & Posição da informação.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o utilizador. 
+\end{DoxyReturn}
+\hypertarget{leaderboard_8c_a3596e9737c2017c08210285adbf50541}{\index{leaderboard.\+c@{leaderboard.\+c}!get\+Info\+\_\+wins@{get\+Info\+\_\+wins}}
+\index{get\+Info\+\_\+wins@{get\+Info\+\_\+wins}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{get\+Info\+\_\+wins}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Info\+\_\+wins (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O}}]{v, }
+\item[{int}]{i}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8c_a3596e9737c2017c08210285adbf50541}
+
+
+Função que obtêm o número de vitórias associado a um bloco de informação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Array de onde irá ser retirada a informação. \\
+\hline
+{\em i} & Posição da informação.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o número de vitórias. 
+\end{DoxyReturn}
+\hypertarget{leaderboard_8c_a57f19b982e416216fe5865738c7e5b2a}{\index{leaderboard.\+c@{leaderboard.\+c}!list\+\_\+info@{list\+\_\+info}}
+\index{list\+\_\+info@{list\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{list\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf I\+N\+F\+O} list\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{x}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{leaderboard_8c_a57f19b982e416216fe5865738c7e5b2a}
+
+
+Cria um array com todos os elementos do ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Endereço onde irá ser colocado o número de elementos lidos.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O array criado.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_ae790da7f1eee2be78a2e51c248ee4282}{size\+\_\+info} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8c_ada70e23e1c8bd904bd090ff8f9d03966}{\index{leaderboard.\+c@{leaderboard.\+c}!make\+\_\+info@{make\+\_\+info}}
+\index{make\+\_\+info@{make\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{make\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}static void make\+\_\+info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{leaderboard_8c_ada70e23e1c8bd904bd090ff8f9d03966}
+
+
+Função que verifica a existência de {\ttfamily D\+I\+R\+I\+N\+F\+O} . Caso o ficheiro não exista, então é criado. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{D\+I\+R\+I\+N\+F\+O} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8c_aa23db304e56c4f0e17bb06e619fe6956}{\index{leaderboard.\+c@{leaderboard.\+c}!push\+\_\+info@{push\+\_\+info}}
+\index{push\+\_\+info@{push\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{push\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}void push\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{user, }
+\item[{int}]{wins}
+\end{DoxyParamCaption}
+)}}\label{leaderboard_8c_aa23db304e56c4f0e17bb06e619fe6956}
+
+
+Função que adiciona nova informação ao ficheiro. Consoante o utilizador e o número de vitória coloca no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} a informação passada como argumento. Da seguinte forma\+: 
+
+
+\begin{DoxyItemize}
+\item Se o utilizador não existir no ficheiro então é colocado no fim.
+\item Se o utilizador existir no ficheiro então o seu número de vitórias é atualizado.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & Utilizador em registo. \\
+\hline
+{\em wins} & Nome de vitórias em registo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_ada70e23e1c8bd904bd090ff8f9d03966}{make\+\_\+info} 
+
+\hyperlink{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{D\+I\+R\+I\+N\+F\+O} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8c_ae790da7f1eee2be78a2e51c248ee4282}{\index{leaderboard.\+c@{leaderboard.\+c}!size\+\_\+info@{size\+\_\+info}}
+\index{size\+\_\+info@{size\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{size\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}static int size\+\_\+info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{leaderboard_8c_ae790da7f1eee2be78a2e51c248ee4282}
+
+
+Função que devolve o número de elementos no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} . 
+
+\begin{DoxyReturn}{Returns}
+Devolve o número de elementos no ficheiro {\ttfamily D\+I\+R\+I\+N\+F\+O} .
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_a9b18aaa9c44ed30a23fcf8811d4c2763}{D\+I\+R\+I\+N\+F\+O} 
+\end{DoxySeeAlso}
+\hypertarget{leaderboard_8c_a31d353bb4c3a5c08b568d5b5a4e98696}{\index{leaderboard.\+c@{leaderboard.\+c}!sort\+\_\+info@{sort\+\_\+info}}
+\index{sort\+\_\+info@{sort\+\_\+info}!leaderboard.\+c@{leaderboard.\+c}}
+\subsubsection[{sort\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}static void sort\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+N\+F\+O}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{leaderboard_8c_a31d353bb4c3a5c08b568d5b5a4e98696}
+
+
+Efetua o sorting do array de {\ttfamily I\+N\+F\+O} . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Array que irá ser ordenado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{leaderboard_8c_ae790da7f1eee2be78a2e51c248ee4282}{size\+\_\+info} 
+\end{DoxySeeAlso}

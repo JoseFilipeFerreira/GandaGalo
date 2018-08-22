@@ -1,0 +1,218 @@
+\hypertarget{cgi_8h}{\section{cgi.\+h File Reference}
+\label{cgi_8h}\index{cgi.\+h@{cgi.\+h}}
+}
+
+
+Macros úteis para gerar C\+G\+Is.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+Include dependency graph for cgi.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=126pt]{cgi_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cgi_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{cgi_8h_a6852d85bc96a09e605bbf4a2dcfc7a5c}{I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H}~\char`\"{}http\+://localhost/images/\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_a58796548ab1719170bdc7cc4f6f06ea2}{A\+N\+C\+\_\+\+P\+A\+T\+H}~\char`\"{}/var/www/html/ficheiro/ancora.\+save\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_af783caa0ab3eaa291b0af58fcb59d2b3}{F\+I\+L\+E\+\_\+\+P\+A\+T\+H}~\char`\"{}/var/www/html/ficheiro/mapas/selectedmap.\+map\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_adb6f101173bcdff98b8a834cdd97fe65}{C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H}~\char`\"{}/var/www/html/ficheiro/checkpoint.\+save\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_a4428b4276eab18b249d924c4398f95bb}{L\+A\+S\+T\+\_\+\+P\+A\+T\+H}~\char`\"{}/var/www/html/ficheiro/last.\+save\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_a2997e8baab88fb20ec0dce822d405aa9}{U\+S\+E\+R\+\_\+\+P\+A\+T\+H}~\char`\"{}/usr/local/games/Ganda\+Galo/users/\char`\"{}
+\item 
+\#define \hyperlink{cgi_8h_a57f243883cb0b226e5af5ec6ceea763b}{M\+A\+P\+\_\+\+P\+A\+T\+H}~\char`\"{}/var/www/html/ficheiro/mapas/\char`\"{}
+\item 
+\hypertarget{cgi_8h_a93e071e1d9a809e4b5f9487700c40fd8}{\#define \hyperlink{cgi_8h_a93e071e1d9a809e4b5f9487700c40fd8}{C\+O\+M\+E\+C\+A\+R\+\_\+\+H\+T\+M\+L}~printf(\char`\"{}Content-\/Type\+: text/html\textbackslash{}n\textbackslash{}n$<$html$>$\textbackslash{}n\char`\"{})}\label{cgi_8h_a93e071e1d9a809e4b5f9487700c40fd8}
+
+\begin{DoxyCompactList}\small\item\em Macro para começar o html. \end{DoxyCompactList}\item 
+\#define \hyperlink{cgi_8h_add6922252041c96ce305ff5254b816f6}{A\+B\+R\+I\+R\+\_\+\+S\+V\+G}(tamx, tamy)~printf(\char`\"{}$<$svg width=\%d height=\%d style='text-\/align\+:center;'$>$\textbackslash{}n\char`\"{},tamx, tamy)
+\begin{DoxyCompactList}\small\item\em Macro para abrir um svg. \end{DoxyCompactList}\item 
+\hypertarget{cgi_8h_a0644b71faea318f82651ca1b25db4737}{\#define \hyperlink{cgi_8h_a0644b71faea318f82651ca1b25db4737}{F\+E\+C\+H\+A\+R\+\_\+\+S\+V\+G}~printf(\char`\"{}$<$/svg$>$\textbackslash{}n\char`\"{})}\label{cgi_8h_a0644b71faea318f82651ca1b25db4737}
+
+\begin{DoxyCompactList}\small\item\em Macro para fechar um svg. \end{DoxyCompactList}\item 
+\#define \hyperlink{cgi_8h_ab723ae3d4297ea0eb77cf3130ab15d42}{I\+M\+A\+G\+E\+M}(X, Y, E\+S\+C\+A\+L\+A, F\+I\+C\+H\+E\+I\+R\+O)
+\begin{DoxyCompactList}\small\item\em Macro para criar uma imagem. \end{DoxyCompactList}\item 
+\#define \hyperlink{cgi_8h_a1ae379b260243788ce152a7b87ec0e03}{Q\+U\+A\+D\+R\+A\+D\+O}(X, Y, E\+S\+C\+A\+L\+A, C\+O\+R)
+\begin{DoxyCompactList}\small\item\em Macro para criar um quadrado. \end{DoxyCompactList}\item 
+\#define \hyperlink{cgi_8h_a752638dcf71c9454bbac9ec8169553b0}{T\+E\+X\+T}(X, Y, C\+O\+R, text)
+\begin{DoxyCompactList}\small\item\em Macro para escrever texto no ecrã \end{DoxyCompactList}\item 
+\#define \hyperlink{cgi_8h_a4d82e0c3156f2bab2f120d251470623a}{A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K}(link)~printf(\char`\"{}$<$a xlink\+:href=\%s$>$\textbackslash{}n\char`\"{}, link)
+\begin{DoxyCompactList}\small\item\em Macro para abrir um link. \end{DoxyCompactList}\item 
+\hypertarget{cgi_8h_ae69156d6ba1d240d0660fe831f683958}{\#define \hyperlink{cgi_8h_ae69156d6ba1d240d0660fe831f683958}{F\+E\+C\+H\+A\+R\+\_\+\+L\+I\+N\+K}~printf(\char`\"{}$<$/a$>$\textbackslash{}n\char`\"{})}\label{cgi_8h_ae69156d6ba1d240d0660fe831f683958}
+
+\begin{DoxyCompactList}\small\item\em Macro para fechar o link. \end{DoxyCompactList}\item 
+\hypertarget{cgi_8h_a19f6329e29338f04cb3ddbbf235ffae6}{\#define \hyperlink{cgi_8h_a19f6329e29338f04cb3ddbbf235ffae6}{F\+E\+C\+H\+A\+R\+\_\+\+H\+T\+M\+L}~printf(\char`\"{}$<$/html$>$\textbackslash{}n\char`\"{})}\label{cgi_8h_a19f6329e29338f04cb3ddbbf235ffae6}
+
+\begin{DoxyCompactList}\small\item\em Macro para fechar o html. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Macros úteis para gerar C\+G\+Is. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{cgi_8h_a4d82e0c3156f2bab2f120d251470623a}{\index{cgi.\+h@{cgi.\+h}!A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K@{A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K}}
+\index{A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K@{A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+B\+R\+I\+R\+\_\+\+L\+I\+N\+K(
+\begin{DoxyParamCaption}
+\item[{}]{link}
+\end{DoxyParamCaption}
+)~printf(\char`\"{}$<$a xlink\+:href=\%s$>$\textbackslash{}n\char`\"{}, link)}}\label{cgi_8h_a4d82e0c3156f2bab2f120d251470623a}
+
+
+Macro para abrir um link. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em link} & O caminho para o link \\
+\hline
+\end{DoxyParams}
+\hypertarget{cgi_8h_add6922252041c96ce305ff5254b816f6}{\index{cgi.\+h@{cgi.\+h}!A\+B\+R\+I\+R\+\_\+\+S\+V\+G@{A\+B\+R\+I\+R\+\_\+\+S\+V\+G}}
+\index{A\+B\+R\+I\+R\+\_\+\+S\+V\+G@{A\+B\+R\+I\+R\+\_\+\+S\+V\+G}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{A\+B\+R\+I\+R\+\_\+\+S\+V\+G}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+B\+R\+I\+R\+\_\+\+S\+V\+G(
+\begin{DoxyParamCaption}
+\item[{}]{tamx, }
+\item[{}]{tamy}
+\end{DoxyParamCaption}
+)~printf(\char`\"{}$<$svg width=\%d height=\%d style='text-\/align\+:center;'$>$\textbackslash{}n\char`\"{},tamx, tamy)}}\label{cgi_8h_add6922252041c96ce305ff5254b816f6}
+
+
+Macro para abrir um svg. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tamx} & O comprimento do svg \\
+\hline
+{\em tamy} & A altura do svg \\
+\hline
+\end{DoxyParams}
+\hypertarget{cgi_8h_a58796548ab1719170bdc7cc4f6f06ea2}{\index{cgi.\+h@{cgi.\+h}!A\+N\+C\+\_\+\+P\+A\+T\+H@{A\+N\+C\+\_\+\+P\+A\+T\+H}}
+\index{A\+N\+C\+\_\+\+P\+A\+T\+H@{A\+N\+C\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{A\+N\+C\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\+N\+C\+\_\+\+P\+A\+T\+H~\char`\"{}/var/www/html/ficheiro/ancora.\+save\char`\"{}}}\label{cgi_8h_a58796548ab1719170bdc7cc4f6f06ea2}
+Caminho para as ancoras \hypertarget{cgi_8h_adb6f101173bcdff98b8a834cdd97fe65}{\index{cgi.\+h@{cgi.\+h}!C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H@{C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H}}
+\index{C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H@{C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\+H\+E\+C\+K\+\_\+\+P\+A\+T\+H~\char`\"{}/var/www/html/ficheiro/checkpoint.\+save\char`\"{}}}\label{cgi_8h_adb6f101173bcdff98b8a834cdd97fe65}
+Caminho para chekpoints \hypertarget{cgi_8h_af783caa0ab3eaa291b0af58fcb59d2b3}{\index{cgi.\+h@{cgi.\+h}!F\+I\+L\+E\+\_\+\+P\+A\+T\+H@{F\+I\+L\+E\+\_\+\+P\+A\+T\+H}}
+\index{F\+I\+L\+E\+\_\+\+P\+A\+T\+H@{F\+I\+L\+E\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{F\+I\+L\+E\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+I\+L\+E\+\_\+\+P\+A\+T\+H~\char`\"{}/var/www/html/ficheiro/mapas/selectedmap.\+map\char`\"{}}}\label{cgi_8h_af783caa0ab3eaa291b0af58fcb59d2b3}
+Caminho para mapas pré-\/definidos \hypertarget{cgi_8h_a6852d85bc96a09e605bbf4a2dcfc7a5c}{\index{cgi.\+h@{cgi.\+h}!I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H@{I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H}}
+\index{I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H@{I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+A\+G\+E\+\_\+\+P\+A\+T\+H~\char`\"{}http\+://localhost/images/\char`\"{}}}\label{cgi_8h_a6852d85bc96a09e605bbf4a2dcfc7a5c}
+Caminho para as imagens \hypertarget{cgi_8h_ab723ae3d4297ea0eb77cf3130ab15d42}{\index{cgi.\+h@{cgi.\+h}!I\+M\+A\+G\+E\+M@{I\+M\+A\+G\+E\+M}}
+\index{I\+M\+A\+G\+E\+M@{I\+M\+A\+G\+E\+M}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{I\+M\+A\+G\+E\+M}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\+M\+A\+G\+E\+M(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y, }
+\item[{}]{E\+S\+C\+A\+L\+A, }
+\item[{}]{F\+I\+C\+H\+E\+I\+R\+O}
+\end{DoxyParamCaption}
+)}}\label{cgi_8h_ab723ae3d4297ea0eb77cf3130ab15d42}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"<image x=%d y=%d width=%d height=%d xlink:href=%s%s />\(\backslash\)n"}, \(\backslash\)
+                                                ESCALA * X, ESCALA* Y, ESCALA, ESCALA, 
+      \hyperlink{cgi_8h_a6852d85bc96a09e605bbf4a2dcfc7a5c}{IMAGE\_PATH}, FICHEIRO)
+\end{DoxyCode}
+
+
+Macro para criar uma imagem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & A coordenada X do canto superior esquerdo \\
+\hline
+{\em Y} & A coordenada Y do canto superior esquerdo \\
+\hline
+{\em E\+S\+C\+A\+L\+A} & A escala da imagem \\
+\hline
+{\em F\+I\+C\+H\+E\+I\+R\+O} & O caminho para o link do ficheiro \\
+\hline
+\end{DoxyParams}
+\hypertarget{cgi_8h_a4428b4276eab18b249d924c4398f95bb}{\index{cgi.\+h@{cgi.\+h}!L\+A\+S\+T\+\_\+\+P\+A\+T\+H@{L\+A\+S\+T\+\_\+\+P\+A\+T\+H}}
+\index{L\+A\+S\+T\+\_\+\+P\+A\+T\+H@{L\+A\+S\+T\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{L\+A\+S\+T\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\+A\+S\+T\+\_\+\+P\+A\+T\+H~\char`\"{}/var/www/html/ficheiro/last.\+save\char`\"{}}}\label{cgi_8h_a4428b4276eab18b249d924c4398f95bb}
+Caminho para a última sava \hypertarget{cgi_8h_a57f243883cb0b226e5af5ec6ceea763b}{\index{cgi.\+h@{cgi.\+h}!M\+A\+P\+\_\+\+P\+A\+T\+H@{M\+A\+P\+\_\+\+P\+A\+T\+H}}
+\index{M\+A\+P\+\_\+\+P\+A\+T\+H@{M\+A\+P\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{M\+A\+P\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+P\+\_\+\+P\+A\+T\+H~\char`\"{}/var/www/html/ficheiro/mapas/\char`\"{}}}\label{cgi_8h_a57f243883cb0b226e5af5ec6ceea763b}
+Caminho para os mapas \hypertarget{cgi_8h_a1ae379b260243788ce152a7b87ec0e03}{\index{cgi.\+h@{cgi.\+h}!Q\+U\+A\+D\+R\+A\+D\+O@{Q\+U\+A\+D\+R\+A\+D\+O}}
+\index{Q\+U\+A\+D\+R\+A\+D\+O@{Q\+U\+A\+D\+R\+A\+D\+O}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{Q\+U\+A\+D\+R\+A\+D\+O}]{\setlength{\rightskip}{0pt plus 5cm}\#define Q\+U\+A\+D\+R\+A\+D\+O(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y, }
+\item[{}]{E\+S\+C\+A\+L\+A, }
+\item[{}]{C\+O\+R}
+\end{DoxyParamCaption}
+)}}\label{cgi_8h_a1ae379b260243788ce152a7b87ec0e03}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"<rect x=%d y=%d width=%d height=%d fill=%s />\(\backslash\)n"}, \(\backslash\)
+                                                ESCALA * X, ESCALA* Y, ESCALA, ESCALA, COR)
+\end{DoxyCode}
+
+
+Macro para criar um quadrado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & A coordenada X do canto superior esquerdo \\
+\hline
+{\em Y} & A coordenada Y do canto superior esquerdo \\
+\hline
+{\em E\+S\+C\+A\+L\+A} & A escala do quadrado \\
+\hline
+{\em C\+O\+R} & A cor de preenchimento do quadrado \\
+\hline
+\end{DoxyParams}
+\hypertarget{cgi_8h_a752638dcf71c9454bbac9ec8169553b0}{\index{cgi.\+h@{cgi.\+h}!T\+E\+X\+T@{T\+E\+X\+T}}
+\index{T\+E\+X\+T@{T\+E\+X\+T}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{T\+E\+X\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+X\+T(
+\begin{DoxyParamCaption}
+\item[{}]{X, }
+\item[{}]{Y, }
+\item[{}]{C\+O\+R, }
+\item[{}]{text}
+\end{DoxyParamCaption}
+)}}\label{cgi_8h_a752638dcf71c9454bbac9ec8169553b0}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+printf(\textcolor{stringliteral}{"<text x=%d y=%d fill=%s>%s</text>\(\backslash\)n"},  \(\backslash\)
+                                                X ,Y, COR,text)
+\end{DoxyCode}
+
+
+Macro para escrever texto no ecrã 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & A coordenada X do canto superior esquerdo \\
+\hline
+{\em Y} & A coordenada Y do canto superior esquerdo \\
+\hline
+{\em C\+O\+R} & A cor de preenchimento do quadrado \\
+\hline
+{\em text} & o texto a escrever \\
+\hline
+\end{DoxyParams}
+\hypertarget{cgi_8h_a2997e8baab88fb20ec0dce822d405aa9}{\index{cgi.\+h@{cgi.\+h}!U\+S\+E\+R\+\_\+\+P\+A\+T\+H@{U\+S\+E\+R\+\_\+\+P\+A\+T\+H}}
+\index{U\+S\+E\+R\+\_\+\+P\+A\+T\+H@{U\+S\+E\+R\+\_\+\+P\+A\+T\+H}!cgi.\+h@{cgi.\+h}}
+\subsubsection[{U\+S\+E\+R\+\_\+\+P\+A\+T\+H}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\+S\+E\+R\+\_\+\+P\+A\+T\+H~\char`\"{}/usr/local/games/Ganda\+Galo/users/\char`\"{}}}\label{cgi_8h_a2997e8baab88fb20ec0dce822d405aa9}
+Caminho para os utilizadores 

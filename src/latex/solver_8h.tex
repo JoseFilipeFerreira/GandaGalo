@@ -1,0 +1,390 @@
+\hypertarget{solver_8h}{\section{solver.\+h File Reference}
+\label{solver_8h}\index{solver.\+h@{solver.\+h}}
+}
+
+
+Algoritmo para resolver mapas e estruturas para obter mapas aleatórios.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+Include dependency graph for solver.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=134pt]{solver_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{solver_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{solver_8h_a625a9769f705973558039f38b1e103f5}{\#define \hyperlink{solver_8h_a625a9769f705973558039f38b1e103f5}{R\+A\+N\+D\+O\+M\+D\+I\+R}~\char`\"{}/var/www/html/ficheiro/mapas/random/\char`\"{}}\label{solver_8h_a625a9769f705973558039f38b1e103f5}
+
+\begin{DoxyCompactList}\small\item\em Macro que indica a diretória de mapas aleatórios. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{solver_8h_a445a80404f22edad4983ab7484d843cc}{typedef struct \hyperlink{structgtree}{gtree} $\ast$ \hyperlink{solver_8h_a445a80404f22edad4983ab7484d843cc}{G\+Tree}}\label{solver_8h_a445a80404f22edad4983ab7484d843cc}
+
+\begin{DoxyCompactList}\small\item\em Estrutura que representa o espaço de soluções de um dado Estado. \end{DoxyCompactList}\item 
+\hypertarget{solver_8h_a7a95bb9dcfd2e11e1bb7e66e5786662f}{typedef struct \hyperlink{structstate}{state} $\ast$ \hyperlink{solver_8h_a7a95bb9dcfd2e11e1bb7e66e5786662f}{T}}\label{solver_8h_a7a95bb9dcfd2e11e1bb7e66e5786662f}
+
+\begin{DoxyCompactList}\small\item\em Declaração do estado interno. \end{DoxyCompactList}\item 
+\hypertarget{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{typedef int($\ast$ \hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} )(\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T}, int, int $\ast$, int)}\label{solver_8h_a03634ec1f096fa2c599deb1491a71bda}
+
+\begin{DoxyCompactList}\small\item\em Gene do anamorfismo da Árvore de Soluções. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{solver_8h_a6102730d9741f071f2354149756162a6}{solve} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} a, long $\ast$number\+\_\+of\+\_\+solutions)
+\begin{DoxyCompactList}\small\item\em Resolve um dado E\+S\+T\+A\+D\+O. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \hyperlink{solver_8h_a830e1a690911647af2ddb474b379c79c}{convert\+\_\+external} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Converte o estado interno numa grelha do estado externo. \end{DoxyCompactList}\item 
+\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} \hyperlink{solver_8h_a5371b705fa6f1d7e41a42bb6d313280f}{ana} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, \hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} func)
+\begin{DoxyCompactList}\small\item\em Esta função, um anamorfimo, cria árvores de soluções do estado indicado conforme a função recebida. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8h_a5c97af1c1d88b32a051b450225f5a981}{cluster} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, int u, int $\ast$cp, int sig)
+\begin{DoxyCompactList}\small\item\em Esta função implementa uma Position Selector. Este Position Selector foi calibrado para promover clustering para obter estados invalidos o mais rapidamente possivel. \end{DoxyCompactList}\item 
+\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} \hyperlink{solver_8h_aa84d7910720fb3f1d65cfc5aef010565}{base\+Map} (int numl, int numc, float prob\+B)
+\begin{DoxyCompactList}\small\item\em Esta função cria um estado interno aleatório com o minimo de peças preenchidas possível. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8h_aea6b60a620fd32a3087893bbafbd87b1}{findk} (\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Esta função cria um array de nodos com as peças que levam a uma solução. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8h_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} (\hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} node)
+\begin{DoxyCompactList}\small\item\em Destroi uma instância da Árvore que representa o espaço de soluções. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8h_aef893a4134b63eeeddadf57d2a89ba85}{pick\+G} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, \hyperlink{solver_8c_a320d65c31df749caec2f5dbe1a3d3309}{G\+Tree} tr)
+\begin{DoxyCompactList}\small\item\em Altera o estado interno por forma a conter o elemento que o nodo contêm. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8h_a9befd5c024b5276c08fccb7def98092b}{show\+S} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Escreve um estado interno no ecra. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8h_a51385fec0d272f29703ff6dc466d59a3}{count\+Use\+S} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Consulta o numero de casas que podem ser alterados na grelha do estado interno. \end{DoxyCompactList}\item 
+int \hyperlink{solver_8h_a5edd3336bf1a14feae92f81deba546fb}{get\+Dimension} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Consulta o numero de casas na grelha do estado interno. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8h_abc174ddc3e0e8a2994759589328ca810}{destroyit} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e)
+\begin{DoxyCompactList}\small\item\em Destroi uma instaância do estado interno. \end{DoxyCompactList}\item 
+void \hyperlink{solver_8h_af632244db4e92b792bac954fde83a795}{write\+Map} (\hyperlink{solver_8c_a4eecb6dfe9c84dfb5f547bd0511f6994}{T} e, char $\ast$difficulty)
+\begin{DoxyCompactList}\small\item\em Escreve um mapa em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Algoritmo para resolver mapas e estruturas para obter mapas aleatórios. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{solver_8h_a5371b705fa6f1d7e41a42bb6d313280f}{\index{solver.\+h@{solver.\+h}!ana@{ana}}
+\index{ana@{ana}!solver.\+h@{solver.\+h}}
+\subsubsection[{ana}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\+Tree} ana (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{{\bf Position\+Selector}}]{func}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a5371b705fa6f1d7e41a42bb6d313280f}
+
+
+Esta função, um anamorfimo, cria árvores de soluções do estado indicado conforme a função recebida. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado interno. \\
+\hline
+{\em func} & função que determina a próxima posição a ser inspecionada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+árvore de soluções.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} 
+
+rec\+\_\+\+Ana 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_aa84d7910720fb3f1d65cfc5aef010565}{\index{solver.\+h@{solver.\+h}!base\+Map@{base\+Map}}
+\index{base\+Map@{base\+Map}!solver.\+h@{solver.\+h}}
+\subsubsection[{base\+Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf T} base\+Map (
+\begin{DoxyParamCaption}
+\item[{int}]{numl, }
+\item[{int}]{numc, }
+\item[{float}]{prob\+B}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_aa84d7910720fb3f1d65cfc5aef010565}
+
+
+Esta função cria um estado interno aleatório com o minimo de peças preenchidas possível. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numl} & numero de linhas do estado a criar. \\
+\hline
+{\em numc} & numero de coluna do estado a criar. \\
+\hline
+{\em prob\+B} & probabilidade de uma dada peças estar Bloqueada.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado interno.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a2963dbaf1bb98e88a517ccf1a525e63f}{makeit} 
+
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+
+\hyperlink{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{ana} 
+
+\hyperlink{solver_8c_a153a660bbdd5fe29918bfdbfdd3e253d}{find\+Way} 
+
+number\+Of\+Solutions 
+
+\hyperlink{solver_8c_abc174ddc3e0e8a2994759589328ca810}{destroyit} 
+
+\hyperlink{solver_8c_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_a5c97af1c1d88b32a051b450225f5a981}{\index{solver.\+h@{solver.\+h}!cluster@{cluster}}
+\index{cluster@{cluster}!solver.\+h@{solver.\+h}}
+\subsubsection[{cluster}]{\setlength{\rightskip}{0pt plus 5cm}int cluster (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{int}]{u, }
+\item[{int $\ast$}]{cp, }
+\item[{int}]{sig}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a5c97af1c1d88b32a051b450225f5a981}
+
+
+Esta função implementa uma Position Selector. Este Position Selector foi calibrado para promover clustering para obter estados invalidos o mais rapidamente possivel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado interno. \\
+\hline
+{\em sig} & sinal que indica se a função está no modo de criação ou remoção. \\
+\hline
+{\em u} & numero peças já percorridas \\
+\hline
+{\em cp} & receberá as proximas coordenadas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+no caso de sucesso 1 caso contrário 0.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8h_a03634ec1f096fa2c599deb1491a71bda}{Position\+Selector} 
+
+\hyperlink{solver_8c_ae6f4a9ace4f041e4725c0bf84ddd4a77}{change\+\_\+aim} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_a830e1a690911647af2ddb474b379c79c}{\index{solver.\+h@{solver.\+h}!convert\+\_\+external@{convert\+\_\+external}}
+\index{convert\+\_\+external@{convert\+\_\+external}!solver.\+h@{solver.\+h}}
+\subsubsection[{convert\+\_\+external}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$$\ast$ convert\+\_\+external (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a830e1a690911647af2ddb474b379c79c}
+
+
+Converte o estado interno numa grelha do estado externo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & é um estado Interno que se pretende converter para um estado externo.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+grelha do estado Externo. 
+\end{DoxyReturn}
+\hypertarget{solver_8h_a51385fec0d272f29703ff6dc466d59a3}{\index{solver.\+h@{solver.\+h}!count\+Use\+S@{count\+Use\+S}}
+\index{count\+Use\+S@{count\+Use\+S}!solver.\+h@{solver.\+h}}
+\subsubsection[{count\+Use\+S}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Use\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a51385fec0d272f29703ff6dc466d59a3}
+
+
+Consulta o numero de casas que podem ser alterados na grelha do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a consultar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de casas que podem ser alterados na grelha. 
+\end{DoxyReturn}
+\hypertarget{solver_8h_a62183a083fdfe2c14c18270540695676}{\index{solver.\+h@{solver.\+h}!destroy\+G\+Tree@{destroy\+G\+Tree}}
+\index{destroy\+G\+Tree@{destroy\+G\+Tree}!solver.\+h@{solver.\+h}}
+\subsubsection[{destroy\+G\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+G\+Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+Tree}}]{node}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a62183a083fdfe2c14c18270540695676}
+
+
+Destroi uma instância da Árvore que representa o espaço de soluções. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & árvore a ser eliminada. \\
+\hline
+\end{DoxyParams}
+\hypertarget{solver_8h_abc174ddc3e0e8a2994759589328ca810}{\index{solver.\+h@{solver.\+h}!destroyit@{destroyit}}
+\index{destroyit@{destroyit}!solver.\+h@{solver.\+h}}
+\subsubsection[{destroyit}]{\setlength{\rightskip}{0pt plus 5cm}void destroyit (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_abc174ddc3e0e8a2994759589328ca810}
+
+
+Destroi uma instaância do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser eliminado.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_aff9931d7524c88e07743af6535b20761}{M\+A\+X} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_aea6b60a620fd32a3087893bbafbd87b1}{\index{solver.\+h@{solver.\+h}!findk@{findk}}
+\index{findk@{findk}!solver.\+h@{solver.\+h}}
+\subsubsection[{findk}]{\setlength{\rightskip}{0pt plus 5cm}int findk (
+\begin{DoxyParamCaption}
+\item[{{\bf G\+Tree}}]{node, }
+\item[{{\bf G\+Tree} $\ast$}]{v}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_aea6b60a620fd32a3087893bbafbd87b1}
+
+
+Esta função cria um array de nodos com as peças que levam a uma solução. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & árvore com uma unica solução. \\
+\hline
+{\em v} & array a construir.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+árvore de soluções. 
+\end{DoxyReturn}
+\hypertarget{solver_8h_a5edd3336bf1a14feae92f81deba546fb}{\index{solver.\+h@{solver.\+h}!get\+Dimension@{get\+Dimension}}
+\index{get\+Dimension@{get\+Dimension}!solver.\+h@{solver.\+h}}
+\subsubsection[{get\+Dimension}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Dimension (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a5edd3336bf1a14feae92f81deba546fb}
+
+
+Consulta o numero de casas na grelha do estado interno. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a consultar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Numero de casas na grelha. 
+\end{DoxyReturn}
+\hypertarget{solver_8h_aef893a4134b63eeeddadf57d2a89ba85}{\index{solver.\+h@{solver.\+h}!pick\+G@{pick\+G}}
+\index{pick\+G@{pick\+G}!solver.\+h@{solver.\+h}}
+\subsubsection[{pick\+G}]{\setlength{\rightskip}{0pt plus 5cm}void pick\+G (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{{\bf G\+Tree}}]{tr}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_aef893a4134b63eeeddadf57d2a89ba85}
+
+
+Altera o estado interno por forma a conter o elemento que o nodo contêm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser alterado. \\
+\hline
+{\em tr} & nodo que se pretende incorporar\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_a6fe6ec4013107e13b427e2692d3d0adf}{pick} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_a9befd5c024b5276c08fccb7def98092b}{\index{solver.\+h@{solver.\+h}!show\+S@{show\+S}}
+\index{show\+S@{show\+S}!solver.\+h@{solver.\+h}}
+\subsubsection[{show\+S}]{\setlength{\rightskip}{0pt plus 5cm}void show\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a9befd5c024b5276c08fccb7def98092b}
+
+
+Escreve um estado interno no ecra. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado a ser impresso. \\
+\hline
+\end{DoxyParams}
+\hypertarget{solver_8h_a6102730d9741f071f2354149756162a6}{\index{solver.\+h@{solver.\+h}!solve@{solve}}
+\index{solve@{solve}!solver.\+h@{solver.\+h}}
+\subsubsection[{solve}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} solve (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{a, }
+\item[{long $\ast$}]{number\+\_\+of\+\_\+solutions}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_a6102730d9741f071f2354149756162a6}
+
+
+Resolve um dado E\+S\+T\+A\+D\+O. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Estado que se pertende resolver. \\
+\hline
+{\em number\+\_\+of\+\_\+solutions} & variavel que contêm o endereço da variavel que se ira colocar o numeor de soluções do mapa.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+E\+S\+T\+A\+D\+O externo resolvido.(se tiver solução)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{solver_8c_abc174ddc3e0e8a2994759589328ca810}{destroyit} 
+
+conver\+\_\+internal 
+
+find\+Sol 
+
+\hyperlink{solver_8c_a5371b705fa6f1d7e41a42bb6d313280f}{ana} 
+
+\hyperlink{estado_8h_aa3dfd8301c50f971b2d20815617e00d3}{get\+E\+\_\+lins} 
+
+\hyperlink{estado_8h_a4d3c25878918fa5fd1ea3d4a0b1e7a8d}{get\+E\+\_\+cols} 
+
+\hyperlink{estado_8h_a0b2cdae45084d690be7137255dfac0cb}{set\+E\+\_\+elem} 
+
+\hyperlink{solver_8c_af889ba91bf5bb2fbc4fa4d790867709c}{number\+Ofsolutions} 
+
+\hyperlink{solver_8c_a62183a083fdfe2c14c18270540695676}{destroy\+G\+Tree} 
+\end{DoxySeeAlso}
+\hypertarget{solver_8h_af632244db4e92b792bac954fde83a795}{\index{solver.\+h@{solver.\+h}!write\+Map@{write\+Map}}
+\index{write\+Map@{write\+Map}!solver.\+h@{solver.\+h}}
+\subsubsection[{write\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void write\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{e, }
+\item[{char $\ast$}]{difficulty}
+\end{DoxyParamCaption}
+)}}\label{solver_8h_af632244db4e92b792bac954fde83a795}
+
+
+Escreve um mapa em ficheiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado que irá escrever. \\
+\hline
+{\em difficulty} & Dificuldade do mapa. \\
+\hline
+\end{DoxyParams}

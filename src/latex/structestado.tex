@@ -1,0 +1,81 @@
+\hypertarget{structestado}{\section{estado Struct Reference}
+\label{structestado}\index{estado@{estado}}
+}
+
+
+Estrutura que armazena o estado do jogo.  
+
+
+
+
+Collaboration diagram for estado\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{structestado__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{structestado_a256854b71f528cf0aafb9acb84fac759}{user} \mbox{[}\hyperlink{estado_8h_aa87360d2dd1fd5a07f92c6afe93045fc}{M\+A\+X\+\_\+\+U\+S\+E\+R}\mbox{]}
+\item 
+int \hyperlink{structestado_ab02e4fe5644c3b59088d7c4566d70105}{num\+\_\+lins}
+\item 
+int \hyperlink{structestado_a5b68d5d6aae41b5b7dd9308e40d53506}{num\+\_\+cols}
+\item 
+int \hyperlink{structestado_a6786d825e542118c5d79b852ace947f7}{flag}
+\item 
+int \hyperlink{structestado_a219ca4fd4c068f749afedb392e3f83b0}{menu}
+\item 
+int \hyperlink{structestado_a488c0d087dcc7e84034cdd814cf3bf3b}{help}
+\item 
+int \hyperlink{structestado_a87d1b6f5a4c37f8d9348c30bbf1f67cc}{wins}
+\item 
+char \hyperlink{structestado_a7d72f243f07d0d277f24e15e28a9a7b2}{grelha} \mbox{[}\hyperlink{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{M\+A\+X\+\_\+\+G\+R\+I\+D}\mbox{]}\mbox{[}\hyperlink{estado_8h_ab02e1c5c6948bf8cf3c21a0acad8a578}{M\+A\+X\+\_\+\+G\+R\+I\+D}\mbox{]}
+\item 
+\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} \hyperlink{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{passado}
+\item 
+\hyperlink{stack_8c_a4b4ce005aaf46d538cc28d07482e137e}{S\+T\+A\+C\+K} \hyperlink{structestado_af5d593ebecd3046a3df69b1ddec6942f}{futuro}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Estrutura que armazena o estado do jogo. 
+
+\subsection{Member Data Documentation}
+\hypertarget{structestado_a6786d825e542118c5d79b852ace947f7}{\index{estado@{estado}!flag@{flag}}
+\index{flag@{flag}!estado@{estado}}
+\subsubsection[{flag}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::flag}}\label{structestado_a6786d825e542118c5d79b852ace947f7}
+Flag \hypertarget{structestado_af5d593ebecd3046a3df69b1ddec6942f}{\index{estado@{estado}!futuro@{futuro}}
+\index{futuro@{futuro}!estado@{estado}}
+\subsubsection[{futuro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+C\+K} estado\+::futuro}}\label{structestado_af5d593ebecd3046a3df69b1ddec6942f}
+Stack para redo \hypertarget{structestado_a7d72f243f07d0d277f24e15e28a9a7b2}{\index{estado@{estado}!grelha@{grelha}}
+\index{grelha@{grelha}!estado@{estado}}
+\subsubsection[{grelha}]{\setlength{\rightskip}{0pt plus 5cm}char estado\+::grelha\mbox{[}{\bf M\+A\+X\+\_\+\+G\+R\+I\+D}\mbox{]}\mbox{[}{\bf M\+A\+X\+\_\+\+G\+R\+I\+D}\mbox{]}}}\label{structestado_a7d72f243f07d0d277f24e15e28a9a7b2}
+Grelha do jogo \hypertarget{structestado_a488c0d087dcc7e84034cdd814cf3bf3b}{\index{estado@{estado}!help@{help}}
+\index{help@{help}!estado@{estado}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::help}}\label{structestado_a488c0d087dcc7e84034cdd814cf3bf3b}
+Número restante de hints \hypertarget{structestado_a219ca4fd4c068f749afedb392e3f83b0}{\index{estado@{estado}!menu@{menu}}
+\index{menu@{menu}!estado@{estado}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::menu}}\label{structestado_a219ca4fd4c068f749afedb392e3f83b0}
+Menu atual \hypertarget{structestado_a5b68d5d6aae41b5b7dd9308e40d53506}{\index{estado@{estado}!num\+\_\+cols@{num\+\_\+cols}}
+\index{num\+\_\+cols@{num\+\_\+cols}!estado@{estado}}
+\subsubsection[{num\+\_\+cols}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::num\+\_\+cols}}\label{structestado_a5b68d5d6aae41b5b7dd9308e40d53506}
+Número de colunas \hypertarget{structestado_ab02e4fe5644c3b59088d7c4566d70105}{\index{estado@{estado}!num\+\_\+lins@{num\+\_\+lins}}
+\index{num\+\_\+lins@{num\+\_\+lins}!estado@{estado}}
+\subsubsection[{num\+\_\+lins}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::num\+\_\+lins}}\label{structestado_ab02e4fe5644c3b59088d7c4566d70105}
+Número de linhas \hypertarget{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}{\index{estado@{estado}!passado@{passado}}
+\index{passado@{passado}!estado@{estado}}
+\subsubsection[{passado}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+C\+K} estado\+::passado}}\label{structestado_ada4a7610a6125feea84f1eeb0ae4fd1a}
+Stack para undo \hypertarget{structestado_a256854b71f528cf0aafb9acb84fac759}{\index{estado@{estado}!user@{user}}
+\index{user@{user}!estado@{estado}}
+\subsubsection[{user}]{\setlength{\rightskip}{0pt plus 5cm}char estado\+::user\mbox{[}{\bf M\+A\+X\+\_\+\+U\+S\+E\+R}\mbox{]}}}\label{structestado_a256854b71f528cf0aafb9acb84fac759}
+Nome de utilizador \hypertarget{structestado_a87d1b6f5a4c37f8d9348c30bbf1f67cc}{\index{estado@{estado}!wins@{wins}}
+\index{wins@{wins}!estado@{estado}}
+\subsubsection[{wins}]{\setlength{\rightskip}{0pt plus 5cm}int estado\+::wins}}\label{structestado_a87d1b6f5a4c37f8d9348c30bbf1f67cc}
+Número de vitórias 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c}{estado.\+c}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\hypertarget{validate_8h}{\section{validate.\+h File Reference}
+\label{validate_8h}\index{validate.\+h@{validate.\+h}}
+}
+
+
+Módulo de funções utilizadas para verificação do tabuleiro.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{validate_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}{valtab} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int i, int j)
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição na grelha do estado passado, é válida (Ou seja, não possui 3 em linhas em nenhuma direção). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de funções utilizadas para verificação do tabuleiro. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}{\index{validate.\+h@{validate.\+h}!valtab@{valtab}}
+\index{valtab@{valtab}!validate.\+h@{validate.\+h}}
+\subsubsection[{valtab}]{\setlength{\rightskip}{0pt plus 5cm}int valtab (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}
+
+
+Verifica se uma posição na grelha do estado passado, é válida (Ou seja, não possui 3 em linhas em nenhuma direção). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Linha que se pretende verificar. \\
+\hline
+{\em j} & Coluna que se pretende verificar. \\
+\hline
+{\em state} & Apontador para o estado que possui a grelha onde se pretende avaliar a posição.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Validade da posição na grelha.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8c_a41577d63c98a897565c29142cecd6f13}{validside} 
+\end{DoxySeeAlso}

@@ -1,0 +1,157 @@
+\hypertarget{filemanager_8c}{\section{filemanager.\+c File Reference}
+\label{filemanager_8c}\index{filemanager.\+c@{filemanager.\+c}}
+}
+
+
+Módulo de leitura de ficheiros.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cgi.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+Include dependency graph for filemanager.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filemanager_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8c_aa0525eadb0a7a8e368b3829ac5456a01}{select\+\_\+arcade} (char $\ast$path, int id)
+\begin{DoxyCompactList}\small\item\em Seleciona um dos mapas disponibilizados pela aplicação. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8c_a1fc929d420e8048085000b6344fe2d78}{select\+\_\+padrao} (char $\ast$path, char $\ast$map, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Carrega um mapa selecionado pelo utilizador. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8c_ade9dcb29b01b24ea595ddc31ef56f5b4}{select\+\_\+random} (int id, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Função utilizada para ler um tabuleiro random. \end{DoxyCompactList}\item 
+static \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8c_aceda657a5528ae114fe6a12b24491f93}{ler\+\_\+puzzle\+\_\+padrao} (F\+I\+L\+E $\ast$file, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Esta função lê um puzzle na convenção dos docentes de li2. \end{DoxyCompactList}\item 
+static char \hyperlink{filemanager_8c_a4011cb2274bbc7560c0e7875ae11a6e1}{convert\+Fl} (char ch, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Verifica a validade de uma determinada peça. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de leitura de ficheiros. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{filemanager_8c_a4011cb2274bbc7560c0e7875ae11a6e1}{\index{filemanager.\+c@{filemanager.\+c}!convert\+Fl@{convert\+Fl}}
+\index{convert\+Fl@{convert\+Fl}!filemanager.\+c@{filemanager.\+c}}
+\subsubsection[{convert\+Fl}]{\setlength{\rightskip}{0pt plus 5cm}static char convert\+Fl (
+\begin{DoxyParamCaption}
+\item[{char}]{ch, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{filemanager_8c_a4011cb2274bbc7560c0e7875ae11a6e1}
+
+
+Verifica a validade de uma determinada peça. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & Valor a comparar. \\
+\hline
+{\em flag} & Endereço onde irá ser colocado 1 se o caráter for válido, ou 0 caso contrário.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o valor convertido caso seja válido, ou o próprio valor de comparação caso seja inválido. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8c_aceda657a5528ae114fe6a12b24491f93}{\index{filemanager.\+c@{filemanager.\+c}!ler\+\_\+puzzle\+\_\+padrao@{ler\+\_\+puzzle\+\_\+padrao}}
+\index{ler\+\_\+puzzle\+\_\+padrao@{ler\+\_\+puzzle\+\_\+padrao}!filemanager.\+c@{filemanager.\+c}}
+\subsubsection[{ler\+\_\+puzzle\+\_\+padrao}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf E\+S\+T\+A\+D\+O} ler\+\_\+puzzle\+\_\+padrao (
+\begin{DoxyParamCaption}
+\item[{F\+I\+L\+E $\ast$}]{file, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{filemanager_8c_aceda657a5528ae114fe6a12b24491f93}
+
+
+Esta função lê um puzzle na convenção dos docentes de li2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & descritor de ficheiro F\+I\+L\+E já aberto. \\
+\hline
+{\em flag} & variavel com o endereço da variavel que registara o valor de sucesso ou insucceso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o {\ttfamily E\+S\+T\+A\+D\+O} lido. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8c_aa0525eadb0a7a8e368b3829ac5456a01}{\index{filemanager.\+c@{filemanager.\+c}!select\+\_\+arcade@{select\+\_\+arcade}}
+\index{select\+\_\+arcade@{select\+\_\+arcade}!filemanager.\+c@{filemanager.\+c}}
+\subsubsection[{select\+\_\+arcade}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+arcade (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8c_aa0525eadb0a7a8e368b3829ac5456a01}
+
+
+Seleciona um dos mapas disponibilizados pela aplicação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho interno onde estão guardados os mapas. \\
+\hline
+{\em id} & I\+D do mapa em questão.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o {\ttfamily E\+S\+T\+A\+D\+O} selecionado. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8c_a1fc929d420e8048085000b6344fe2d78}{\index{filemanager.\+c@{filemanager.\+c}!select\+\_\+padrao@{select\+\_\+padrao}}
+\index{select\+\_\+padrao@{select\+\_\+padrao}!filemanager.\+c@{filemanager.\+c}}
+\subsubsection[{select\+\_\+padrao}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+padrao (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{map, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8c_a1fc929d420e8048085000b6344fe2d78}
+
+
+Carrega um mapa selecionado pelo utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho do mapa que o utilizador pretende abrir. \\
+\hline
+{\em map} & Nome do ficheiro a carregar. \\
+\hline
+{\em flag} & Variavél com o endereço da variavél que registara o valor de sucesso ou insucceso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o {\ttfamily E\+S\+T\+A\+D\+O} selecionado. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8c_ade9dcb29b01b24ea595ddc31ef56f5b4}{\index{filemanager.\+c@{filemanager.\+c}!select\+\_\+random@{select\+\_\+random}}
+\index{select\+\_\+random@{select\+\_\+random}!filemanager.\+c@{filemanager.\+c}}
+\subsubsection[{select\+\_\+random}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+random (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8c_ade9dcb29b01b24ea595ddc31ef56f5b4}
+
+
+Função utilizada para ler um tabuleiro random. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id do ficheiro a carregar. \\
+\hline
+{\em flag} & Variavél onde se registará o valor de sucesso ou insucesso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estado lido. 
+\end{DoxyReturn}

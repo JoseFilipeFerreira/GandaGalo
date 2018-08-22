@@ -1,0 +1,200 @@
+\hypertarget{frontendTab_8c}{\section{frontend\+Tab.\+c File Reference}
+\label{frontendTab_8c}\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+}
+
+
+Módulo de tratamento gráfico, especializado ao tabuleiro.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decide.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}givehelp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+Include dependency graph for frontend\+Tab.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontendTab_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{frontendTab_8c_aee7a7847a9a0c7a98bacd5e5fa09383c}{getmax}(n1, n2)~((n2)$>$(n1)) ? ((int)(n2))\+:((int)(n1))
+\begin{DoxyCompactList}\small\item\em Macro que calcula o valor máximo entre dois valores. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontendTab_8c_aa931d57852fb164f2d99a6e339bc521b}{draw\+Tab} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize, int x, int y)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Tabuleiro. \end{DoxyCompactList}\item 
+void \hyperlink{frontendTab_8c_a9d5ce8de0b474b3a08f544463433551a}{map\+Placer} (int x, int y, int size, int id, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, char $\ast$username)
+\begin{DoxyCompactList}\small\item\em Função que desenha um Mapa clicavél dos mapas pré-\/definidos. \end{DoxyCompactList}\item 
+static void \hyperlink{frontendTab_8c_a80ef7d7d4b66d2d915548f19c81cd690}{aidimage} (int x, int y, int size, char $\ast$img, char $\ast$buffer, int sign)
+\begin{DoxyCompactList}\small\item\em Macro para criar colocar uma peça do tabuleiro. \end{DoxyCompactList}\item 
+static void \hyperlink{frontendTab_8c_ad57282eb1359893bb2b389e7311a9d45}{putimage} (int ox, int oy, int x, int y, int size, int value, char $\ast$buffer, char menu, char linker)
+\begin{DoxyCompactList}\small\item\em Macro para criar colocar uma peça do tabuleiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de tratamento gráfico, especializado ao tabuleiro. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{frontendTab_8c_aee7a7847a9a0c7a98bacd5e5fa09383c}{\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}!getmax@{getmax}}
+\index{getmax@{getmax}!frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+\subsubsection[{getmax}]{\setlength{\rightskip}{0pt plus 5cm}\#define getmax(
+\begin{DoxyParamCaption}
+\item[{}]{n1, }
+\item[{}]{n2}
+\end{DoxyParamCaption}
+)~((n2)$>$(n1)) ? ((int)(n2))\+:((int)(n1))}}\label{frontendTab_8c_aee7a7847a9a0c7a98bacd5e5fa09383c}
+
+
+Macro que calcula o valor máximo entre dois valores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n1} & valor a comparar \\
+\hline
+{\em n2} & valor a comparar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+o valor maior entre n1 e n2 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontendTab_8c_a80ef7d7d4b66d2d915548f19c81cd690}{\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}!aidimage@{aidimage}}
+\index{aidimage@{aidimage}!frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+\subsubsection[{aidimage}]{\setlength{\rightskip}{0pt plus 5cm}static void aidimage (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{size, }
+\item[{char $\ast$}]{img, }
+\item[{char $\ast$}]{buffer, }
+\item[{int}]{sign}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontendTab_8c_a80ef7d7d4b66d2d915548f19c81cd690}
+
+
+Macro para criar colocar uma peça do tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abcissa do canto superior esquerdo da imagem \\
+\hline
+{\em y} & ordenada do canto superior esquerdo da imagem \\
+\hline
+{\em size} & tamanho da imagem \\
+\hline
+{\em img} & nome do ficheiro da imagem \\
+\hline
+{\em buffer} & hiperligação a colocar na imagem \\
+\hline
+{\em sign} & 0 para imprimir a imagem, 1 para imprimir e associar o link \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontendTab_8c_aa931d57852fb164f2d99a6e339bc521b}{\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}!draw\+Tab@{draw\+Tab}}
+\index{draw\+Tab@{draw\+Tab}!frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+\subsubsection[{draw\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}void draw\+Tab (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}}\label{frontendTab_8c_aa931d57852fb164f2d99a6e339bc521b}
+
+
+Função que desenha o Tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+{\em x} & offset do tabuleiro no eixo Ox \\
+\hline
+{\em y} & offset do tabuleiro no eixo Oy \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontendTab_8c_a9d5ce8de0b474b3a08f544463433551a}{\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}!map\+Placer@{map\+Placer}}
+\index{map\+Placer@{map\+Placer}!frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+\subsubsection[{map\+Placer}]{\setlength{\rightskip}{0pt plus 5cm}void map\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{size, }
+\item[{int}]{id, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{char $\ast$}]{username}
+\end{DoxyParamCaption}
+)}}\label{frontendTab_8c_a9d5ce8de0b474b3a08f544463433551a}
+
+
+Função que desenha um Mapa clicavél dos mapas pré-\/definidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & abcissa do canto superior esquerdo do mapa \\
+\hline
+{\em y} & ordenada do canto superior esquerdo do mapa \\
+\hline
+{\em size} & tamanho do mapa \\
+\hline
+{\em id} & número do mapa que está a ser desenhado \\
+\hline
+{\em state} & o estado onde se encontra o mapa a desenhar \\
+\hline
+{\em username} & o nome do utilizador que está a jogar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontendTab_8c_ad57282eb1359893bb2b389e7311a9d45}{\index{frontend\+Tab.\+c@{frontend\+Tab.\+c}!putimage@{putimage}}
+\index{putimage@{putimage}!frontend\+Tab.\+c@{frontend\+Tab.\+c}}
+\subsubsection[{putimage}]{\setlength{\rightskip}{0pt plus 5cm}static void putimage (
+\begin{DoxyParamCaption}
+\item[{int}]{ox, }
+\item[{int}]{oy, }
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{size, }
+\item[{int}]{value, }
+\item[{char $\ast$}]{buffer, }
+\item[{char}]{menu, }
+\item[{char}]{linker}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontendTab_8c_ad57282eb1359893bb2b389e7311a9d45}
+
+
+Macro para criar colocar uma peça do tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ox} & offset da peça no eixo Ox \\
+\hline
+{\em oy} & offset da peça no eixo Oy \\
+\hline
+{\em x} & número da linha da peça \\
+\hline
+{\em y} & número da coluna da peça \\
+\hline
+{\em size} & tamanho da peça \\
+\hline
+{\em value} & descrição enum da peça \\
+\hline
+{\em buffer} & hiperligação a colocar na peça \\
+\hline
+{\em menu} & menu onde se encontra o tabuleiro \\
+\hline
+{\em linker} & identificação para desenhar soltos com link \\
+\hline
+\end{DoxyParams}

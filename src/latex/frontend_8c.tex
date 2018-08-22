@@ -1,0 +1,721 @@
+\hypertarget{frontend_8c}{\section{frontend.\+c File Reference}
+\label{frontend_8c}\index{frontend.\+c@{frontend.\+c}}
+}
+
+
+Módulo de tratamento gráfico.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}state.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}filemanager.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decide.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}givehelp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}frontend\+Tab.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}leaderboard.\+h\char`\"{}}\\*
+Include dependency graph for frontend.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frontend_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{frontend_8c_a13475eb196c024c709557ec43810c63e}{\#define \hyperlink{frontend_8c_a13475eb196c024c709557ec43810c63e}{N\+M\+A\+P\+S}~7}\label{frontend_8c_a13475eb196c024c709557ec43810c63e}
+
+\begin{DoxyCompactList}\small\item\em Constante que representa o número de mapas pré-\/definidos. \end{DoxyCompactList}\item 
+\#define \hyperlink{frontend_8c_a4e7c62acc3de768680fb1ca1a7e4663a}{M\+A\+R\+G\+I\+N}(windowsize)~(windowsize/8)
+\begin{DoxyCompactList}\small\item\em Macro para criar um valor de margem para trabalhar em frontend. \end{DoxyCompactList}\item 
+\#define \hyperlink{frontend_8c_aabac370a28fbfb599c4dfcd65919e94d}{T\+E\+X\+T\+M\+A\+R\+G\+I\+N}(windowsize)~(windowsize/80)
+\begin{DoxyCompactList}\small\item\em Macro para criar um valor de margem de texto para trabalhar em frontend. \end{DoxyCompactList}\item 
+\#define \hyperlink{frontend_8c_a84857978d4c38e5397cc54ab849eaa3e}{S\+I\+Z\+E}(windowsize, x, d)~(d? (((windowsize$\ast$x)/16) + (windowsize/(16$\ast$d))) \+: ((windowsize$\ast$x)/16))
+\begin{DoxyCompactList}\small\item\em Macro para criar um valor de tamanho para trabalhar em frontend. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{frontend_8c_a3bd06a6350b1adbcf2d2d71769b27ff9}{printstate} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que deesenha o Estado. \end{DoxyCompactList}\item 
+void \hyperlink{frontend_8c_a24cc4ee047b57331edabed32f639b9f7}{select\+File} (char $\ast$name\+Tag, char $\ast$tag)
+\begin{DoxyCompactList}\small\item\em Função que coloca uma textbox. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_afea3aedafac593a10ba6d2cf778a1612}{draw\+Menu\+Design\+Validate} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função auxiliar para criar a validação do Menu desenhar tabuleiro. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a4903992159a3ec4da981c1cc7418118d}{draw\+Menu\+Tab\+Design\+Stack} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função auxiliar para criar o undo/redo do Menu desenhar tabuleiro. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a0303eb77f758fd1bad7254b2beda86ed}{draw\+Menu\+Design\+Size} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função auxiliar para criar o alterar tamanho do Menu desenhar tabuleiro. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a05812a42c852508047f23de24c08d64a}{drawbuttonsplay\+Stack} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função auxiliar para o Menu jogar Desenha undo/redo e ancoras. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a2ecfaee0790d7c444e5ba53425b3dbca}{button\+Placer} (int x, int y, int size, char $\ast$link, char $\ast$pic)
+\begin{DoxyCompactList}\small\item\em colocar um botão \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a748959ed642f1a42f3a84b0b33af40e7}{circulate\+Buttons} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize, int menu\+Prev, int menu\+Next)
+\begin{DoxyCompactList}\small\item\em Função que desenha o rodapé do menu help. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_aaa606b9c4c0c87d167cbeebec3ab5308}{draw\+Menu\+Tab\+Design} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função para criar o Menu desenhar tabuleiro. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a487648a211fb66481701c83d119768e8}{drawbuttonsplay} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função para o Menu jogar. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a190791c8d661c12785cc74737f3265e2}{draw\+Pick\+Map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o menu de escolher mapas. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a845079297b8632ddf170fa54790490b7}{mode\+Select\+Menu} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu para escolher o modo de jogo. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a4e2fc98e7b289374d4f932a5a9515524}{draw\+Confirm\+Map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu para confirmar o mapa escolhido. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a3e1bf9a4011354495add20600fd7fef3}{draw\+Menu\+Victory} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de Vitória. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_aff844c0da46af57d5cfba37d8b71bd96}{draw\+Menu\+Invalid\+Map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de mapa inválido. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a3485d524c07159e6bd35ecb39ad40780}{draw\+Menu\+Initial} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu inicial. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a9fe4e9db2a437f5a491e2540fca95bbc}{menu\+Random\+Map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de mapas aleatórios. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_ab39bfd410378ea338fc2c75741883c4c}{menu\+Confirm\+R\+Map} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu para cnfirmar mapas. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_acbbbd42e23dc3a761521bf6a81e5940b}{draw\+Hint} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função auxiliar para o Menu jogar que desenha as hint. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a24dd3bc3793c63c8b94164fd102bc439}{help\+P10} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de ajuda sobre leadearboard. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_ab1220950f1a95aa662a4f296e78699c0}{help\+P11} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de ajudas sobre jogar. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a377305d3c60c5dc11c1c2cdd92ee4150}{help\+P12} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de ajudas sobre desenhar mapas. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_aca45f054ae44065acbcfabe1b44a0ec8}{help\+P13} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de ajudas sobre geração aleatória de mapas. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a4702c27b0d07277af7f4d9e712152506}{help\+P14} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de ajudas sobre selecionar ficheiros. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a8fbf9cd7d33b52b951eeaf21d9e9331e}{trofy\+Placer} (int windowsize, int N\+Leader)
+\begin{DoxyCompactList}\small\item\em Função que desenha os trofeus no menu de leaderboard. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_ab8df0e7ab127c8814f8791d1f8656c15}{score\+Placer} (int windowsize, int N\+Leader, \hyperlink{leaderboard_8c_ae0cd0677a19c7077f6bba18c8276576e}{I\+N\+F\+O} v)
+\begin{DoxyCompactList}\small\item\em Função que desenha os resultados no menu de leaderboard. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_af9ba7d1a7650c54f79a8590574ced887}{draw\+Menu\+Invalid\+Random} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de mapa inválido. \end{DoxyCompactList}\item 
+static void \hyperlink{frontend_8c_a84d827d14d7b39c89702253e48dd8acb}{draw\+Leader\+Board} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int windowsize)
+\begin{DoxyCompactList}\small\item\em Função que desenha o Menu de leaderboard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de tratamento gráfico. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{frontend_8c_a4e7c62acc3de768680fb1ca1a7e4663a}{\index{frontend.\+c@{frontend.\+c}!M\+A\+R\+G\+I\+N@{M\+A\+R\+G\+I\+N}}
+\index{M\+A\+R\+G\+I\+N@{M\+A\+R\+G\+I\+N}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{M\+A\+R\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\+A\+R\+G\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{windowsize}
+\end{DoxyParamCaption}
+)~(windowsize/8)}}\label{frontend_8c_a4e7c62acc3de768680fb1ca1a7e4663a}
+
+
+Macro para criar um valor de margem para trabalhar em frontend. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & a àrea disponível para desenhar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de margem 
+\end{DoxyReturn}
+\hypertarget{frontend_8c_a84857978d4c38e5397cc54ab849eaa3e}{\index{frontend.\+c@{frontend.\+c}!S\+I\+Z\+E@{S\+I\+Z\+E}}
+\index{S\+I\+Z\+E@{S\+I\+Z\+E}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+Z\+E(
+\begin{DoxyParamCaption}
+\item[{}]{windowsize, }
+\item[{}]{x, }
+\item[{}]{d}
+\end{DoxyParamCaption}
+)~(d? (((windowsize$\ast$x)/16) + (windowsize/(16$\ast$d))) \+: ((windowsize$\ast$x)/16))}}\label{frontend_8c_a84857978d4c38e5397cc54ab849eaa3e}
+
+
+Macro para criar um valor de tamanho para trabalhar em frontend. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & a àrea disponível para desenhar \\
+\hline
+{\em x} & valor a multiplicar \\
+\hline
+{\em d} & valor a dividir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de tamanho 
+\end{DoxyReturn}
+\hypertarget{frontend_8c_aabac370a28fbfb599c4dfcd65919e94d}{\index{frontend.\+c@{frontend.\+c}!T\+E\+X\+T\+M\+A\+R\+G\+I\+N@{T\+E\+X\+T\+M\+A\+R\+G\+I\+N}}
+\index{T\+E\+X\+T\+M\+A\+R\+G\+I\+N@{T\+E\+X\+T\+M\+A\+R\+G\+I\+N}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{T\+E\+X\+T\+M\+A\+R\+G\+I\+N}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\+E\+X\+T\+M\+A\+R\+G\+I\+N(
+\begin{DoxyParamCaption}
+\item[{}]{windowsize}
+\end{DoxyParamCaption}
+)~(windowsize/80)}}\label{frontend_8c_aabac370a28fbfb599c4dfcd65919e94d}
+
+
+Macro para criar um valor de margem de texto para trabalhar em frontend. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & a àrea disponível para desenhar\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+valor de margem de texto 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{frontend_8c_a2ecfaee0790d7c444e5ba53425b3dbca}{\index{frontend.\+c@{frontend.\+c}!button\+Placer@{button\+Placer}}
+\index{button\+Placer@{button\+Placer}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{button\+Placer}]{\setlength{\rightskip}{0pt plus 5cm}static void button\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{int}]{size, }
+\item[{char $\ast$}]{link, }
+\item[{char $\ast$}]{pic}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a2ecfaee0790d7c444e5ba53425b3dbca}
+
+
+colocar um botão 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & offset do botão no eixo Ox \\
+\hline
+{\em y} & offset do botão no eixo Oy \\
+\hline
+{\em size} & A tamanho do botão \\
+\hline
+{\em link} & fim da hiperligação a colocar no botão \\
+\hline
+{\em pic} & nome da imagem do botão \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a748959ed642f1a42f3a84b0b33af40e7}{\index{frontend.\+c@{frontend.\+c}!circulate\+Buttons@{circulate\+Buttons}}
+\index{circulate\+Buttons@{circulate\+Buttons}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{circulate\+Buttons}]{\setlength{\rightskip}{0pt plus 5cm}static void circulate\+Buttons (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize, }
+\item[{int}]{menu\+Prev, }
+\item[{int}]{menu\+Next}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a748959ed642f1a42f3a84b0b33af40e7}
+
+
+Função que desenha o rodapé do menu help. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+{\em menu\+Prev} & menu anterior \\
+\hline
+{\em menu\+Next} & menu seguinte \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a487648a211fb66481701c83d119768e8}{\index{frontend.\+c@{frontend.\+c}!drawbuttonsplay@{drawbuttonsplay}}
+\index{drawbuttonsplay@{drawbuttonsplay}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{drawbuttonsplay}]{\setlength{\rightskip}{0pt plus 5cm}static void drawbuttonsplay (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a487648a211fb66481701c83d119768e8}
+
+
+Função para o Menu jogar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a05812a42c852508047f23de24c08d64a}{\index{frontend.\+c@{frontend.\+c}!drawbuttonsplay\+Stack@{drawbuttonsplay\+Stack}}
+\index{drawbuttonsplay\+Stack@{drawbuttonsplay\+Stack}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{drawbuttonsplay\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}static void drawbuttonsplay\+Stack (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a05812a42c852508047f23de24c08d64a}
+
+
+Função auxiliar para o Menu jogar Desenha undo/redo e ancoras. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a4e2fc98e7b289374d4f932a5a9515524}{\index{frontend.\+c@{frontend.\+c}!draw\+Confirm\+Map@{draw\+Confirm\+Map}}
+\index{draw\+Confirm\+Map@{draw\+Confirm\+Map}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Confirm\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Confirm\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a4e2fc98e7b289374d4f932a5a9515524}
+
+
+Função que desenha o Menu para confirmar o mapa escolhido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_acbbbd42e23dc3a761521bf6a81e5940b}{\index{frontend.\+c@{frontend.\+c}!draw\+Hint@{draw\+Hint}}
+\index{draw\+Hint@{draw\+Hint}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Hint (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_acbbbd42e23dc3a761521bf6a81e5940b}
+
+
+Função auxiliar para o Menu jogar que desenha as hint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a84d827d14d7b39c89702253e48dd8acb}{\index{frontend.\+c@{frontend.\+c}!draw\+Leader\+Board@{draw\+Leader\+Board}}
+\index{draw\+Leader\+Board@{draw\+Leader\+Board}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Leader\+Board}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Leader\+Board (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a84d827d14d7b39c89702253e48dd8acb}
+
+
+Função que desenha o Menu de leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a0303eb77f758fd1bad7254b2beda86ed}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Design\+Size@{draw\+Menu\+Design\+Size}}
+\index{draw\+Menu\+Design\+Size@{draw\+Menu\+Design\+Size}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Design\+Size}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Design\+Size (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a0303eb77f758fd1bad7254b2beda86ed}
+
+
+Função auxiliar para criar o alterar tamanho do Menu desenhar tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_afea3aedafac593a10ba6d2cf778a1612}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Design\+Validate@{draw\+Menu\+Design\+Validate}}
+\index{draw\+Menu\+Design\+Validate@{draw\+Menu\+Design\+Validate}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Design\+Validate}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Design\+Validate (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_afea3aedafac593a10ba6d2cf778a1612}
+
+
+Função auxiliar para criar a validação do Menu desenhar tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a3485d524c07159e6bd35ecb39ad40780}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Initial@{draw\+Menu\+Initial}}
+\index{draw\+Menu\+Initial@{draw\+Menu\+Initial}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Initial}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Initial (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a3485d524c07159e6bd35ecb39ad40780}
+
+
+Função que desenha o Menu inicial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_aff844c0da46af57d5cfba37d8b71bd96}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Invalid\+Map@{draw\+Menu\+Invalid\+Map}}
+\index{draw\+Menu\+Invalid\+Map@{draw\+Menu\+Invalid\+Map}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Invalid\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Invalid\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_aff844c0da46af57d5cfba37d8b71bd96}
+
+
+Função que desenha o Menu de mapa inválido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_af9ba7d1a7650c54f79a8590574ced887}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Invalid\+Random@{draw\+Menu\+Invalid\+Random}}
+\index{draw\+Menu\+Invalid\+Random@{draw\+Menu\+Invalid\+Random}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Invalid\+Random}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Invalid\+Random (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_af9ba7d1a7650c54f79a8590574ced887}
+
+
+Função que desenha o Menu de mapa inválido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_aaa606b9c4c0c87d167cbeebec3ab5308}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Tab\+Design@{draw\+Menu\+Tab\+Design}}
+\index{draw\+Menu\+Tab\+Design@{draw\+Menu\+Tab\+Design}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Tab\+Design}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Tab\+Design (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_aaa606b9c4c0c87d167cbeebec3ab5308}
+
+
+Função para criar o Menu desenhar tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a4903992159a3ec4da981c1cc7418118d}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Tab\+Design\+Stack@{draw\+Menu\+Tab\+Design\+Stack}}
+\index{draw\+Menu\+Tab\+Design\+Stack@{draw\+Menu\+Tab\+Design\+Stack}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Tab\+Design\+Stack}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Tab\+Design\+Stack (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a4903992159a3ec4da981c1cc7418118d}
+
+
+Função auxiliar para criar o undo/redo do Menu desenhar tabuleiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a3e1bf9a4011354495add20600fd7fef3}{\index{frontend.\+c@{frontend.\+c}!draw\+Menu\+Victory@{draw\+Menu\+Victory}}
+\index{draw\+Menu\+Victory@{draw\+Menu\+Victory}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Menu\+Victory}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Menu\+Victory (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a3e1bf9a4011354495add20600fd7fef3}
+
+
+Função que desenha o Menu de Vitória. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a190791c8d661c12785cc74737f3265e2}{\index{frontend.\+c@{frontend.\+c}!draw\+Pick\+Map@{draw\+Pick\+Map}}
+\index{draw\+Pick\+Map@{draw\+Pick\+Map}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{draw\+Pick\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static void draw\+Pick\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a190791c8d661c12785cc74737f3265e2}
+
+
+Função que desenha o menu de escolher mapas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a24dd3bc3793c63c8b94164fd102bc439}{\index{frontend.\+c@{frontend.\+c}!help\+P10@{help\+P10}}
+\index{help\+P10@{help\+P10}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{help\+P10}]{\setlength{\rightskip}{0pt plus 5cm}static void help\+P10 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a24dd3bc3793c63c8b94164fd102bc439}
+
+
+Função que desenha o Menu de ajuda sobre leadearboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_ab1220950f1a95aa662a4f296e78699c0}{\index{frontend.\+c@{frontend.\+c}!help\+P11@{help\+P11}}
+\index{help\+P11@{help\+P11}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{help\+P11}]{\setlength{\rightskip}{0pt plus 5cm}static void help\+P11 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_ab1220950f1a95aa662a4f296e78699c0}
+
+
+Função que desenha o Menu de ajudas sobre jogar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a377305d3c60c5dc11c1c2cdd92ee4150}{\index{frontend.\+c@{frontend.\+c}!help\+P12@{help\+P12}}
+\index{help\+P12@{help\+P12}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{help\+P12}]{\setlength{\rightskip}{0pt plus 5cm}static void help\+P12 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a377305d3c60c5dc11c1c2cdd92ee4150}
+
+
+Função que desenha o Menu de ajudas sobre desenhar mapas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_aca45f054ae44065acbcfabe1b44a0ec8}{\index{frontend.\+c@{frontend.\+c}!help\+P13@{help\+P13}}
+\index{help\+P13@{help\+P13}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{help\+P13}]{\setlength{\rightskip}{0pt plus 5cm}static void help\+P13 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_aca45f054ae44065acbcfabe1b44a0ec8}
+
+
+Função que desenha o Menu de ajudas sobre geração aleatória de mapas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a4702c27b0d07277af7f4d9e712152506}{\index{frontend.\+c@{frontend.\+c}!help\+P14@{help\+P14}}
+\index{help\+P14@{help\+P14}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{help\+P14}]{\setlength{\rightskip}{0pt plus 5cm}static void help\+P14 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a4702c27b0d07277af7f4d9e712152506}
+
+
+Função que desenha o Menu de ajudas sobre selecionar ficheiros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_ab39bfd410378ea338fc2c75741883c4c}{\index{frontend.\+c@{frontend.\+c}!menu\+Confirm\+R\+Map@{menu\+Confirm\+R\+Map}}
+\index{menu\+Confirm\+R\+Map@{menu\+Confirm\+R\+Map}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{menu\+Confirm\+R\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static void menu\+Confirm\+R\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_ab39bfd410378ea338fc2c75741883c4c}
+
+
+Função que desenha o Menu para cnfirmar mapas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a9fe4e9db2a437f5a491e2540fca95bbc}{\index{frontend.\+c@{frontend.\+c}!menu\+Random\+Map@{menu\+Random\+Map}}
+\index{menu\+Random\+Map@{menu\+Random\+Map}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{menu\+Random\+Map}]{\setlength{\rightskip}{0pt plus 5cm}static void menu\+Random\+Map (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a9fe4e9db2a437f5a491e2540fca95bbc}
+
+
+Função que desenha o Menu de mapas aleatórios. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a845079297b8632ddf170fa54790490b7}{\index{frontend.\+c@{frontend.\+c}!mode\+Select\+Menu@{mode\+Select\+Menu}}
+\index{mode\+Select\+Menu@{mode\+Select\+Menu}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{mode\+Select\+Menu}]{\setlength{\rightskip}{0pt plus 5cm}static void mode\+Select\+Menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a845079297b8632ddf170fa54790490b7}
+
+
+Função que desenha o Menu para escolher o modo de jogo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & o estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a3bd06a6350b1adbcf2d2d71769b27ff9}{\index{frontend.\+c@{frontend.\+c}!printstate@{printstate}}
+\index{printstate@{printstate}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{printstate}]{\setlength{\rightskip}{0pt plus 5cm}void printstate (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{windowsize}
+\end{DoxyParamCaption}
+)}}\label{frontend_8c_a3bd06a6350b1adbcf2d2d71769b27ff9}
+
+
+Função que deesenha o Estado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & estado a desenhar \\
+\hline
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_ab8df0e7ab127c8814f8791d1f8656c15}{\index{frontend.\+c@{frontend.\+c}!score\+Placer@{score\+Placer}}
+\index{score\+Placer@{score\+Placer}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{score\+Placer}]{\setlength{\rightskip}{0pt plus 5cm}static void score\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{windowsize, }
+\item[{int}]{N\+Leader, }
+\item[{{\bf I\+N\+F\+O}}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_ab8df0e7ab127c8814f8791d1f8656c15}
+
+
+Função que desenha os resultados no menu de leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+{\em N\+Leader} & número de utilizadores a escrever \\
+\hline
+{\em v} & informação sobre a leaderboard \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a24cc4ee047b57331edabed32f639b9f7}{\index{frontend.\+c@{frontend.\+c}!select\+File@{select\+File}}
+\index{select\+File@{select\+File}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{select\+File}]{\setlength{\rightskip}{0pt plus 5cm}void select\+File (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name\+Tag, }
+\item[{char $\ast$}]{tag}
+\end{DoxyParamCaption}
+)}}\label{frontend_8c_a24cc4ee047b57331edabed32f639b9f7}
+
+
+Função que coloca uma textbox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\+Tag} & nome da Text\+Box \\
+\hline
+{\em tag} & parte de trás da string \\
+\hline
+\end{DoxyParams}
+\hypertarget{frontend_8c_a8fbf9cd7d33b52b951eeaf21d9e9331e}{\index{frontend.\+c@{frontend.\+c}!trofy\+Placer@{trofy\+Placer}}
+\index{trofy\+Placer@{trofy\+Placer}!frontend.\+c@{frontend.\+c}}
+\subsubsection[{trofy\+Placer}]{\setlength{\rightskip}{0pt plus 5cm}static void trofy\+Placer (
+\begin{DoxyParamCaption}
+\item[{int}]{windowsize, }
+\item[{int}]{N\+Leader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{frontend_8c_a8fbf9cd7d33b52b951eeaf21d9e9331e}
+
+
+Função que desenha os trofeus no menu de leaderboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em windowsize} & tamanho da área disponível para desenhar \\
+\hline
+{\em N\+Leader} & número de utilizadores a escrever \\
+\hline
+\end{DoxyParams}

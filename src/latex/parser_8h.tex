@@ -1,0 +1,72 @@
+\hypertarget{parser_8h}{\section{parser.\+h File Reference}
+\label{parser_8h}\index{parser.\+h@{parser.\+h}}
+}
+
+
+Ficheiro header de User input / Interpertador de comandos.  
+
+
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=140pt]{parser_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{parser_8h_a34976bb9db8f4c74909c52a61a7982eb}{pipe\+\_\+env} (void)
+\begin{DoxyCompactList}\small\item\em Efetua todas as operações necessárias para load do utilizador e aplicação dos comandos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Ficheiro header de User input / Interpertador de comandos. 
+
+
+
+\subsection{Function Documentation}
+\hypertarget{parser_8h_a34976bb9db8f4c74909c52a61a7982eb}{\index{parser.\+h@{parser.\+h}!pipe\+\_\+env@{pipe\+\_\+env}}
+\index{pipe\+\_\+env@{pipe\+\_\+env}!parser.\+h@{parser.\+h}}
+\subsubsection[{pipe\+\_\+env}]{\setlength{\rightskip}{0pt plus 5cm}void pipe\+\_\+env (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{parser_8h_a34976bb9db8f4c74909c52a61a7982eb}
+
+
+Efetua todas as operações necessárias para load do utilizador e aplicação dos comandos. 
+
+Para a leitura de utilizadores e comandos há três situações, consoante o número de itens lidos.
+
+
+\begin{DoxyItemize}
+\item Caso nenhum item seja lido, então é colocada na página uma input box onde se deve colocar o utilizador.
+\item Caso seja só lido o utilizador, é aberto o {\ttfamily E\+S\+T\+A\+D\+O} correspondente e apresentado.
+\item Caso seja lido o utilizador e o comando, é apresentado o {\ttfamily E\+S\+T\+A\+D\+O} corresponde com as alterações do comando já efetuadas.
+\begin{DoxyItemize}
+\item Neste caso acima, primeiro são analisadas as operações principais, e caso nenhuma seja efetuada, então passa para as operações secundárias.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+No final, o {\ttfamily E\+S\+T\+A\+D\+O} é escrito em ficheiro.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{parser_8c_a2ba3af7ad2c8720dffb2e60ec1936697}{get\+User\+C} 
+
+\hyperlink{parser_8c_a0d2b502d56325f9e1a72c703c2f51086}{convert} 
+
+\hyperlink{frontend_8h_a24cc4ee047b57331edabed32f639b9f7}{select\+File} 
+
+\hyperlink{parser_8c_a62404024039935a10aa34e9939a02d4e}{load\+\_\+user} 
+
+\hyperlink{parser_8c_a0da69644ab20507560818f1895e8a481}{main\+\_\+op} 
+
+\hyperlink{parser_8c_a9dd3ff6aa5721874cf88bec4955f600b}{snd\+\_\+op} 
+
+\hyperlink{userfiles_8h_af94c939d48715fec1933684c3073f7d9}{estado2file} 
+
+\hyperlink{frontend_8h_a3bd06a6350b1adbcf2d2d71769b27ff9}{printstate} 
+
+\hyperlink{estado_8h_a8b28e51aaf0dded437325daee1e86238}{destroy\+State} 
+\end{DoxySeeAlso}

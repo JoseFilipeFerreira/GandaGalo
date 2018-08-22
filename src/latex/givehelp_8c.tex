@@ -1,0 +1,197 @@
+\hypertarget{givehelp_8c}{\section{givehelp.\+c File Reference}
+\label{givehelp_8c}\index{givehelp.\+c@{givehelp.\+c}}
+}
+
+
+Módulo para fornecimento de ajudas.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}decide.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}givehelp.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}validate.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+Include dependency graph for givehelp.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{givehelp_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{givehelp_8c_a337cd8a8e5c0d38e251d972e9533fa50}{is\+\_\+solto}(num)~((num == S\+O\+L\+\_\+\+X) $\vert$$\vert$ (num == S\+O\+L\+\_\+\+O) $\vert$$\vert$ (num == V\+A\+Z\+I\+A))
+\begin{DoxyCompactList}\small\item\em verifica se uma peca é S\+O\+L ou V\+A\+Z\+I\+A \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{givehelp_8c_a76ebe592c1a541633c7e5662fff4eb8e}{possiblepath} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{structstate}{state}, int i, int j)
+\begin{DoxyCompactList}\small\item\em Indica o número de casas válidas que uma posição consegue percorrer. \end{DoxyCompactList}\item 
+void \hyperlink{givehelp_8c_a56fc46f28368685f0897f3f58f80b039}{givehelp} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} e)
+\begin{DoxyCompactList}\small\item\em Função que altera o Estado e dá ajudas. \end{DoxyCompactList}\item 
+static int \hyperlink{givehelp_8c_a7ef25cc065d026571f0a09c6f37a3dc0}{putnatural} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} src, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} comp)
+\begin{DoxyCompactList}\small\item\em Função que dá ajudas naturais Se existirem duas pecas em linha ela coloca uma peça válida numa das extremidades. \end{DoxyCompactList}\item 
+static int \hyperlink{givehelp_8c_a040597e0574505bd0f83f904df3debed}{searchcomp} (\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} src, \hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} comp, int indc)
+\begin{DoxyCompactList}\small\item\em Faz um procura complementária entre dois estados diferentes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo para fornecimento de ajudas. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{givehelp_8c_a337cd8a8e5c0d38e251d972e9533fa50}{\index{givehelp.\+c@{givehelp.\+c}!is\+\_\+solto@{is\+\_\+solto}}
+\index{is\+\_\+solto@{is\+\_\+solto}!givehelp.\+c@{givehelp.\+c}}
+\subsubsection[{is\+\_\+solto}]{\setlength{\rightskip}{0pt plus 5cm}\#define is\+\_\+solto(
+\begin{DoxyParamCaption}
+\item[{}]{num}
+\end{DoxyParamCaption}
+)~((num == S\+O\+L\+\_\+\+X) $\vert$$\vert$ (num == S\+O\+L\+\_\+\+O) $\vert$$\vert$ (num == V\+A\+Z\+I\+A))}}\label{givehelp_8c_a337cd8a8e5c0d38e251d972e9533fa50}
+
+
+verifica se uma peca é S\+O\+L ou V\+A\+Z\+I\+A 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & valor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se for S\+O\+L ou V\+A\+Z\+I\+A, 0 caso contrário 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{givehelp_8c_a56fc46f28368685f0897f3f58f80b039}{\index{givehelp.\+c@{givehelp.\+c}!givehelp@{givehelp}}
+\index{givehelp@{givehelp}!givehelp.\+c@{givehelp.\+c}}
+\subsubsection[{givehelp}]{\setlength{\rightskip}{0pt plus 5cm}void givehelp (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{e}
+\end{DoxyParamCaption}
+)}}\label{givehelp_8c_a56fc46f28368685f0897f3f58f80b039}
+
+
+Função que altera o Estado e dá ajudas. 
+
+A função inicialmente verifica se o número de ajudas disponivél é maior que 0, se o for, então é criada uma solução de {\ttfamily state} , sendo então utilizada a função {\ttfamily putnatural} , de forma a encontrar peças sem verificar a solução. Se {\ttfamily putnatural} não encontrar nenhuma ajuda então é utilizada a função {\ttfamily searchcomp} com {\ttfamily indc} a {\bfseries 0} de forma a que não utilize recursividade. Se não encontrar nenhum elemento a alterar desta forma então corre a função {\ttfamily searchcomp} com {\ttfamily indc} a {\bfseries 1} , então será utilizada recursividade e mais de uma peça será alterada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & Estado a alterar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{estado_8h_ab3e47d845be6ab389f1cb63532ab9313}{get\+E\+\_\+help} 
+
+\hyperlink{solver_8h_a6102730d9741f071f2354149756162a6}{solve} 
+
+\hyperlink{givehelp_8c_a7ef25cc065d026571f0a09c6f37a3dc0}{putnatural} 
+
+\hyperlink{givehelp_8c_a040597e0574505bd0f83f904df3debed}{searchcomp} 
+\end{DoxySeeAlso}
+\hypertarget{givehelp_8c_a76ebe592c1a541633c7e5662fff4eb8e}{\index{givehelp.\+c@{givehelp.\+c}!possiblepath@{possiblepath}}
+\index{possiblepath@{possiblepath}!givehelp.\+c@{givehelp.\+c}}
+\subsubsection[{possiblepath}]{\setlength{\rightskip}{0pt plus 5cm}int possiblepath (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{state, }
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}}\label{givehelp_8c_a76ebe592c1a541633c7e5662fff4eb8e}
+
+
+Indica o número de casas válidas que uma posição consegue percorrer. 
+
+Verifica a grelha de um estado, e consoante as peças à volta de uma posição, percorre as possibilidades de peças até alcançar {\bfseries S\+O\+L\+\_\+\+O} indicando quantas destas peças intermédias são válidas.
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & Estado que se pretende alterar. \\
+\hline
+{\em i} & Linha que se pretende verificar. \\
+\hline
+{\em j} & Coluna que se pretende verificar.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O número de peças que são válidas.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{validate_8h_a7cc26aa61c34f0e7fd569e7e176ef8e4}{valtab} 
+\end{DoxySeeAlso}
+\hypertarget{givehelp_8c_a7ef25cc065d026571f0a09c6f37a3dc0}{\index{givehelp.\+c@{givehelp.\+c}!putnatural@{putnatural}}
+\index{putnatural@{putnatural}!givehelp.\+c@{givehelp.\+c}}
+\subsubsection[{putnatural}]{\setlength{\rightskip}{0pt plus 5cm}static int putnatural (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{src, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{comp}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{givehelp_8c_a7ef25cc065d026571f0a09c6f37a3dc0}
+
+
+Função que dá ajudas naturais Se existirem duas pecas em linha ela coloca uma peça válida numa das extremidades. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & estado onde se encontra o mapa a procurar \\
+\hline
+{\em comp} & local onde são armazenadas as alterações\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 se conseguir encontrar pecas nessa condição, 0 se não encontrar
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{givehelp_8c_a76ebe592c1a541633c7e5662fff4eb8e}{possiblepath} 
+
+\hyperlink{decide_8h_ac47faeda9e29e07135095e3711035845}{playadvance} 
+
+\hyperlink{decide_8h_ae13669ac08e09c81d021c5569733e0fb}{formove} 
+
+\hyperlink{stack_8h_a734636978e69eedc1efd53ddc858d360}{push} 
+
+\hyperlink{estado_8h_aa61011eadf880d552d197316ad4b30bb}{get\+E\+\_\+stack} 
+\end{DoxySeeAlso}
+\hypertarget{givehelp_8c_a040597e0574505bd0f83f904df3debed}{\index{givehelp.\+c@{givehelp.\+c}!searchcomp@{searchcomp}}
+\index{searchcomp@{searchcomp}!givehelp.\+c@{givehelp.\+c}}
+\subsubsection[{searchcomp}]{\setlength{\rightskip}{0pt plus 5cm}static int searchcomp (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{src, }
+\item[{{\bf E\+S\+T\+A\+D\+O}}]{comp, }
+\item[{int}]{indc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{givehelp_8c_a040597e0574505bd0f83f904df3debed}
+
+
+Faz um procura complementária entre dois estados diferentes. 
+
+A função percorre ambos os estados, sendo que {\ttfamily comp} deve corresponder à solução do estado {\ttfamily src}. A cada posição que corresponda a uma peça do tipo {\bfseries S\+O\+L\+T\+O} ou {\bfseries V\+A\+Z\+I\+A} verifica que está é igual à peça que se encontra na mesma posição na solução, caso sejam iguais as peças nenhuma operação é efetuada. Caso contrário, o elemento em questão é alterada para a peça correspondente na solução. O que gera três casos\+:
+
+
+\begin{DoxyItemize}
+\item A nova peça é válida, então o elemento é alterado, e colocado na {\bfseries S\+T\+A\+C\+K} .
+\item A nova peça é inválida e {\ttfamily indc} é {\bfseries 0} , então a peça será alterada para o elemento antigo que lá se encontrava.
+\item A nova peça é inválida e {\ttfamily indc} é diferente de {\bfseries 0} , então é utilizada recursividade de forma a alterar um número arbitrário de peças até que o tabuleiro se torne válido.
+\end{DoxyItemize}
+\begin{DoxyParams}{Parameters}
+{\em src} & O estado que irá ser alterado. \\
+\hline
+{\em comp} & O estado que servirá de base de alteração. \\
+\hline
+{\em indc} & 0 se não se pretender utilizar recursividade, diferente de {\bfseries 0} caso contrário.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 se encontrou uma peça para alterar, 1 caso contrário.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{givehelp_8c_a337cd8a8e5c0d38e251d972e9533fa50}{is\+\_\+solto} 
+
+\hyperlink{stack_8h_a734636978e69eedc1efd53ddc858d360}{push} 
+
+\hyperlink{estado_8h_aa61011eadf880d552d197316ad4b30bb}{get\+E\+\_\+stack} 
+\end{DoxySeeAlso}

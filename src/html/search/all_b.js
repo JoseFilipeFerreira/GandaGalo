@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['main',['main',['../exemplo_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;exemplo.c'],['../gerar_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;gerar.c']]],
+  ['main_5fop',['main_op',['../parser_8c.html#a0da69644ab20507560818f1895e8a481',1,'parser.c']]],
+  ['make_5finfo',['make_info',['../leaderboard_8c.html#ada70e23e1c8bd904bd090ff8f9d03966',1,'leaderboard.c']]],
+  ['makeanc',['makeAnc',['../stack_8c.html#a57784d722b977fd9dc3f17dfec32b7aa',1,'makeAnc(STACK s):&#160;stack.c'],['../stack_8h.html#a57784d722b977fd9dc3f17dfec32b7aa',1,'makeAnc(STACK s):&#160;stack.c']]],
+  ['makefixo',['makefixo',['../state_8c.html#a1775e9c25dcb0dcf9d03020f281c4ca8',1,'makefixo(ESTADO e):&#160;state.c'],['../state_8h.html#a1775e9c25dcb0dcf9d03020f281c4ca8',1,'makefixo(ESTADO e):&#160;state.c']]],
+  ['makeit',['makeit',['../solver_8c.html#a2963dbaf1bb98e88a517ccf1a525e63f',1,'solver.c']]],
+  ['makeplay',['makePlay',['../parser_8c.html#ac8e0d98f52835e13cdeb0815f76693f7',1,'parser.c']]],
+  ['makestate',['makeState',['../estado_8c.html#a425d9a13679db6099c218938240ba30d',1,'makeState(ESTADO e):&#160;estado.c'],['../estado_8h.html#a425d9a13679db6099c218938240ba30d',1,'makeState(ESTADO e):&#160;estado.c']]],
+  ['map_5fpath',['MAP_PATH',['../cgi_8h.html#a57f243883cb0b226e5af5ec6ceea763b',1,'cgi.h']]],
+  ['mapplacer',['mapPlacer',['../frontendTab_8c.html#a9d5ce8de0b474b3a08f544463433551a',1,'mapPlacer(int x, int y, int size, int id, ESTADO state, char *username):&#160;frontendTab.c'],['../frontendTab_8h.html#a9d5ce8de0b474b3a08f544463433551a',1,'mapPlacer(int x, int y, int size, int id, ESTADO state, char *username):&#160;frontendTab.c']]],
+  ['margin',['MARGIN',['../frontend_8c.html#a4e7c62acc3de768680fb1ca1a7e4663a',1,'frontend.c']]],
+  ['max',['MAX',['../solver_8c.html#aff9931d7524c88e07743af6535b20761',1,'solver.c']]],
+  ['max_5fbuffer',['MAX_BUFFER',['../estado_8h.html#a1d5dab30b404fab91608086105afc78c',1,'estado.h']]],
+  ['max_5fgrid',['MAX_GRID',['../estado_8h.html#ab02e1c5c6948bf8cf3c21a0acad8a578',1,'estado.h']]],
+  ['max_5fs',['MAX_S',['../leaderboard_8h.html#ab5c9e28069b9fbddd9c296f14d25b84c',1,'leaderboard.h']]],
+  ['max_5fuser',['MAX_USER',['../estado_8h.html#aa87360d2dd1fd5a07f92c6afe93045fc',1,'estado.h']]],
+  ['menu',['menu',['../structestado.html#a219ca4fd4c068f749afedb392e3f83b0',1,'estado']]],
+  ['menu_5findex',['MENU_INDEX',['../estado_8h.html#a92174b27f2983e923597ffca08c4b20f',1,'estado.h']]],
+  ['menuconfirmrmap',['menuConfirmRMap',['../frontend_8c.html#ab39bfd410378ea338fc2c75741883c4c',1,'frontend.c']]],
+  ['menurandommap',['menuRandomMap',['../frontend_8c.html#a9fe4e9db2a437f5a491e2540fca95bbc',1,'frontend.c']]],
+  ['mode',['MODE',['../decide_8h.html#a7eabd788dcab19ca586663bf73deddf5',1,'decide.h']]],
+  ['modeselectmenu',['modeSelectMenu',['../frontend_8c.html#a845079297b8632ddf170fa54790490b7',1,'frontend.c']]]
+];

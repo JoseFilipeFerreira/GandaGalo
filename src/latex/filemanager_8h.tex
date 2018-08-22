@@ -1,0 +1,162 @@
+\hypertarget{filemanager_8h}{\section{filemanager.\+h File Reference}
+\label{filemanager_8h}\index{filemanager.\+h@{filemanager.\+h}}
+}
+
+
+Módulo de leitura de ficheiros.  
+
+
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}solver.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}cgi.\+h\char`\"{}}\\*
+Include dependency graph for filemanager.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{filemanager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{filemanager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{filemanager_8h_a65db46ec06db54c143d8c58f50a480af}{S\+E\+L\+E\+C\+T}(id)~\hyperlink{filemanager_8h_aa0525eadb0a7a8e368b3829ac5456a01}{select\+\_\+arcade}(\hyperlink{cgi_8h_af783caa0ab3eaa291b0af58fcb59d2b3}{F\+I\+L\+E\+\_\+\+P\+A\+T\+H}	,id)
+\begin{DoxyCompactList}\small\item\em Macro para ler um mapa prédefinido. \end{DoxyCompactList}\item 
+\#define \hyperlink{filemanager_8h_a312709802aca1cafd23ab379fb6fb9cc}{s\+Padrao}(map, flag)~(\hyperlink{filemanager_8h_a1fc929d420e8048085000b6344fe2d78}{select\+\_\+padrao}(\hyperlink{cgi_8h_a57f243883cb0b226e5af5ec6ceea763b}{M\+A\+P\+\_\+\+P\+A\+T\+H},map,\&(flag)))
+\begin{DoxyCompactList}\small\item\em Macro para ler um mapa do utilizador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8h_aa0525eadb0a7a8e368b3829ac5456a01}{select\+\_\+arcade} (char $\ast$path, int id)
+\begin{DoxyCompactList}\small\item\em Seleciona um dos mapas disponibilizados pela aplicação. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8h_a1fc929d420e8048085000b6344fe2d78}{select\+\_\+padrao} (char $\ast$path, char $\ast$map, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Carrega um mapa selecionado pelo utilizador. \end{DoxyCompactList}\item 
+\hyperlink{estado_8c_afbffb4e9c242f93d5a2d607754ce2db8}{E\+S\+T\+A\+D\+O} \hyperlink{filemanager_8h_ade9dcb29b01b24ea595ddc31ef56f5b4}{select\+\_\+random} (int id, int $\ast$flag)
+\begin{DoxyCompactList}\small\item\em Função utilizada para ler um tabuleiro random. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Módulo de leitura de ficheiros. 
+
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{filemanager_8h_a65db46ec06db54c143d8c58f50a480af}{\index{filemanager.\+h@{filemanager.\+h}!S\+E\+L\+E\+C\+T@{S\+E\+L\+E\+C\+T}}
+\index{S\+E\+L\+E\+C\+T@{S\+E\+L\+E\+C\+T}!filemanager.\+h@{filemanager.\+h}}
+\subsubsection[{S\+E\+L\+E\+C\+T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+E\+L\+E\+C\+T(
+\begin{DoxyParamCaption}
+\item[{}]{id}
+\end{DoxyParamCaption}
+)~{\bf select\+\_\+arcade}({\bf F\+I\+L\+E\+\_\+\+P\+A\+T\+H}	,id)}}\label{filemanager_8h_a65db46ec06db54c143d8c58f50a480af}
+
+
+Macro para ler um mapa prédefinido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & número do mapa\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado com o mapa lido 
+\end{DoxyReturn}
+\hypertarget{filemanager_8h_a312709802aca1cafd23ab379fb6fb9cc}{\index{filemanager.\+h@{filemanager.\+h}!s\+Padrao@{s\+Padrao}}
+\index{s\+Padrao@{s\+Padrao}!filemanager.\+h@{filemanager.\+h}}
+\subsubsection[{s\+Padrao}]{\setlength{\rightskip}{0pt plus 5cm}\#define s\+Padrao(
+\begin{DoxyParamCaption}
+\item[{}]{map, }
+\item[{}]{flag}
+\end{DoxyParamCaption}
+)~({\bf select\+\_\+padrao}({\bf M\+A\+P\+\_\+\+P\+A\+T\+H},map,\&(flag)))}}\label{filemanager_8h_a312709802aca1cafd23ab379fb6fb9cc}
+
+
+Macro para ler um mapa do utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Nome do ficheiro a carregar. \\
+\hline
+{\em flag} & Variavél onde se registará o valor de sucesso ou insucesso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado com o mapa lido 
+\end{DoxyReturn}
+
+
+\subsection{Function Documentation}
+\hypertarget{filemanager_8h_aa0525eadb0a7a8e368b3829ac5456a01}{\index{filemanager.\+h@{filemanager.\+h}!select\+\_\+arcade@{select\+\_\+arcade}}
+\index{select\+\_\+arcade@{select\+\_\+arcade}!filemanager.\+h@{filemanager.\+h}}
+\subsubsection[{select\+\_\+arcade}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+arcade (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8h_aa0525eadb0a7a8e368b3829ac5456a01}
+
+
+Seleciona um dos mapas disponibilizados pela aplicação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho interno onde estão guardados os mapas. \\
+\hline
+{\em id} & I\+D do mapa em questão.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o {\ttfamily E\+S\+T\+A\+D\+O} selecionado. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8h_a1fc929d420e8048085000b6344fe2d78}{\index{filemanager.\+h@{filemanager.\+h}!select\+\_\+padrao@{select\+\_\+padrao}}
+\index{select\+\_\+padrao@{select\+\_\+padrao}!filemanager.\+h@{filemanager.\+h}}
+\subsubsection[{select\+\_\+padrao}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+padrao (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{path, }
+\item[{char $\ast$}]{map, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8h_a1fc929d420e8048085000b6344fe2d78}
+
+
+Carrega um mapa selecionado pelo utilizador. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & Caminho do mapa que o utilizador pretende abrir. \\
+\hline
+{\em map} & Nome do ficheiro a carregar. \\
+\hline
+{\em flag} & Variavél com o endereço da variavél que registara o valor de sucesso ou insucceso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Devolve o {\ttfamily E\+S\+T\+A\+D\+O} selecionado. 
+\end{DoxyReturn}
+\hypertarget{filemanager_8h_ade9dcb29b01b24ea595ddc31ef56f5b4}{\index{filemanager.\+h@{filemanager.\+h}!select\+\_\+random@{select\+\_\+random}}
+\index{select\+\_\+random@{select\+\_\+random}!filemanager.\+h@{filemanager.\+h}}
+\subsubsection[{select\+\_\+random}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+D\+O} select\+\_\+random (
+\begin{DoxyParamCaption}
+\item[{int}]{id, }
+\item[{int $\ast$}]{flag}
+\end{DoxyParamCaption}
+)}}\label{filemanager_8h_ade9dcb29b01b24ea595ddc31ef56f5b4}
+
+
+Função utilizada para ler um tabuleiro random. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id do ficheiro a carregar. \\
+\hline
+{\em flag} & Variavél onde se registará o valor de sucesso ou insucesso desta função.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Estado lido. 
+\end{DoxyReturn}
