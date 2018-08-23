@@ -6,9 +6,9 @@ Project done for "Laboratórios de Informática II" @ UMINHO
 
 ## Authors
 
-* Gonçalo Rui Alves Faria
-* José Filipe de Sousa Matos Ferreira
-* Rui Pedro Neto Reis
+* [Gonçalo Rui Alves Faria](https://github.com/Goncalo-Faria)
+* [José Filipe de Sousa Matos Ferreira](https://github.com/JoseFilipeFerreira)
+* [Rui Pedro Neto Reis](https://github.com/Syrayse)
 ## Documentation
 
 Click [here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/JoseFilipeFerreira/GandaGalo/master/src/html/index.html) to see the documentation.
